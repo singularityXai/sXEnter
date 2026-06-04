@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sXEnter Gateway</title>
+    <style>
+        /* Core Layout Elements */
+        body {
+            background-color: #121214;
+            color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .gateway-container {
+            width: 100%;
+            max-width: 650px;
+            padding: 40px 20px;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        /* Branding and Typography */
+        .logo-placeholder {
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: 600;
+            margin: 0 0 20px 0;
+            letter-spacing: 0.5px;
+        }
+
+        .manifesto-text {
+            color: #a0a5ad;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 35px;
+            text-align: justify;
+        }
+
+        /* Interactive Element Track Boxes */
+        .track-selection-box {
+            background-color: #1a1a1e;
+            border: 1px solid #2d2d34;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .track-label {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 18px;
+            cursor: pointer;
+            font-size: 14px;
+            color: #e2e4e9;
+        }
+
+        .track-label:last-child {
+            margin-bottom: 0;
+        }
+
+        .track-label input[type="radio"] {
+            margin-right: 12px;
+            margin-top: 3px;
+            accent-color: #0066ff;
+        }
+
+        .track-description {
+            display: block;
+            color: #71757f;
+            font-size: 12px;
+            margin-top: 4px;
+        }
+
+        /* High-End Action Button */
+        .google-auth-btn {
+            background-color: #0066ff;
+            color: #ffffff;
+            border: none;
+            border-radius: 6px;
+            padding: 14px 28px;
+            font-size: 14px;
+            font-weight: 600;
+            width: 100%;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .google-auth-btn:hover {
+            background-color: #0052cc;
+        }
+
+        .identity-notice {
+            color: #71757f;
+            font-size: 11px;
+            margin-top: 12px;
+            margin-bottom: 25px;
+        }
+
+        /* Security Disclaimer Box */
+        .security-disclaimer {
+            color: #51555f;
+            font-size: 11px;
+            line-height: 1.5;
+            text-align: justify;
+            border-top: 1px solid #1f1f23;
+            padding-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        /* Structural Footer */
+        footer {
+            margin-top: 40px;
+            border-top: 1px solid #2d2d34;
+            padding-top: 20px;
+        }
+
+        .tagline {
+            color: #71757f;
+            font-size: 12px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="gateway-container">
+        
+        <!-- Top Branding Zone -->
+        <div class="logo-placeholder">SingularityX</div>
+        <h1>sXEnter™ GATEWAY</h1>
+        
+        <!-- Clean Sub-Header Copy Layer -->
+        <div class="manifesto-text">
+            Inside the sXEcoStructure™, technology is no longer allowed to consume your life. sXProvinceZERO™ (sXPRO™) is established as the definitive, live sandbox environment engineered to prove a singular operational reality: That a high-value business track can be mapped, automated, and scaled with absolute efficiency while completely sXRemovingFounder™ from the day-to-day machine. We have built this architecture to grant ordinary everyday people total systemic relief. By processing your trajectory through the hard-coded GiAE™ matrix, manual labor is eliminated. You transition from a stressed manual worker to a sXSovereignOperator™, guided every single step of the way by your personal sXCoCreator™ (CC™) intelligence dashboard engine.
+        </div>
+
+        <!-- The Entrance Selection Box -->
+        <div class="track-selection-box">
+            <label class="track-label">
+                <input type="radio" name="sx_track" value="corporate" checked>
+                <div>
+                    <strong>Service Corporate Clients</strong>
+                    <span class="track-description">Engineered for Doctors, Lawyers, and Agencies.</span>
+                </div>
+            </label>
+            
+            <label class="track-label">
+                <input type="radio" name="sx_track" value="business">
+                <div>
+                    <strong>Operate My Own Business</strong>
+                    <span class="track-description">Engineered for Coaches, MRR operators, and MLM structures.</span>
+                </div>
+            </label>
+            
+            <label class="track-label">
+                <input type="radio" name="sx_track" value="affiliate">
+                <div>
+                    <strong>Initialize sXAffiliate™</strong>
+                    <span class="track-description">No existing business model? The sX™ system sells itself.</span>
+                </div>
+            </label>
+        </div>
+
+        <!-- Frictionless Native Auth Trigger -->
+        <button class="google-auth-btn" onclick="alert('Google Authentication Portal Initializing...')">
+            Continue with Google
+        </button>
+        <div class="identity-notice">Entry requires a verified Google identity to initialize your secure workspace.</div>
+
+        <!-- Data Governance & Security Protocol Layer -->
+        <div class="security-disclaimer">
+            <strong>Data Governance & System Security Protocol:</strong> In strict compliance with the Protection of Personal Information Act (POPIA) and advanced global data privacy architectures, your submitted identity credentials are automatically encrypted and processed with zero human involvement. We maintain absolute data integrity; your information is never shared, rented, or exposed to external digital networks. Proceeding past this gateway automatically initializes the sXVerify™ Protocol on the subsequent step. The system will issue a temporary, single-use 6-digit security token to your active Gmail inbox to validate your sXOperatorIdentity™ before entry to the live sandbox environment is permitted.
+        </div>
+
+        <!-- Structural Footer Zone -->
+        <footer>
+            <div class="tagline">Business infrastructure, stripped of human friction.</div>
+        </footer>
+
+    </div>
+
+</body>
+</html>
