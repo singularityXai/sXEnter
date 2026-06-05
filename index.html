@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>sXEnter Gateway</title>
     
-    <!-- Native Vector Favicon Integration linked strictly to your x.svg asset -->
     <link rel="icon" type="image/svg+xml" href="x.svg" sizes="any">
     
     <style>
@@ -48,7 +47,7 @@
         /* Crown Branding Layer */
         .logo-container {
             width: 100%;
-            max-width: 480px; /* Scaled up from 390px to enlarge wordlogo */
+            max-width: 480px; 
             margin: 0 auto;
             position: relative;
         }
@@ -68,7 +67,7 @@
             border: none;
         }
 
-        /* Massive Authoritative Header - Made Bigger */
+        /* Massive Authoritative Header */
         h1 {
             font-size: 64px; 
             font-weight: 400;
@@ -98,7 +97,7 @@
             100% { background-position: -200% center; }
         }
 
-        /* Sub-Header Tagline style - Pulled the gap beneath it tighter */
+        /* Sub-Header Tagline style */
         .sub-tagline {
             text-transform: uppercase;
             font-size: 16px; 
@@ -113,7 +112,7 @@
         /* Symmetrical Master Grid Split Structure */
         .split-cockpit-layout {
             display: flex;
-            gap: 60px;
+            gap: 60px; /* The exact 60px span across the center axis */
             text-align: left;
             margin-bottom: 40px;
             align-items: flex-start;
@@ -128,7 +127,7 @@
             flex-direction: column;
             justify-content: center;
             min-height: 280px;
-            padding-right: 25px;
+            /* REMOVED padding-right to ensure perfect symmetry */
         }
 
         /* Manifesto Text Pure White, Evenly Distributed Justification */
@@ -154,7 +153,7 @@
             align-items: center;
         }
 
-        /* High-End Deep Equidistant 3D Interface Box - Bumped back up */
+        /* High-End Deep Equidistant 3D Interface Box */
         .track-selection-box {
             background-color: #424344; 
             border: none; 
@@ -277,14 +276,25 @@
             padding: 0 10px;
         }
 
-        /* Responsive Break for smaller configurations */
+        /* ==========================================================
+           MOBILE RESPONSIVE OVERRIDE (Fixes the visual bleed)
+           ========================================================== */
         @media (max-width: 900px) {
+            .logo-container {
+                max-width: 280px; /* Shrinks the wordlogo for mobile */
+            }
+            h1 {
+                font-size: 40px; /* Shrinks the massive header for mobile */
+            }
+            .sub-tagline {
+                font-size: 12px; /* Scales slogan to fit */
+            }
             .split-cockpit-layout {
                 flex-direction: column;
                 gap: 40px;
             }
             .manifesto-text {
-                text-align: center;
+                text-align: left;
             }
             .brand-divider {
                 width: 310px;
@@ -296,33 +306,27 @@
 
     <div class="gateway-container">
         
-        <!-- Crown Branding Zone -->
         <div class="logo-container">
             <img src="logo.png" alt="SingularityX" onerror="this.style.display='none'; document.getElementById('fallback-title').style.display='block';">
             <div id="fallback-title" style="display:none; font-size:26px; font-weight:300; letter-spacing:4px; margin-bottom:10px;">SingularityX</div>
         </div>
 
-        <!-- Balanced Proportional Divider Line -->
         <hr class="brand-divider">
 
-        <!-- Animated, Scaled Authoritative Header -->
         <h1><span class="sx-sovereign">sX</span>Enter™ <span class="bold-gateway">GATEWAY</span></h1>
         <div class="sub-tagline">BUSINESS INFRASTRUCTURE | STRIPPED OF HUMAN NOISE</div>
         
-        <!-- SIDE-BY-SIDE SPLIT COCKPIT FRAMEWORK -->
         <div class="split-cockpit-layout">
             
-            <!-- PANEL A: Left-aligned narrative field -->
             <div class="column-manifesto">
                 <p class="manifesto-text">
-                    Inside the <span class="sx-sovereign">sX</span>EcoStructure™, technology is no longer allowed to consume your life. <span class="sx-sovereign">sX</span>ProvinceZERO™ (<span class="sx-sovereign">sX</span>PRO™) is established as the definitive, live sandbox environment engineered to prove a singular operational reality: That a high-value business track can be mapped, automated, and scaled with absolute efficiency while completely <span class="sx-sovereign">sX</span>FounderRemoved™ from the day-to-day machine.
+                    Inside the <span class="sx-sovereign">sX</span>EcoStructure™, technology is no longer allowed to consume your life. <span class="sx-sovereign">sX</span>ProvinceZERO™ (<span class="sx-sovereign">sX</span>PRO™) is established as the definitive, live sandbox environment engineered to prove a singular operational reality: That a high-value business track can be mapped, automated, and scaled with absolute efficiency while completely <span class="sx-sovereign">sX</span>FounderRemoved™ from the day-to-day&nbsp;machine.
                 </p>
                 <p class="manifesto-text">
                     We have built this architecture to grant ordinary everyday people total systemic relief. By processing your trajectory through the hard-coded GiAE™ matrix, manual labor is eliminated. You transition from a stressed manual worker to a <span class="sx-sovereign">sX</span>SovereignOperator™, guided every single step of the way by your personal <span class="sx-sovereign">sX</span>CoCreator™ (CC™) intelligence dashboard engine.
                 </p>
             </div>
             
-            <!-- PANEL B: Right-aligned interaction control field -->
             <div class="column-controls">
                 <div class="track-selection-box">
                     <label class="track-label">
@@ -345,12 +349,11 @@
                         <input type="radio" name="sx_track" value="affiliate">
                         <div>
                             <span class="track-title">Initialize <span class="sx-bold">sX</span>Affiliate™</span>
-                            <span class="track-description">No existing business model? The <span class="sx-bold">sX</span>™ system sells itself.</span>
+                            <span class="track-description">No existing business model? The <span class="sx-bold">sX</span>™ system sells&nbsp;itself.</span>
                         </div>
                     </label>
                 </div>
 
-                <!-- Frictionless Native Auth Trigger -->
                 <div>
                     <button class="google-auth-btn" onclick="alert('Google Native Sign-In Active. Redirecting straight to your workspace sandbox...')">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
@@ -364,12 +367,10 @@
 
         </div>
 
-        <!-- System Baseline Boundary Line -->
         <hr class="base-divider">
 
-        <!-- Data Governance & Security Protocol Full Width Frame -->
         <div class="security-disclaimer">
-            <strong>Data Governance & System Security Protocol:</strong> In strict compliance with the Protection of Personal Information Act (POPIA) and advanced global data privacy architectures, your submitted identity credentials are automatically encrypted and processed with zero human involvement. We maintain absolute data integrity:<br>your information is never shared, rented, or exposed to external digital networks.<br><br><strong>PROCEEDING PAST THIS GATEWAY AUTOMATICALLY INITIALIZES YOUR SECURE WORKSPACE DASHBOARD ENVIRONMENT SEAMLESSLY.</strong>
+            <strong>Data Governance & System Security Protocol:</strong> In strict compliance with the Protection of Personal Information Act (POPIA) and advanced global data privacy architectures, your submitted identity credentials are automatically encrypted and processed with zero human involvement. We maintain absolute data integrity:<br>your information is never shared, rented, or exposed to external digital networks.<br><strong>PROCEEDING PAST THIS GATEWAY AUTOMATICALLY INITIALIZES YOUR SECURE WORKSPACE DASHBOARD ENVIRONMENT SEAMLESSLY.</strong>
         </div>
 
     </div>
