@@ -29,7 +29,7 @@
         /* Expanded Container to accommodate Premium Side-by-Side Cockpit Layout */
         .gateway-container {
             width: 100%;
-            max-width: 1200px;
+            max-width: 1240px; /* Expanded slightly to permanently prevent text overflows */
             padding: 20px 40px 40px 40px;
             text-align: center;
             box-sizing: border-box;
@@ -67,15 +67,15 @@
             border: none;
         }
 
-        /* Massive Authoritative Header - Original Smooth Glisten Reverted */
+        /* Massive Authoritative Header - Reverted Original Smooth Glisten */
         h1 {
-            font-size: 44px; /* Amplified to match or exceed slogan line width scale */
+            font-size: 44px; 
             font-weight: 400;
             margin: 0 auto 10px auto;
             letter-spacing: 4px;
             display: block;
             width: 100%;
-            max-width: 900px;
+            max-width: 950px;
             
             /* Original 90-degree smooth silver horizontal glisten matrix */
             background: linear-gradient(90deg, #ffffff 0%, #ffffff 35%, #9da1aa 48%, #ffffff 55%, #ffffff 100%);
@@ -118,13 +118,13 @@
 
         /* COLUMN A: Narrative Frame */
         .column-manifesto {
-            flex: 1;
+            flex: 1.1; /* Inched slightly wider to provide optimal text tracking bounds */
             box-sizing: border-box;
             display: flex;
             flex-direction: column;
             justify-content: center;
+            min-height: 280px;
             padding-right: 25px;
-            padding-bottom: 20px; /* Added tracking expansion space to prevent any base boundary clips */
         }
 
         /* Manifesto Text Pure White, Right-Aligned with Tightened Paragraph Margins */
@@ -143,7 +143,7 @@
 
         /* COLUMN B: Action Control Frame */
         .column-controls {
-            flex: 1;
+            flex: 0.9;
             box-sizing: border-box;
             display: flex;
             flex-direction: column;
@@ -157,7 +157,7 @@
             border-top-color: #18191a;
             border-left-color: #18191a;
             border-radius: 14px;
-            padding: 35px; 
+            padding: 35px 30px; /* Optimized internal text breathing room */
             margin-top: 4px; 
             margin-bottom: 18px; 
             text-align: left;
@@ -199,7 +199,7 @@
         .track-description {
             display: block;
             color: #e5e7eb; 
-            font-size: 14px; 
+            font-size: 13.5px; /* Fine-tuned for absolute bounding containment */
             font-weight: 300;
             margin-top: 6px;
             line-height: 1.5;
@@ -313,10 +313,10 @@
             <!-- PANEL A: Left-aligned narrative field -->
             <div class="column-manifesto">
                 <p class="manifesto-text">
-                    Inside the <span class="sx-sovereign">sX</span>EcoStructure™, technology is no longer allowed to consume your life. <span class="sx-sovereign">sX</span>ProvinceZERO™ (<span class="sx-sovereign">sX</span>PRO Executive™) is established as the definitive, live sandbox environment engineered to prove a singular operational reality: That a high-value business track can be mapped, automated, and scaled with absolute efficiency while completely <span class="sx-sovereign">sX</span>FounderRemoved™ from the day-to-day machine.
+                    Inside the <span class="sx-sovereign">sX</span>EcoStructure™, technology is no longer allowed to consume your life. <span class="sx-sovereign">sX</span>ProvinceZERO™ (<span class="sx-sovereign">sX</span>PRO™) is established as the definitive, live sandbox environment engineered to prove a singular operational reality: That a high-value business track can be mapped, automated, and scaled with absolute efficiency while completely <span class="sx-sovereign">sX</span>FounderRemoved™ from the day-to-day machine.
                 </p>
                 <p class="manifesto-text">
-                    We have built this architecture to grant ordinary everyday people total systemic relief. By processing your trajectory through the hard-coded GiAE™ matrix, manual labor is eliminated. You transition from a stressed manual worker to a <span class="sx-sovereign">sX</span>SovereignOperator™, guided every single step of the way by your personal <span class="sx-sovereign">sX</span>CoCreator™ (CC™) intelligence dashboard engine.
+                    We have built this architecture to grant ordinary everyday people total systemic relief. By processing your trajectory through the hard-coded GiAE™ matrix, manual labor is eliminated. You transition from a stressed manual worker to a <span class="sx-sovereign">sX</span>SovereignOperator™, guided every single step of the way by your personal <span class="sx-sovereign">sX</span>CoCreator™ (CC) intelligence dashboard engine.
                 </p>
             </div>
             
@@ -365,7 +365,7 @@
         <!-- System Baseline Boundary Line -->
         <hr class="base-divider">
 
-        <!-- Data Governance & Security Protocol Full Width Frame (Clean Line Broken) -->
+        <!-- Data Governance & Security Protocol Full Width Frame (Clean Hard Break Applied) -->
         <div class="security-disclaimer">
             <strong>Data Governance & System Security Protocol:</strong> In strict compliance with the Protection of Personal Information Act (POPIA) and advanced global data privacy architectures, your submitted identity credentials are automatically encrypted and processed with zero human involvement. We maintain absolute data integrity; your information is never shared, rented, or exposed to external digital networks.<br><br>Proceeding past this gateway automatically initializes your secure workspace dashboard environment seamlessly.
         </div>
