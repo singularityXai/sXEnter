@@ -29,7 +29,7 @@
         /* Expanded Container to accommodate Premium Side-by-Side Cockpit Layout */
         .gateway-container {
             width: 100%;
-            max-width: 1100px;
+            max-width: 1150px;
             padding: 20px 40px 40px 40px;
             text-align: center;
             box-sizing: border-box;
@@ -43,7 +43,7 @@
         /* Crown Branding Layer */
         .logo-container {
             width: 100%;
-            max-width: 420px; /* Scaled up as requested */
+            max-width: 390px; /* Scaled up a tad as requested */
             margin: 0 auto;
             position: relative;
         }
@@ -56,24 +56,23 @@
 
         /* Balanced Proportional Divider Line */
         .brand-divider {
-            width: 310px;
+            width: 420px;
             height: 1px;
             background-color: #636773;
             margin: 15px auto 20px auto;
             border: none;
         }
 
-        /* Scaled Cinematic Silver Reflection Wash Header - Syntax Restored */
+        /* Highly Authoritative Large Silver Reflection Wash Header */
         h1 {
-            font-size: 25px;
+            font-size: 32px; /* Amplified for maximum authority scale */
             font-weight: 400;
-            margin: 0 auto 6px auto;
-            letter-spacing: 3px;
+            margin: 0 auto 10px auto;
+            letter-spacing: 4px;
             display: block;
             width: 100%;
-            max-width: 450px;
+            max-width: 600px;
             
-            /* Typo resolved: 35% fixed to restore visibility */
             background: linear-gradient(90deg, #ffffff 0%, #ffffff 35%, #9da1aa 48%, #ffffff 55%, #ffffff 100%);
             background-size: 200% auto;
             -webkit-background-clip: text;
@@ -85,7 +84,7 @@
 
         .bold-gateway {
             font-weight: 700;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
         }
 
         @keyframes textReflectionWash {
@@ -99,27 +98,28 @@
             font-size: 11px;
             letter-spacing: 2px;
             color: #b0b4be;
-            margin: 0 0 40px 0;
+            margin: 0 0 45px 0;
             font-weight: 400;
         }
 
-        /* Master Grid Split Structure (A / B Columns) */
+        /* Symmetrical Master Grid Split Structure (Perfect 1:1 Center Axis Split) */
         .split-cockpit-layout {
             display: flex;
-            gap: 50px;
+            gap: 60px;
             text-align: left;
             margin-bottom: 40px;
             align-items: flex-start;
         }
 
-        /* COLUMN A: Narrative Frame */
+        /* COLUMN A: Narrative Frame (Balanced equally to 1) */
         .column-manifesto {
-            flex: 1.1;
+            flex: 1;
             box-sizing: border-box;
             display: flex;
             flex-direction: column;
             justify-content: center;
             min-height: 280px;
+            padding-right: 15px; /* Spatial buffer zone keeping text clean from the center line */
         }
 
         /* Manifesto Text Scaled up to 16px, Pure White, Right-Aligned */
@@ -136,29 +136,48 @@
             margin-bottom: 0;
         }
 
-        /* COLUMN B: Action Control Frame */
+        /* COLUMN B: Action Control Frame (Balanced equally to 1) */
         .column-controls {
-            flex: 0.9;
+            flex: 1;
             box-sizing: border-box;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
 
-        /* High-End Deep Inset 3D Interface Box */
+        /* High-End Deep Inset 3D Interface Box with Rapid Reflection Sweep */
         .track-selection-box {
-            background-color: #28292a; /* Lightened background pass */
+            background-color: #363738; /* Lightened background layer */
             border: 1px solid #1c1d1e;
             border-top-color: #121314;
             border-left-color: #121314;
             border-radius: 14px;
-            padding: 35px 35px 35px 35px; /* Normalized left margin for clean alignment */
+            padding: 35px 40px; 
             margin-bottom: 30px;
             text-align: left;
             width: 100%;
             box-sizing: border-box;
-            /* Deeper shadow distribution spread inwards */
+            position: relative;
+            overflow: hidden;
+            /* Deeper inner shadow layout depth */
             box-shadow: inset 0 6px 14px rgba(0, 0, 0, 0.5), inset 0 1px 3px rgba(0, 0, 0, 0.6);
+        }
+
+        /* Independent Box Glisten Filter Layer */
+        .track-selection-box::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -150%;
+            width: 150%;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 40%, rgba(255,255,255,0.12) 50%, rgba(255,255,255,0) 60%, rgba(255,255,255,0) 100%);
+            animation: boxGlistenWash 3s infinite linear; /* Quicker tempo cadence than h1 */
+        }
+
+        @keyframes boxGlistenWash {
+            0% { left: -150%; }
+            100% { left: 150%; }
         }
 
         .track-label {
@@ -168,6 +187,8 @@
             cursor: pointer;
             color: #ffffff;
             transition: transform 0.2s ease;
+            position: relative;
+            z-index: 2; /* Pins text choices safely above glisten glare layer */
         }
 
         .track-label:hover {
@@ -186,14 +207,14 @@
         }
 
         .track-title {
-            font-size: 18px; /* Bumped exactly ONE size larger */
+            font-size: 18px; /* High authority font enlargement */
             font-weight: 500;
             letter-spacing: 0.5px;
         }
 
         .track-description {
             display: block;
-            color: #b0b4be;
+            color: #d1d5db; /* High contrast legibility upgrade */
             font-size: 13px;
             font-weight: 300;
             margin-top: 6px;
@@ -229,7 +250,7 @@
             box-shadow: 0 6px 20px rgba(24, 119, 242, 0.5);
         }
 
-        /* Subtle Premium Light Grey Reset with explicit centering text align */
+        /* Centered subtle notice format */
         .identity-notice {
             color: #b0b4be;
             font-size: 12px;
@@ -239,6 +260,7 @@
             letter-spacing: 0.5px;
             text-align: center;
             width: 100%;
+            line-height: 1.6;
         }
 
         /* High-Contrast Target Highlight for Google */
@@ -254,13 +276,13 @@
             width: 100%;
             height: 1px;
             background-color: #44454a;
-            margin: 35px 0 30px 0; /* Expanded gap to push disclaimer downward */
+            margin: 40px 0 30px 0;
             border: none;
         }
 
         /* Anchor Governance Disclaimer Layer spanning full width at base */
         .security-disclaimer {
-            color: #b0b4be; /* Softened light grey shade adjustment */
+            color: #b0b4be;
             font-size: 12px;
             font-weight: 300;
             line-height: 1.7;
@@ -278,6 +300,9 @@
             .manifesto-text {
                 text-align: center;
             }
+            .brand-divider {
+                width: 310px;
+            }
         }
     </style>
 </head>
@@ -294,7 +319,7 @@
         <!-- Balanced Proportional Divider Line -->
         <hr class="brand-divider">
 
-        <!-- Animated, Scaled Header with bolded Gateway declaration -->
+        <!-- Animated, Scaled Authoritative Header -->
         <h1><span class="sx-sovereign">sX</span>Enter™ <span class="bold-gateway">GATEWAY</span></h1>
         <div class="sub-tagline">BUSINESS INFRASTRUCTURE | STRIPPED OF HUMAN NOISE</div>
         
@@ -307,7 +332,7 @@
                     Inside the <span class="sx-sovereign">sX</span>EcoStructure™, technology is no longer allowed to consume your life. <span class="sx-sovereign">sX</span>ProvinceZERO™ (<span class="sx-sovereign">sX</span>PRO™) is established as the definitive, live sandbox environment engineered to prove a singular operational reality: That a high-value business track can be mapped, automated, and scaled with absolute efficiency while completely <span class="sx-sovereign">sX</span>FounderRemoved™ from the day-to-day machine.
                 </p>
                 <p class="manifesto-text">
-                    We have built this architecture to grant ordinary everyday people total systemic relief. By processing your trajectory through the hard-coded GiAE™ matrix, manual labor is eliminated. You transition from a stressed manual worker to a <span class="sx-sovereign">sX</span>SovereignOperator™, guided every single step of the way by your personal <span class="sx-sovereign">sX</span>CoCreator™ (CC™) intelligence dashboard engine.
+                    We have built this architecture to grant ordinary everyday people total systemic relief. By processing your trajectory through the hard-coded GiAE™ matrix, manual labor is eliminated. You transition from a stressed manual worker to a <span class="sx-sovereign">sX</span>SovereignOperator™, guided every single step of the way by your personal <span class="sx-sovereign">sX</span>CoCreator™ (CCRank™) intelligence dashboard engine.
                 </p>
             </div>
             
@@ -348,7 +373,8 @@
                         Continue with Google
                     </button>
                 </div>
-                <div class="identity-notice">Entry requires a verified <span class="google-highlight">Google</span> identity to initialize your secure workspace.</div>
+                <!-- Line Broken Exactly between Identity and To -->
+                <div class="identity-notice">Entry requires a verified <span class="google-highlight">Google</span> identity<br>to initialize your secure workspace.</div>
             </div>
 
         </div>
