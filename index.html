@@ -5,40 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>sXEnter Gateway</title>
     
+    <!-- Native Vector Favicon Integration linked strictly to your x.svg asset -->
     <link rel="icon" type="image/svg+xml" href="x.svg" sizes="any">
     
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
-
-        /* =========================================
-           sX™ MASTER CONTROL MATRIX 
-           Change these numbers to adjust layout without breaking code.
-           ========================================= */
-        :root {
-            /* 🖥️ DESKTOP PARAMETERS */
-            --header-scale: 64px;
-            --tagline-scale: 16px;
-            --tagline-gap: 75px;        /* Space between tagline and grid */
-            --manifesto-scale: 17px;
-            --manifesto-gap: 4px;       /* Space between the two paragraphs */
-            --manifesto-align: justify; /* Keeps desktop text squarely blocked */
-            --box-drop: 15px;           /* Pushes the right selection box down */
-            --grid-gap: 60px;           /* Space between left text and right box */
-        }
-
-        /* 📱 MOBILE PARAMETERS (Overrides desktop automatically on phones) */
-        @media (max-width: 900px) {
-            :root {
-                --header-scale: 38px;       /* Scaled down to stop screen bleed */
-                --tagline-scale: 12px;
-                --tagline-gap: 30px;
-                --manifesto-scale: 16px;
-                --manifesto-align: center;  /* Centers text for mobile readability */
-                --box-drop: 0px;            /* Reset to 0 since elements stack on mobile */
-                --grid-gap: 40px;
-            }
-        }
-        /* ========================================= */
 
         /* Core Layout Elements */
         body {
@@ -97,9 +68,9 @@
             border: none;
         }
 
-        /* Massive Authoritative Header - Linked to Matrix */
+        /* Massive Authoritative Header - Made Bigger */
         h1 {
-            font-size: var(--header-scale); 
+            font-size: 64px; 
             font-weight: 400;
             margin: 0 auto 10px auto;
             letter-spacing: 4px;
@@ -127,13 +98,13 @@
             100% { background-position: -200% center; }
         }
 
-        /* Sub-Header Tagline style - Linked to Matrix */
+        /* Sub-Header Tagline style - Pulled the gap beneath it tighter */
         .sub-tagline {
             text-transform: uppercase;
-            font-size: var(--tagline-scale); 
+            font-size: 16px; 
             letter-spacing: 2px;
             color: #b0b4be;
-            margin: 0 auto var(--tagline-gap) auto; 
+            margin: 0 auto 40px auto; /* Tightened gap to bring columns up */
             font-weight: 400;
             max-width: 950px;
             display: block;
@@ -142,7 +113,7 @@
         /* Symmetrical Master Grid Split Structure */
         .split-cockpit-layout {
             display: flex;
-            gap: var(--grid-gap);
+            gap: 60px;
             text-align: left;
             margin-bottom: 40px;
             align-items: flex-start;
@@ -160,14 +131,14 @@
             padding-right: 25px;
         }
 
-        /* Manifesto Text Pure White - Linked to Matrix */
+        /* Manifesto Text Pure White, Evenly Distributed Justification */
         .manifesto-text {
             color: #ffffff;
-            font-size: var(--manifesto-scale); 
+            font-size: 17px; 
             font-weight: 300;
             line-height: 1.8;
-            margin: 0 0 var(--manifesto-gap) 0; 
-            text-align: var(--manifesto-align); 
+            margin: 0 0 4px 0; 
+            text-align: justify; 
         }
 
         .manifesto-text:last-child {
@@ -183,13 +154,13 @@
             align-items: center;
         }
 
-        /* High-End Deep Equidistant 3D Interface Box - Linked to Matrix */
+        /* High-End Deep Equidistant 3D Interface Box - Bumped back up */
         .track-selection-box {
             background-color: #424344; 
             border: none; 
             border-radius: 14px;
             padding: 35px 40px; 
-            margin-top: var(--box-drop); 
+            margin-top: 4px; /* Bumped box directly back up */
             margin-bottom: 18px; 
             text-align: left;
             width: 100%;
@@ -305,16 +276,15 @@
             box-sizing: border-box;
             padding: 0 10px;
         }
-        
-        .footer-action {
-            font-weight: 700;
-            text-transform: uppercase;
-        }
 
-        /* Automated Switchover Logic for Matrix Controls */
+        /* Responsive Break for smaller configurations */
         @media (max-width: 900px) {
             .split-cockpit-layout {
                 flex-direction: column;
+                gap: 40px;
+            }
+            .manifesto-text {
+                text-align: center;
             }
             .brand-divider {
                 width: 310px;
@@ -326,18 +296,23 @@
 
     <div class="gateway-container">
         
+        <!-- Crown Branding Zone -->
         <div class="logo-container">
             <img src="logo.png" alt="SingularityX" onerror="this.style.display='none'; document.getElementById('fallback-title').style.display='block';">
             <div id="fallback-title" style="display:none; font-size:26px; font-weight:300; letter-spacing:4px; margin-bottom:10px;">SingularityX</div>
         </div>
 
+        <!-- Balanced Proportional Divider Line -->
         <hr class="brand-divider">
 
+        <!-- Animated, Scaled Authoritative Header -->
         <h1><span class="sx-sovereign">sX</span>Enter™ <span class="bold-gateway">GATEWAY</span></h1>
         <div class="sub-tagline">BUSINESS INFRASTRUCTURE | STRIPPED OF HUMAN NOISE</div>
         
+        <!-- SIDE-BY-SIDE SPLIT COCKPIT FRAMEWORK -->
         <div class="split-cockpit-layout">
             
+            <!-- PANEL A: Left-aligned narrative field -->
             <div class="column-manifesto">
                 <p class="manifesto-text">
                     Inside the <span class="sx-sovereign">sX</span>EcoStructure™, technology is no longer allowed to consume your life. <span class="sx-sovereign">sX</span>ProvinceZERO™ (<span class="sx-sovereign">sX</span>PRO™) is established as the definitive, live sandbox environment engineered to prove a singular operational reality: That a high-value business track can be mapped, automated, and scaled with absolute efficiency while completely <span class="sx-sovereign">sX</span>FounderRemoved™ from the day-to-day machine.
@@ -347,6 +322,7 @@
                 </p>
             </div>
             
+            <!-- PANEL B: Right-aligned interaction control field -->
             <div class="column-controls">
                 <div class="track-selection-box">
                     <label class="track-label">
@@ -374,6 +350,7 @@
                     </label>
                 </div>
 
+                <!-- Frictionless Native Auth Trigger -->
                 <div>
                     <button class="google-auth-btn" onclick="alert('Google Native Sign-In Active. Redirecting straight to your workspace sandbox...')">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
@@ -387,8 +364,10 @@
 
         </div>
 
+        <!-- System Baseline Boundary Line -->
         <hr class="base-divider">
 
+        <!-- Data Governance & Security Protocol Full Width Frame -->
         <div class="security-disclaimer">
             <strong>Data Governance & System Security Protocol:</strong> In strict compliance with the Protection of Personal Information Act (POPIA) and advanced global data privacy architectures, your submitted identity credentials are automatically encrypted and processed with zero human involvement. We maintain absolute data integrity:<br>your information is never shared, rented, or exposed to external digital networks.<br><br><strong>PROCEEDING PAST THIS GATEWAY AUTOMATICALLY INITIALIZES YOUR SECURE WORKSPACE DASHBOARD ENVIRONMENT SEAMLESSLY.</strong>
         </div>
