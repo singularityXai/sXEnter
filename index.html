@@ -10,6 +10,36 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
+        /* =========================================
+           sX™ MASTER CONTROL MATRIX 
+           Change these numbers to adjust layout without breaking code.
+           ========================================= */
+        :root {
+            /* 🖥️ DESKTOP PARAMETERS */
+            --header-scale: 64px;
+            --tagline-scale: 16px;
+            --tagline-gap: 75px;        /* Space between tagline and grid */
+            --manifesto-scale: 17px;
+            --manifesto-gap: 4px;       /* Space between the two paragraphs */
+            --manifesto-align: justify; /* Keeps desktop text squarely blocked */
+            --box-drop: 15px;           /* Pushes the right selection box down */
+            --grid-gap: 60px;           /* Space between left text and right box */
+        }
+
+        /* 📱 MOBILE PARAMETERS (Overrides desktop automatically on phones) */
+        @media (max-width: 900px) {
+            :root {
+                --header-scale: 38px;       /* Scaled down to stop screen bleed */
+                --tagline-scale: 12px;
+                --tagline-gap: 30px;
+                --manifesto-scale: 16px;
+                --manifesto-align: center;  /* Centers text for mobile readability */
+                --box-drop: 0px;            /* Reset to 0 since elements stack on mobile */
+                --grid-gap: 40px;
+            }
+        }
+        /* ========================================= */
+
         /* Core Layout Elements */
         body {
             background-color: #303132;
@@ -67,9 +97,9 @@
             border: none;
         }
 
-        /* Massive Authoritative Header - Made Bigger */
+        /* Massive Authoritative Header - Linked to Matrix */
         h1 {
-            font-size: 64px; 
+            font-size: var(--header-scale); 
             font-weight: 400;
             margin: 0 auto 10px auto;
             letter-spacing: 4px;
@@ -97,13 +127,13 @@
             100% { background-position: -200% center; }
         }
 
-        /* Sub-Header Tagline style - Scaled Proportions */
+        /* Sub-Header Tagline style - Linked to Matrix */
         .sub-tagline {
             text-transform: uppercase;
-            font-size: 16px; 
+            font-size: var(--tagline-scale); 
             letter-spacing: 2px;
             color: #b0b4be;
-            margin: 0 auto 75px auto; 
+            margin: 0 auto var(--tagline-gap) auto; 
             font-weight: 400;
             max-width: 950px;
             display: block;
@@ -112,7 +142,7 @@
         /* Symmetrical Master Grid Split Structure */
         .split-cockpit-layout {
             display: flex;
-            gap: 60px;
+            gap: var(--grid-gap);
             text-align: left;
             margin-bottom: 40px;
             align-items: flex-start;
@@ -130,14 +160,14 @@
             padding-right: 25px;
         }
 
-        /* Manifesto Text Pure White, Evenly Distributed Justification */
+        /* Manifesto Text Pure White - Linked to Matrix */
         .manifesto-text {
             color: #ffffff;
-            font-size: 17px; 
+            font-size: var(--manifesto-scale); 
             font-weight: 300;
             line-height: 1.8;
-            margin: 0 0 4px 0; 
-            text-align: justify; 
+            margin: 0 0 var(--manifesto-gap) 0; 
+            text-align: var(--manifesto-align); 
         }
 
         .manifesto-text:last-child {
@@ -153,13 +183,13 @@
             align-items: center;
         }
 
-        /* High-End Deep Equidistant 3D Interface Box - Bumped up 2 notches to 15px */
+        /* High-End Deep Equidistant 3D Interface Box - Linked to Matrix */
         .track-selection-box {
             background-color: #424344; 
             border: none; 
             border-radius: 14px;
             padding: 35px 40px; 
-            margin-top: 15px; /* Shifted up 20px from previous version for alignment balance */
+            margin-top: var(--box-drop); 
             margin-bottom: 18px; 
             text-align: left;
             width: 100%;
@@ -275,15 +305,16 @@
             box-sizing: border-box;
             padding: 0 10px;
         }
+        
+        .footer-action {
+            font-weight: 700;
+            text-transform: uppercase;
+        }
 
-        /* Responsive Break for smaller configurations */
+        /* Automated Switchover Logic for Matrix Controls */
         @media (max-width: 900px) {
             .split-cockpit-layout {
                 flex-direction: column;
-                gap: 40px;
-            }
-            .manifesto-text {
-                text-align: center;
             }
             .brand-divider {
                 width: 310px;
