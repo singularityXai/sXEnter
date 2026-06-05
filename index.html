@@ -29,7 +29,7 @@
         /* Expanded Container to accommodate Premium Side-by-Side Cockpit Layout */
         .gateway-container {
             width: 100%;
-            max-width: 1200px; /* Widened slightly to prevent any text constraints */
+            max-width: 1200px;
             padding: 20px 40px 40px 40px;
             text-align: center;
             box-sizing: border-box;
@@ -41,7 +41,7 @@
         }
 
         .sx-bold {
-            font-weight: 700; /* Dedicated absolute bold weight for track sX markers */
+            font-weight: 700;
         }
 
         /* Crown Branding Layer */
@@ -67,23 +67,25 @@
             border: none;
         }
 
-        /* Highly Authoritative Massive Silver Reflection Wash Header */
+        /* Highly Authoritative Large Top-Left to Bottom-Right Glisten Header */
         h1 {
-            font-size: 38px; /* Expanded heavily to span beautifully across the horizon */
+            font-size: 38px;
             font-weight: 400;
             margin: 0 auto 10px auto;
             letter-spacing: 4px;
             display: block;
             width: 100%;
-            max-width: 800px;
+            max-width: 850px;
             
-            background: linear-gradient(90deg, #ffffff 0%, #ffffff 35%, #9da1aa 48%, #ffffff 55%, #ffffff 100%);
-            background-size: 200% auto;
+            /* Diagonal 135-degree muted glisten color matrix */
+            background: linear-gradient(135deg, #ffffff 30%, #8a8d93 50%, #ffffff 70%);
+            background-size: 300% 300%;
+            background-position: 0% 0%;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             text-fill-color: transparent;
-            animation: textReflectionWash 6s infinite linear;
+            animation: textReflectionWash 5.5s infinite ease-in-out;
         }
 
         .bold-gateway {
@@ -91,9 +93,11 @@
             letter-spacing: 3px;
         }
 
+        /* Accelerated sweep duration combined with a longer stationary gap at the tail */
         @keyframes textReflectionWash {
-            0% { background-position: 200% center; }
-            100% { background-position: -200% center; }
+            0% { background-position: 0% 0%; }
+            30% { background-position: 100% 100%; }
+            100% { background-position: 100% 100%; }
         }
 
         /* Sub-Header Tagline style */
@@ -123,16 +127,16 @@
             flex-direction: column;
             justify-content: center;
             min-height: 280px;
-            padding-right: 20px;
+            padding-right: 25px; /* Expanded slightly to eliminate word fragmentation constraints */
         }
 
-        /* Manifesto Text Scaled up to 16px, Pure White, Right-Aligned */
+        /* Manifesto Text Pure White, Right-Aligned with Compressed Paragraph Spacing */
         .manifesto-text {
             color: #ffffff;
             font-size: 16px;
             font-weight: 300;
             line-height: 1.8;
-            margin: 0 0 22px 0;
+            margin: 0 0 10px 0; /* Compressed spacing footprint to enhance layout cohesion */
             text-align: right;
         }
 
@@ -149,20 +153,20 @@
             align-items: center;
         }
 
-        /* High-End Deep Equidistant 3D Interface Box - Glisten Strip Removed */
+        /* High-End Deep Equidistant 3D Interface Box - Shifted Two Shades Lighter */
         .track-selection-box {
-            background-color: #363738; /* Lightened background layer match */
-            border: 1px solid #1c1d1e;
-            border-top-color: #121314;
-            border-left-color: #121314;
+            background-color: #424344; /* Calibrated lighter canvas pass */
+            border: 1px solid #202122;
+            border-top-color: #18191a;
+            border-left-color: #18191a;
             border-radius: 14px;
             padding: 35px; 
-            margin-top: 4px; /* Dropped box down pixels to align horizontal horizons */
-            margin-bottom: 18px; /* Brought bottom button closer to panel layout */
+            margin-top: 4px; 
+            margin-bottom: 18px; 
             text-align: left;
             width: 100%;
             box-sizing: border-box;
-            /* Balanced isotropic equidistant inner shadow setting */
+            /* Perfectly uniform, equidistant isotropic shadow framework */
             box-shadow: inset 0 0 16px rgba(0, 0, 0, 0.65);
         }
 
@@ -191,15 +195,15 @@
         }
 
         .track-title {
-            font-size: 19px; /* Scaled text up 1 size larger */
-            font-weight: 400; /* deBOLDed as instructed */
+            font-size: 19px; 
+            font-weight: 400; 
             letter-spacing: 0.5px;
         }
 
         .track-description {
             display: block;
-            color: #d1d5db;
-            font-size: 14px; /* Scaled text up 1 size larger */
+            color: #e5e7eb; /* Higher visibility contrast on the lighter tray surface */
+            font-size: 14px; 
             font-weight: 300;
             margin-top: 6px;
             line-height: 1.5;
@@ -316,7 +320,7 @@
                     Inside the <span class="sx-sovereign">sX</span>EcoStructure™, technology is no longer allowed to consume your life. <span class="sx-sovereign">sX</span>ProvinceZERO™ (<span class="sx-sovereign">sX</span>PRO™) is established as the definitive, live sandbox environment engineered to prove a singular operational reality: That a high-value business track can be mapped, automated, and scaled with absolute efficiency while completely <span class="sx-sovereign">sX</span>FounderRemoved™ from the day-to-day machine.
                 </p>
                 <p class="manifesto-text">
-                    We have built this architecture to grant ordinary everyday people total systemic relief. By processing your trajectory through the hard-coded GiAE™ matrix, manual labor is eliminated. You transition from a stressed manual worker to a <span class="sx-sovereign">sX</span>SovereignOperator™, guided every single step of the way by your personal <span class="sx-sovereign">sX</span>CoCreator™ (CC™) intelligence dashboard engine.
+                    We have built this architecture to grant ordinary everyday people total systemic relief. By processing your trajectory through the hard-coded GiAE™ matrix, manual labor is eliminated. You transition from a stressed manual worker to a <span class="sx-sovereign">sX</span>SovereignOperator™, guided every single step of the way by your personal <span class="sx-sovereign">sX</span>CoCreator™ (CC—) intelligence dashboard engine.
                 </p>
             </div>
             
@@ -365,9 +369,9 @@
         <!-- System Baseline Boundary Line -->
         <hr class="base-divider">
 
-        <!-- Data Governance & Security Protocol Full Width Frame -->
+        <!-- Data Governance & Security Protocol Full Width Frame (Surgically Split) -->
         <div class="security-disclaimer">
-            <strong>Data Governance & System Security Protocol:</strong> In strict compliance with the Protection of Personal Information Act (POPIA) and advanced global data privacy architectures, your submitted identity credentials are automatically encrypted and processed with zero human involvement. We maintain absolute data integrity; your information is never shared, rented, or exposed to external digital networks. Proceeding past this gateway automatically initializes your secure workspace dashboard environment seamlessly.
+            <strong>Data Governance & System Security Protocol:</strong> In strict compliance with the Protection of Personal Information Act (POPIA) and advanced global data privacy architectures, your submitted identity credentials are automatically encrypted and processed with zero human involvement. We maintain absolute data integrity; your information is never shared, rented, or exposed to external digital networks. | Proceeding past this gateway automatically initializes your secure workspace dashboard environment seamlessly.
         </div>
 
     </div>
