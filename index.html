@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>sXEnter Gateway</title>
     
-    <!-- Native Vector Favicon Integration linked strictly to your x.svg asset -->
     <link rel="icon" type="image/svg+xml" href="x.svg">
     
     <style>
@@ -39,11 +38,13 @@
             font-weight: 500;
         }
 
-        /* Branding Layer */
+        /* Animated Branding Layer */
         .logo-container {
             width: 100%;
             max-width: 320px;
             margin: 0 auto;
+            position: relative;
+            overflow: hidden; /* Keeps the reflection strictly inside the logo boundaries */
         }
 
         .logo-container img {
@@ -52,12 +53,34 @@
             display: block;
         }
 
+        /* Image Reflection Layer */
+        .logo-container::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -150%;
+            width: 150%;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 35%, rgba(255,255,255,0.25) 50%, rgba(255,255,255,0) 65%, rgba(255,255,255,0) 100%);
+            animation: imageReflectionWash 6s infinite linear;
+        }
+
+        /* Image Reflection Keyframes (Slipped to a smooth 6s pace) */
+        @keyframes imageReflectionWash {
+            0% {
+                left: -150%;
+            }
+            100% {
+                left: 150%;
+            }
+        }
+
         /* Balanced Proportional Divider Line */
         .brand-divider {
             width: 310px;
             height: 1px;
             background-color: #636773;
-            margin: 10px auto 25px auto;
+            margin: 15px auto 25px auto;
             border: none;
         }
 
@@ -78,11 +101,11 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
             text-fill-color: transparent;
-            animation: reflectionWash 4s infinite linear;
+            animation: textReflectionWash 6s infinite linear;
         }
 
-        /* Continuous Left to Right Reflection Keyframes */
-        @keyframes reflectionWash {
+        /* Text Reflection Keyframes (Slowed to match the 6s engine pace) */
+        @keyframes textReflectionWash {
             0% {
                 background-position: 200% center;
             }
@@ -238,20 +261,16 @@
 
     <div class="gateway-container">
         
-        <!-- Top Branding Zone -->
         <div class="logo-container">
             <img src="logo.png" alt="SingularityX" onerror="this.style.display='none'; document.getElementById('fallback-title').style.display='block';">
             <div id="fallback-title" style="display:none; font-size:26px; font-weight:300; letter-spacing:4px; margin-bottom:10px;">SingularityX</div>
         </div>
 
-        <!-- Balanced Proportional Divider Line -->
         <hr class="brand-divider">
 
-        <!-- Animated, Scaled Header -->
         <h1><span class="sx-sovereign">sX</span>Enter™ GATEWAY</h1>
         <div class="sub-tagline">BUSINESS INFRASTRUCTURE | STRIPPED OF HUMAN NOISE</div>
         
-        <!-- Manifesto Copy Layer -->
         <div class="manifesto-container">
             <p class="manifesto-text">
                 Inside the <span class="sx-sovereign">sX</span>EcoStructure™, technology is no longer allowed to consume your life. <span class="sx-sovereign">sX</span>ProvinceZERO™ (<span class="sx-sovereign">sX</span>PRO™) is established as the definitive, live sandbox environment engineered to prove a singular operational reality: That a high-value business track can be mapped, automated, and scaled with absolute efficiency while completely <span class="sx-sovereign">sX</span>RemovingFounder™ from the day-to-day machine.
@@ -261,7 +280,6 @@
             </p>
         </div>
 
-        <!-- Embedded Entrance Selection Box -->
         <div class="track-selection-box">
             <label class="track-label">
                 <input type="radio" name="sx_track" value="corporate" checked>
@@ -288,7 +306,6 @@
             </label>
         </div>
 
-        <!-- Frictionless Native Auth Trigger -->
         <div>
             <button class="google-auth-btn" onclick="alert('Google Native Sign-In Active. Redirecting straight to your workspace sandbox...')">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
@@ -299,7 +316,6 @@
         </div>
         <div class="identity-notice">Entry requires a verified <span class="google-highlight">Google</span> identity to initialize your secure workspace.</div>
 
-        <!-- Data Governance & Security Protocol Layer -->
         <div class="security-disclaimer">
             <strong>Data Governance & System Security Protocol:</strong> In strict compliance with the Protection of Personal Information Act (POPIA) and advanced global data privacy architectures, your submitted identity credentials are automatically encrypted and processed with zero human involvement. We maintain absolute data integrity; your information is never shared, rented, or exposed to external digital networks. Proceeding past this gateway automatically initializes your secure workspace dashboard environment seamlessly.
         </div>
