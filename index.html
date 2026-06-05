@@ -52,9 +52,19 @@
         h1 {
             font-size: 20px;
             font-weight: 400;
-            margin: 0 0 35px 0;
+            margin: 0 0 8px 0;
             letter-spacing: 3px;
             color: #ffffff;
+        }
+
+        /* Sub-Header Tagline style */
+        .sub-tagline {
+            text-transform: uppercase;
+            font-size: 11px;
+            letter-spacing: 2px;
+            color: #b0b4be;
+            margin: 0 0 35px 0;
+            font-weight: 400;
         }
 
         .manifesto-container {
@@ -74,15 +84,15 @@
             margin-bottom: 0;
         }
 
-        /* High-End Interface Selection Box */
+        /* High-End Interface Selection Box (Shades darker than backdrop) */
         .track-selection-box {
-            background-color: #121214;
+            background-color: #222324;
             border: 1px solid #44454a;
             border-radius: 14px;
             padding: 30px;
             margin-bottom: 35px;
             text-align: left;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
         }
 
         .track-label {
@@ -105,7 +115,7 @@
         .track-label input[type="radio"] {
             margin-right: 14px;
             margin-top: 5px;
-            accent-color: #0066ff;
+            accent-color: #1877f2;
             transform: scale(1.1);
         }
 
@@ -124,13 +134,13 @@
             line-height: 1.5;
         }
 
-        /* Compact Premium Google Action Button */
+        /* Compact Unified Brand Blue Action Button */
         .google-auth-btn {
-            background-color: #ffffff;
-            color: #000000;
+            background-color: #1877f2;
+            color: #ffffff;
             border: none;
             border-radius: 6px;
-            padding: 12px 24px;
+            padding: 14px 28px;
             font-family: 'Montserrat', sans-serif;
             font-size: 13px;
             font-weight: 500;
@@ -145,12 +155,12 @@
             align-items: center;
             justify-content: center;
             gap: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 15px rgba(24, 119, 242, 0.3);
         }
 
         .google-auth-btn:hover {
-            background-color: #f1f3f4;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            background-color: #115cc9;
+            box-shadow: 0 6px 20px rgba(24, 119, 242, 0.5);
         }
 
         .identity-notice {
@@ -160,6 +170,14 @@
             margin-top: 16px;
             margin-bottom: 40px;
             letter-spacing: 0.5px;
+        }
+
+        /* Target High-Contrast Highlight for Google */
+        .google-highlight {
+            font-weight: 500;
+            color: #ffffff;
+            border-bottom: 1px dashed rgba(24, 119, 242, 0.6);
+            padding-bottom: 1px;
         }
 
         /* Governance Disclaimer Layer */
@@ -178,15 +196,7 @@
         footer {
             margin-top: 45px;
             border-top: 1px solid #44454a;
-            padding-top: 25px;
-        }
-
-        .tagline {
-            color: #b0b4be;
-            font-size: 11px;
-            font-weight: 400;
-            letter-spacing: 2px;
-            text-transform: uppercase;
+            padding-top: 10px;
         }
     </style>
 </head>
@@ -200,6 +210,8 @@
             <div id="fallback-title" style="display:none; font-size:26px; font-weight:300; letter-spacing:4px; margin-bottom:10px;">SingularityX</div>
         </div>
         <h1><span class="sx-sovereign">sX</span>Enter™ GATEWAY</h1>
+        <!-- Relocated & Re-worded Tagline -->
+        <div class="sub-tagline">BUSINESS INFRASTRUCTURE | STRIPPED OF HUMAN NOISE</div>
         
         <!-- Manifesto Copy Layer -->
         <div class="manifesto-container">
@@ -241,27 +253,22 @@
         <!-- Frictionless Native Auth Trigger -->
         <div>
             <button class="google-auth-btn" onclick="alert('Google Native Sign-In Active. Redirecting straight to your workspace sandbox...')">
-                <!-- Native Multi-Color Google G Icon -->
+                <!-- Premium Monochrome White Google Icon for High Contrast -->
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
-                    <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v3.92h6.61c-.29 1.53-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.65-5.17 3.65-8.58z"/>
-                    <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.11 0-5.74-2.11-6.68-4.96H1.21v3.15C3.18 21.88 7.31 24 12 24z"/>
-                    <path fill="#FBBC05" d="M5.32 14.24A7.16 7.16 0 0 1 5 12c0-.79.13-1.57.32-2.34V6.51H1.21A11.94 11.94 0 0 0 0 12c0 1.92.45 3.79 1.21 5.49l4.11-3.25z"/>
-                    <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.31 0 3.18 2.12 1.21 5.49l4.11 3.25c.94-2.85 3.57-4.99 6.68-4.99z"/>
+                    <path fill="#ffffff" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v3.92h6.61c-.29 1.53-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.65-5.17 3.65-8.58zM12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.11 0-5.74-2.11-6.68-4.96H1.21v3.15C3.18 21.88 7.31 24 12 24zM5.32 14.24A7.16 7.16 0 0 1 5 12c0-.79.13-1.57.32-2.34V6.51H1.21A11.94 11.94 0 0 0 0 12c0 1.92.45 3.79 1.21 5.49l4.11-3.25zM12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.31 0 3.18 2.12 1.21 5.49l4.11 3.25c.94-2.85 3.57-4.99 6.68-4.99z"/>
                 </svg>
                 Continue with Google
             </button>
         </div>
-        <div class="identity-notice">Entry requires a verified Google identity to initialize your secure workspace.</div>
+        <!-- Highlighted Notice -->
+        <div class="identity-notice">Entry requires a verified <span class="google-highlight">Google</span> identity to initialize your secure workspace.</div>
 
         <!-- Data Governance & Security Protocol Layer -->
         <div class="security-disclaimer">
             <strong>Data Governance & System Security Protocol:</strong> In strict compliance with the Protection of Personal Information Act (POPIA) and advanced global data privacy architectures, your submitted identity credentials are automatically encrypted and processed with zero human involvement. We maintain absolute data integrity; your information is never shared, rented, or exposed to external digital networks. Proceeding past this gateway automatically initializes your secure workspace dashboard environment seamlessly.
         </div>
 
-        <!-- Structural Footer Zone -->
-        <footer>
-            <div class="tagline">Business infrastructure, stripped of human friction.</div>
-        </footer>
+        <footer></footer>
 
     </div>
 
