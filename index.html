@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>sXEnter Gateway</title>
     
+    <!-- Native Vector Favicon Integration linked strictly to your x.svg asset -->
     <link rel="icon" type="image/svg+xml" href="x.svg">
     
     <style>
@@ -42,7 +43,7 @@
         /* Crown Branding Layer */
         .logo-container {
             width: 100%;
-            max-width: 360px;
+            max-width: 420px; /* Scaled up as requested */
             margin: 0 auto;
             position: relative;
         }
@@ -62,7 +63,7 @@
             border: none;
         }
 
-        /* Scaled Cinematic Silver Reflection Wash Header */
+        /* Scaled Cinematic Silver Reflection Wash Header - Syntax Restored */
         h1 {
             font-size: 25px;
             font-weight: 400;
@@ -70,8 +71,9 @@
             letter-spacing: 3px;
             display: block;
             width: 100%;
-            max-width: 310px;
+            max-width: 450px;
             
+            /* Typo resolved: 35% fixed to restore visibility */
             background: linear-gradient(90deg, #ffffff 0%, #ffffff 35%, #9da1aa 48%, #ffffff 55%, #ffffff 100%);
             background-size: 200% auto;
             -webkit-background-clip: text;
@@ -120,14 +122,14 @@
             min-height: 280px;
         }
 
-        /* Manifesto Text Scaled up to 16px */
+        /* Manifesto Text Scaled up to 16px, Pure White, Right-Aligned */
         .manifesto-text {
             color: #ffffff;
             font-size: 16px;
             font-weight: 300;
             line-height: 1.8;
             margin: 0 0 22px 0;
-            text-align: center;
+            text-align: right;
         }
 
         .manifesto-text:last-child {
@@ -145,17 +147,18 @@
 
         /* High-End Deep Inset 3D Interface Box */
         .track-selection-box {
-            background-color: #262728;
+            background-color: #28292a; /* Lightened background pass */
             border: 1px solid #1c1d1e;
             border-top-color: #121314;
             border-left-color: #121314;
             border-radius: 14px;
-            padding: 35px 30px 35px 70px;
+            padding: 35px 35px 35px 35px; /* Normalized left margin for clean alignment */
             margin-bottom: 30px;
             text-align: left;
             width: 100%;
             box-sizing: border-box;
-            box-shadow: inset 0 4px 12px rgba(0, 0, 0, 0.45), inset 0 1px 3px rgba(0, 0, 0, 0.6);
+            /* Deeper shadow distribution spread inwards */
+            box-shadow: inset 0 6px 14px rgba(0, 0, 0, 0.5), inset 0 1px 3px rgba(0, 0, 0, 0.6);
         }
 
         .track-label {
@@ -183,7 +186,7 @@
         }
 
         .track-title {
-            font-size: 16px;
+            font-size: 18px; /* Bumped exactly ONE size larger */
             font-weight: 500;
             letter-spacing: 0.5px;
         }
@@ -226,14 +229,16 @@
             box-shadow: 0 6px 20px rgba(24, 119, 242, 0.5);
         }
 
-        /* Subtle Premium Light Grey Reset */
+        /* Subtle Premium Light Grey Reset with explicit centering text align */
         .identity-notice {
-            color: #9da1aa;
+            color: #b0b4be;
             font-size: 12px;
             font-weight: 300;
             margin-top: 16px;
             margin-bottom: 0;
             letter-spacing: 0.5px;
+            text-align: center;
+            width: 100%;
         }
 
         /* High-Contrast Target Highlight for Google */
@@ -249,13 +254,13 @@
             width: 100%;
             height: 1px;
             background-color: #44454a;
-            margin: 20px 0 25px 0;
+            margin: 35px 0 30px 0; /* Expanded gap to push disclaimer downward */
             border: none;
         }
 
         /* Anchor Governance Disclaimer Layer spanning full width at base */
         .security-disclaimer {
-            color: #e2e4e9;
+            color: #b0b4be; /* Softened light grey shade adjustment */
             font-size: 12px;
             font-weight: 300;
             line-height: 1.7;
@@ -270,8 +275,8 @@
                 flex-direction: column;
                 gap: 40px;
             }
-            .track-selection-box {
-                padding: 35px 30px 35px 45px;
+            .manifesto-text {
+                text-align: center;
             }
         }
     </style>
@@ -280,18 +285,23 @@
 
     <div class="gateway-container">
         
+        <!-- Crown Branding Zone -->
         <div class="logo-container">
             <img src="logo.png" alt="SingularityX" onerror="this.style.display='none'; document.getElementById('fallback-title').style.display='block';">
             <div id="fallback-title" style="display:none; font-size:26px; font-weight:300; letter-spacing:4px; margin-bottom:10px;">SingularityX</div>
         </div>
 
+        <!-- Balanced Proportional Divider Line -->
         <hr class="brand-divider">
 
+        <!-- Animated, Scaled Header with bolded Gateway declaration -->
         <h1><span class="sx-sovereign">sX</span>Enter™ <span class="bold-gateway">GATEWAY</span></h1>
         <div class="sub-tagline">BUSINESS INFRASTRUCTURE | STRIPPED OF HUMAN NOISE</div>
         
+        <!-- SIDE-BY-SIDE SPLIT COCKPIT FRAMEWORK -->
         <div class="split-cockpit-layout">
             
+            <!-- PANEL A: Left-aligned narrative field -->
             <div class="column-manifesto">
                 <p class="manifesto-text">
                     Inside the <span class="sx-sovereign">sX</span>EcoStructure™, technology is no longer allowed to consume your life. <span class="sx-sovereign">sX</span>ProvinceZERO™ (<span class="sx-sovereign">sX</span>PRO™) is established as the definitive, live sandbox environment engineered to prove a singular operational reality: That a high-value business track can be mapped, automated, and scaled with absolute efficiency while completely <span class="sx-sovereign">sX</span>FounderRemoved™ from the day-to-day machine.
@@ -301,6 +311,7 @@
                 </p>
             </div>
             
+            <!-- PANEL B: Right-aligned interaction control field -->
             <div class="column-controls">
                 <div class="track-selection-box">
                     <label class="track-label">
@@ -328,6 +339,7 @@
                     </label>
                 </div>
 
+                <!-- Frictionless Native Auth Trigger -->
                 <div>
                     <button class="google-auth-btn" onclick="alert('Google Native Sign-In Active. Redirecting straight to your workspace sandbox...')">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
@@ -341,8 +353,10 @@
 
         </div>
 
+        <!-- System Baseline Boundary Line -->
         <hr class="base-divider">
 
+        <!-- Data Governance & Security Protocol Full Width Frame -->
         <div class="security-disclaimer">
             <strong>Data Governance & System Security Protocol:</strong> In strict compliance with the Protection of Personal Information Act (POPIA) and advanced global data privacy architectures, your submitted identity credentials are automatically encrypted and processed with zero human involvement. We maintain absolute data integrity; your information is never shared, rented, or exposed to external digital networks. Proceeding past this gateway automatically initializes your secure workspace dashboard environment seamlessly.
         </div>
