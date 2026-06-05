@@ -5,50 +5,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>sXEnter Gateway</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap');
 
-        body { background-color: #303132; color: #ffffff; font-family: 'Montserrat', sans-serif; margin: 0; padding: 40px; display: flex; justify-content: center; }
-        .gateway-container { width: 100%; max-width: 1000px; text-align: center; }
+        body {
+            background-color: #303132;
+            color: #ffffff;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .gateway-container {
+            width: 100%;
+            max-width: 1000px;
+            padding: 40px 20px;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        .logo-container { width: 100%; max-width: 400px; margin: 0 auto 20px; }
+        .logo-container img { width: 100%; height: auto; display: block; }
         
-        /* Layout */
-        .split-cockpit-layout { display: flex; gap: 60px; margin-top: 40px; text-align: left; }
+        h1 { font-size: 56px; font-weight: 400; letter-spacing: 4px; margin-bottom: 10px; 
+             background: linear-gradient(90deg, #ffffff, #9da1aa); 
+             -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+             
+        .sub-tagline { color: #b0b4be; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 50px; }
+
+        .split-cockpit-layout { display: flex; gap: 60px; text-align: left; }
         .column-left { flex: 1; }
         .column-right { flex: 1; }
 
-        /* Styles */
-        h1 { font-size: 50px; margin-bottom: 10px; }
-        .sub-tagline { color: #b0b4be; margin-bottom: 40px; text-transform: uppercase; letter-spacing: 2px; }
-        .manifesto-text { font-size: 17px; line-height: 1.8; margin-bottom: 20px; text-align: justify; }
+        .manifesto-text { font-size: 17px; line-height: 1.8; margin-bottom: 15px; text-align: justify; }
         
-        .track-box { background-color: #424344; padding: 30px; border-radius: 14px; }
-        .track-item { margin-bottom: 20px; cursor: pointer; display: flex; align-items: flex-start; }
-        .track-item input { margin-right: 15px; margin-top: 5px; }
-        .track-title { font-weight: 700; display: block; }
-        .track-desc { font-size: 14px; color: #e5e7eb; }
+        .track-box { background-color: #424344; padding: 35px; border-radius: 14px; box-shadow: inset 0 0 24px rgba(0,0,0,0.5); }
+        .track-item { margin-bottom: 25px; cursor: pointer; display: flex; align-items: flex-start; }
+        .track-item input { margin-right: 15px; margin-top: 5px; transform: scale(1.2); }
+        .track-title { font-weight: 700; display: block; font-size: 18px; }
+        .track-desc { font-size: 14px; color: #e5e7eb; margin-top: 5px; }
+
+        .btn-auth { background-color: #1877f2; color: #fff; border: none; padding: 15px 30px; border-radius: 6px; font-weight: 700; margin-top: 20px; cursor: pointer; width: 100%; max-width: 300px; }
 
         @media (max-width: 800px) {
             .split-cockpit-layout { flex-direction: column; }
+            h1 { font-size: 36px; }
         }
     </style>
 </head>
 <body>
     <div class="gateway-container">
+        <!-- Logo Fallback -->
+        <div class="logo-container">
+            <img src="logo.png" alt="SingularityX" onerror="this.style.display='none'">
+        </div>
+
         <h1>sXEnter™ GATEWAY</h1>
         <div class="sub-tagline">BUSINESS INFRASTRUCTURE | STRIPPED OF HUMAN NOISE</div>
         
         <div class="split-cockpit-layout">
-            <!-- LEFT SIDE TEXT -->
             <div class="column-left">
-                <p class="manifesto-text">Inside the sXEcoStructure™, technology is no longer allowed to consume your life.</p>
-                <p class="manifesto-text">We have built this architecture to grant ordinary people total systemic relief. You transition from a manual worker to a sXSovereignOperator™.</p>
+                <p class="manifesto-text">Inside the sXEcoStructure™, technology is no longer allowed to consume your life. sXProvinceZERO™ (sXPRO™) is established as the definitive, live sandbox environment engineered to prove a singular operational reality: That a high-value business track can be mapped, automated, and scaled with absolute efficiency while completely sXFounderRemoved™ from the day-to-day machine.</p>
+                <p class="manifesto-text">We have built this architecture to grant ordinary everyday people total systemic relief. By processing your trajectory through the hard-coded GiAE™ matrix, manual labor is eliminated. You transition from a stressed manual worker to a sXSovereignOperator™, guided every single step of the way by your personal sXCoCreator™ (CC™) intelligence dashboard engine.</p>
             </div>
             
-            <!-- RIGHT SIDE TRACKS -->
             <div class="column-right">
                 <div class="track-box">
-                    <label class="track-item"><input type="radio" name="track"> <div><span class="track-title">Service Corporate Clients</span><span class="track-desc">Engineered for Doctors and Agencies.</span></div></label>
-                    <label class="track-item"><input type="radio" name="track"> <div><span class="track-title">Operate My Own Business</span><span class="track-desc">Engineered for Coaches and MRR.</span></div></label>
+                    <label class="track-item"><input type="radio" name="sx_track"> <div><span class="track-title">Service Corporate Clients</span><span class="track-desc">Engineered for Doctors, Lawyers, and Agencies.</span></div></label>
+                    <label class="track-item"><input type="radio" name="sx_track"> <div><span class="track-title">Operate My Own Business</span><span class="track-desc">Engineered for Coaches, MRR operators, and MLM structures.</span></div></label>
+                    <label class="track-item"><input type="radio" name="sx_track"> <div><span class="track-title">Initialize sXAffiliate™</span><span class="track-desc">No existing business model? The sX™ system sells itself.</span></div></label>
                 </div>
+                <button class="btn-auth">Continue with Google</button>
             </div>
         </div>
     </div>
