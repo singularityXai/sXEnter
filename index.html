@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>sXEnter Gateway</title>
     
-    <!-- Native Vector Favicon Integration linked strictly to your x.svg asset -->
     <link rel="icon" type="image/svg+xml" href="x.svg">
     
     <style>
@@ -30,7 +29,7 @@
         .gateway-container {
             width: 100%;
             max-width: 1100px;
-            padding: 20px 40px 40px 40px; /* Pulled closer to the absolute top of canvas */
+            padding: 20px 40px 40px 40px;
             text-align: center;
             box-sizing: border-box;
         }
@@ -43,7 +42,7 @@
         /* Crown Branding Layer */
         .logo-container {
             width: 100%;
-            max-width: 360px; /* Scaled larger as requested */
+            max-width: 360px;
             margin: 0 auto;
             position: relative;
         }
@@ -73,7 +72,7 @@
             width: 100%;
             max-width: 310px;
             
-            background: linear-gradient(90deg, #ffffff 0%, #ffffff 35., #9da1aa 48%, #ffffff 55%, #ffffff 100%);
+            background: linear-gradient(90deg, #ffffff 0%, #ffffff 35%, #9da1aa 48%, #ffffff 55%, #ffffff 100%);
             background-size: 200% auto;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -83,7 +82,7 @@
         }
 
         .bold-gateway {
-            font-weight: 700; /* Distinctly Bolded Gateway Call */
+            font-weight: 700;
             letter-spacing: 2px;
         }
 
@@ -121,13 +120,14 @@
             min-height: 280px;
         }
 
+        /* Manifesto Text Scaled up to 16px */
         .manifesto-text {
             color: #ffffff;
-            font-size: 14px;
+            font-size: 16px;
             font-weight: 300;
             line-height: 1.8;
             margin: 0 0 22px 0;
-            text-align: center; /* Preserves centered aesthetic flow in left panel */
+            text-align: center;
         }
 
         .manifesto-text:last-child {
@@ -145,17 +145,16 @@
 
         /* High-End Deep Inset 3D Interface Box */
         .track-selection-box {
-            background-color: #262728; /* Lighter base box pass */
-            border: 1px solid #1c1d1e; /* Dark frame boundary accentuates deep groove cuts */
+            background-color: #262728;
+            border: 1px solid #1c1d1e;
             border-top-color: #121314;
             border-left-color: #121314;
             border-radius: 14px;
-            padding: 35px 30px 35px 70px; /* Heavy left padding pushes text elements to optical center */
+            padding: 35px 30px 35px 70px;
             margin-bottom: 30px;
             text-align: left;
             width: 100%;
             box-sizing: border-box;
-            /* Multi-layer hyper-dark inner shadowing for 3D extrusion effect */
             box-shadow: inset 0 4px 12px rgba(0, 0, 0, 0.45), inset 0 1px 3px rgba(0, 0, 0, 0.6);
         }
 
@@ -281,33 +280,27 @@
 
     <div class="gateway-container">
         
-        <!-- Crown Branding Zone -->
         <div class="logo-container">
             <img src="logo.png" alt="SingularityX" onerror="this.style.display='none'; document.getElementById('fallback-title').style.display='block';">
             <div id="fallback-title" style="display:none; font-size:26px; font-weight:300; letter-spacing:4px; margin-bottom:10px;">SingularityX</div>
         </div>
 
-        <!-- Balanced Proportional Divider Line -->
         <hr class="brand-divider">
 
-        <!-- Animated, Scaled Header with bolded Gateway declaration -->
         <h1><span class="sx-sovereign">sX</span>Enter™ <span class="bold-gateway">GATEWAY</span></h1>
         <div class="sub-tagline">BUSINESS INFRASTRUCTURE | STRIPPED OF HUMAN NOISE</div>
         
-        <!-- SIDE-BY-SIDE SPLIT COCKPIT FRAMEWORK -->
         <div class="split-cockpit-layout">
             
-            <!-- PANEL A: Left-aligned narrative field -->
             <div class="column-manifesto">
                 <p class="manifesto-text">
-                    Inside the <span class="sx-sovereign">sX</span>EcoStructure™, technology is no longer allowed to consume your life. <span class="sx-sovereign">sX</span>ProvinceZERO™ (<span class="sx-sovereign">sX</span>PRO roll™) is established as the definitive, live sandbox environment engineered to prove a singular operational reality: That a high-value business track can be mapped, automated, and scaled with absolute efficiency while completely <span class="sx-sovereign">sX</span>FounderRemoved™ from the day-to-day machine.
+                    Inside the <span class="sx-sovereign">sX</span>EcoStructure™, technology is no longer allowed to consume your life. <span class="sx-sovereign">sX</span>ProvinceZERO™ (<span class="sx-sovereign">sX</span>PRO™) is established as the definitive, live sandbox environment engineered to prove a singular operational reality: That a high-value business track can be mapped, automated, and scaled with absolute efficiency while completely <span class="sx-sovereign">sX</span>FounderRemoved™ from the day-to-day machine.
                 </p>
                 <p class="manifesto-text">
                     We have built this architecture to grant ordinary everyday people total systemic relief. By processing your trajectory through the hard-coded GiAE™ matrix, manual labor is eliminated. You transition from a stressed manual worker to a <span class="sx-sovereign">sX</span>SovereignOperator™, guided every single step of the way by your personal <span class="sx-sovereign">sX</span>CoCreator™ (CC™) intelligence dashboard engine.
                 </p>
             </div>
             
-            <!-- PANEL B: Right-aligned interaction control field -->
             <div class="column-controls">
                 <div class="track-selection-box">
                     <label class="track-label">
@@ -335,7 +328,6 @@
                     </label>
                 </div>
 
-                <!-- Frictionless Native Auth Trigger -->
                 <div>
                     <button class="google-auth-btn" onclick="alert('Google Native Sign-In Active. Redirecting straight to your workspace sandbox...')">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
@@ -349,10 +341,8 @@
 
         </div>
 
-        <!-- System Baseline Boundary Line -->
         <hr class="base-divider">
 
-        <!-- Data Governance & Security Protocol Full Width Frame -->
         <div class="security-disclaimer">
             <strong>Data Governance & System Security Protocol:</strong> In strict compliance with the Protection of Personal Information Act (POPIA) and advanced global data privacy architectures, your submitted identity credentials are automatically encrypted and processed with zero human involvement. We maintain absolute data integrity; your information is never shared, rented, or exposed to external digital networks. Proceeding past this gateway automatically initializes your secure workspace dashboard environment seamlessly.
         </div>
