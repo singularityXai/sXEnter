@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>sXEnter Gateway</title>
     
-    <!-- Native Vector Favicon Integration linked strictly to your x.svg asset -->
     <link rel="icon" type="image/svg+xml" href="x.svg" sizes="any">
     
     <style>
@@ -26,8 +25,8 @@
             letter-spacing: 0.5px;
         }
 
-        /* Container Layout */
-        gateway-container {
+        /* Container Layout - FIXED AND SECURED */
+        .gateway-container {
             width: 100%;
             max-width: 1200px;
             padding: 20px 40px 40px 40px;
@@ -124,7 +123,7 @@
 
         /* COLUMN A: Narrative Frame */
         .column-manifesto {
-            flex: 1.1; /* Slightly wider layout for perfect text balance */
+            flex: 1.1;
             box-sizing: border-box;
             display: flex;
             flex-direction: column;
@@ -133,7 +132,7 @@
             padding-right: 25px;
         }
 
-        /* AUDITED: Restored clean left alignment to match master layout screenshot */
+        /* Manifesto Text Pure White, Left-Aligned */
         .manifesto-text {
             color: #ffffff;
             font-size: 17px;
@@ -189,7 +188,7 @@
             margin-bottom: 0;
         }
 
-        /* AUDITED: Native radio hidden to kill browser override variations */
+        /* Native radio hidden to kill browser override variations */
         .track-label input[type="radio"] {
             position: absolute;
             opacity: 0;
@@ -197,7 +196,7 @@
             height: 0;
         }
 
-        /* AUDITED: Engineered custom radio engine for unified sX execution */
+        /* Engineered custom radio engine for unified sX execution */
         .custom-radio {
             width: 16px;
             height: 16px;
@@ -255,7 +254,7 @@
             color: #ffffff;
             border: none;
             border-radius: 4px;
-            padding: 8px 16px 8px 8px; /* Precise framing padding */
+            padding: 8px 16px 8px 8px;
             font-family: 'Montserrat', sans-serif;
             font-size: 14px;
             font-weight: 500;
@@ -278,7 +277,7 @@
             box-shadow: 0 6px 20px rgba(24, 119, 242, 0.5);
         }
 
-        /* AUDITED: Permanent protective white container badge for the Google Vector */
+        /* Permanent protective white container badge for the Google Vector */
         .google-icon-badge {
             width: 32px;
             height: 32px;
@@ -354,23 +353,18 @@
 
     <div class="gateway-container">
         
-        <!-- Crown Branding Zone -->
         <div class="logo-container">
             <img src="logo.png" alt="SingularityX" onerror="this.style.display='none'; document.getElementById('fallback-title').style.display='block';">
             <div id="fallback-title" style="display:none; font-size:26px; font-weight:300; letter-spacing:4px; margin-bottom:10px;">SingularityX</div>
         </div>
 
-        <!-- Balanced Proportional Divider Line -->
         <hr class="brand-divider">
 
-        <!-- Animated, Scaled Authoritative Header -->
         <h1><span class="sx-sovereign">sX</span>Enter™ <span class="bold-gateway">GATEWAY</span></h1>
         <div class="sub-tagline">BUSINESS INFRASTRUCTURE | STRIPPED OF HUMAN NOISE</div>
         
-        <!-- SIDE-BY-SIDE SPLIT COCKPIT FRAMEWORK -->
         <div class="split-cockpit-layout">
             
-            <!-- PANEL A: Left-aligned narrative field -->
             <div class="column-manifesto">
                 <p class="manifesto-text">
                     Inside the <span class="sx-sovereign">sX</span>EcoStructure™, technology is no longer allowed to consume your life. <span class="sx-sovereign">sX</span>ProvinceZERO™ (<span class="sx-sovereign">sX</span>PRO™) is established as the definitive, live sandbox environment engineered to prove a singular operational reality: That a high-value business track can be mapped, automated, and scaled with absolute efficiency while completely <span class="sx-sovereign">sX</span>FounderRemoved™ from the day-to-day machine.
@@ -380,7 +374,6 @@
                 </p>
             </div>
             
-            <!-- PANEL B: Right-aligned interaction control field -->
             <div class="column-controls">
                 <div class="track-selection-box">
                     <label class="track-label">
@@ -411,7 +404,6 @@
                     </label>
                 </div>
 
-                <!-- Frictionless Native Auth Trigger -->
                 <div>
                     <button class="google-auth-btn" onclick="alert('Google Native Sign-In Active. Redirecting straight to your workspace sandbox...')">
                         <div class="google-icon-badge">
@@ -430,10 +422,8 @@
 
         </div>
 
-        <!-- System Baseline Boundary Line -->
         <hr class="base-divider">
 
-        <!-- Data Governance & Security Protocol Full Width Frame -->
         <div class="security-disclaimer">
             <strong>Data Governance & System Security Protocol:</strong> In strict compliance with the Protection of Personal Information Act (POPIA) and advanced global data privacy architectures, your submitted identity credentials are automatically encrypted and processed with zero human involvement. We maintain absolute data integrity; your information is never shared, rented, or exposed to external digital networks.<br>Proceeding past this gateway automatically initializes your secure workspace dashboard environment seamlessly.
         </div>
