@@ -6,7 +6,7 @@
     <title>sXEnter Gateway</title>
     
     <!-- Native Vector Favicon Integration linked strictly to your x.svg asset -->
-    <link rel="icon" type="image/svg+xml" href="x.svg">
+    <link rel="icon" type="image/svg+xml" href="x.svg" sizes="any">
     
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
@@ -29,7 +29,7 @@
         /* Expanded Container to accommodate Premium Side-by-Side Cockpit Layout */
         .gateway-container {
             width: 100%;
-            max-width: 1150px;
+            max-width: 1200px; /* Widened slightly to prevent any text constraints */
             padding: 20px 40px 40px 40px;
             text-align: center;
             box-sizing: border-box;
@@ -40,10 +40,14 @@
             font-weight: 500;
         }
 
+        .sx-bold {
+            font-weight: 700; /* Dedicated absolute bold weight for track sX markers */
+        }
+
         /* Crown Branding Layer */
         .logo-container {
             width: 100%;
-            max-width: 390px; /* Scaled up a tad as requested */
+            max-width: 390px;
             margin: 0 auto;
             position: relative;
         }
@@ -63,15 +67,15 @@
             border: none;
         }
 
-        /* Highly Authoritative Large Silver Reflection Wash Header */
+        /* Highly Authoritative Massive Silver Reflection Wash Header */
         h1 {
-            font-size: 32px; /* Amplified for maximum authority scale */
+            font-size: 38px; /* Expanded heavily to span beautifully across the horizon */
             font-weight: 400;
             margin: 0 auto 10px auto;
             letter-spacing: 4px;
             display: block;
             width: 100%;
-            max-width: 600px;
+            max-width: 800px;
             
             background: linear-gradient(90deg, #ffffff 0%, #ffffff 35%, #9da1aa 48%, #ffffff 55%, #ffffff 100%);
             background-size: 200% auto;
@@ -111,7 +115,7 @@
             align-items: flex-start;
         }
 
-        /* COLUMN A: Narrative Frame (Balanced equally to 1) */
+        /* COLUMN A: Narrative Frame */
         .column-manifesto {
             flex: 1;
             box-sizing: border-box;
@@ -119,7 +123,7 @@
             flex-direction: column;
             justify-content: center;
             min-height: 280px;
-            padding-right: 15px; /* Spatial buffer zone keeping text clean from the center line */
+            padding-right: 20px;
         }
 
         /* Manifesto Text Scaled up to 16px, Pure White, Right-Aligned */
@@ -136,7 +140,7 @@
             margin-bottom: 0;
         }
 
-        /* COLUMN B: Action Control Frame (Balanced equally to 1) */
+        /* COLUMN B: Action Control Frame */
         .column-controls {
             flex: 1;
             box-sizing: border-box;
@@ -145,39 +149,21 @@
             align-items: center;
         }
 
-        /* High-End Deep Inset 3D Interface Box with Rapid Reflection Sweep */
+        /* High-End Deep Equidistant 3D Interface Box - Glisten Strip Removed */
         .track-selection-box {
-            background-color: #363738; /* Lightened background layer */
+            background-color: #363738; /* Lightened background layer match */
             border: 1px solid #1c1d1e;
             border-top-color: #121314;
             border-left-color: #121314;
             border-radius: 14px;
-            padding: 35px 40px; 
-            margin-bottom: 30px;
+            padding: 35px; 
+            margin-top: 4px; /* Dropped box down pixels to align horizontal horizons */
+            margin-bottom: 18px; /* Brought bottom button closer to panel layout */
             text-align: left;
             width: 100%;
             box-sizing: border-box;
-            position: relative;
-            overflow: hidden;
-            /* Deeper inner shadow layout depth */
-            box-shadow: inset 0 6px 14px rgba(0, 0, 0, 0.5), inset 0 1px 3px rgba(0, 0, 0, 0.6);
-        }
-
-        /* Independent Box Glisten Filter Layer */
-        .track-selection-box::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -150%;
-            width: 150%;
-            height: 100%;
-            background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 40%, rgba(255,255,255,0.12) 50%, rgba(255,255,255,0) 60%, rgba(255,255,255,0) 100%);
-            animation: boxGlistenWash 3s infinite linear; /* Quicker tempo cadence than h1 */
-        }
-
-        @keyframes boxGlistenWash {
-            0% { left: -150%; }
-            100% { left: 150%; }
+            /* Balanced isotropic equidistant inner shadow setting */
+            box-shadow: inset 0 0 16px rgba(0, 0, 0, 0.65);
         }
 
         .track-label {
@@ -187,8 +173,6 @@
             cursor: pointer;
             color: #ffffff;
             transition: transform 0.2s ease;
-            position: relative;
-            z-index: 2; /* Pins text choices safely above glisten glare layer */
         }
 
         .track-label:hover {
@@ -207,15 +191,15 @@
         }
 
         .track-title {
-            font-size: 18px; /* High authority font enlargement */
-            font-weight: 500;
+            font-size: 19px; /* Scaled text up 1 size larger */
+            font-weight: 400; /* deBOLDed as instructed */
             letter-spacing: 0.5px;
         }
 
         .track-description {
             display: block;
-            color: #d1d5db; /* High contrast legibility upgrade */
-            font-size: 13px;
+            color: #d1d5db;
+            font-size: 14px; /* Scaled text up 1 size larger */
             font-weight: 300;
             margin-top: 6px;
             line-height: 1.5;
@@ -255,7 +239,7 @@
             color: #b0b4be;
             font-size: 12px;
             font-weight: 300;
-            margin-top: 16px;
+            margin-top: 14px;
             margin-bottom: 0;
             letter-spacing: 0.5px;
             text-align: center;
@@ -292,7 +276,7 @@
         }
 
         /* Responsive Break for smaller configurations */
-        @media (max-width: 860px) {
+        @media (max-width: 900px) {
             .split-cockpit-layout {
                 flex-direction: column;
                 gap: 40px;
@@ -332,7 +316,7 @@
                     Inside the <span class="sx-sovereign">sX</span>EcoStructure™, technology is no longer allowed to consume your life. <span class="sx-sovereign">sX</span>ProvinceZERO™ (<span class="sx-sovereign">sX</span>PRO™) is established as the definitive, live sandbox environment engineered to prove a singular operational reality: That a high-value business track can be mapped, automated, and scaled with absolute efficiency while completely <span class="sx-sovereign">sX</span>FounderRemoved™ from the day-to-day machine.
                 </p>
                 <p class="manifesto-text">
-                    We have built this architecture to grant ordinary everyday people total systemic relief. By processing your trajectory through the hard-coded GiAE™ matrix, manual labor is eliminated. You transition from a stressed manual worker to a <span class="sx-sovereign">sX</span>SovereignOperator™, guided every single step of the way by your personal <span class="sx-sovereign">sX</span>CoCreator™ (CCRank™) intelligence dashboard engine.
+                    We have built this architecture to grant ordinary everyday people total systemic relief. By processing your trajectory through the hard-coded GiAE™ matrix, manual labor is eliminated. You transition from a stressed manual worker to a <span class="sx-sovereign">sX</span>SovereignOperator™, guided every single step of the way by your personal <span class="sx-sovereign">sX</span>CoCreator™ (CC™) intelligence dashboard engine.
                 </p>
             </div>
             
@@ -358,8 +342,8 @@
                     <label class="track-label">
                         <input type="radio" name="sx_track" value="affiliate">
                         <div>
-                            <span class="track-title">Initialize <span class="sx-sovereign">sX</span>Affiliate™</span>
-                            <span class="track-description">No existing business model? The <span class="sx-sovereign">sX</span>™ system sells itself.</span>
+                            <span class="track-title">Initialize <span class="sx-bold">sX</span>Affiliate™</span>
+                            <span class="track-description">No existing business model? The <span class="sx-bold">sX</span>™ system sells itself.</span>
                         </div>
                     </label>
                 </div>
@@ -373,7 +357,6 @@
                         Continue with Google
                     </button>
                 </div>
-                <!-- Line Broken Exactly between Identity and To -->
                 <div class="identity-notice">Entry requires a verified <span class="google-highlight">Google</span> identity<br>to initialize your secure workspace.</div>
             </div>
 
