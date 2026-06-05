@@ -5,68 +5,93 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>sXEnter Gateway</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap');
+
         /* Core Layout Elements */
         body {
-            background-color: #121214;
+            background-color: #0b0b0d;
             color: #ffffff;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
             margin: 0;
             padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
+            letter-spacing: 0.5px;
         }
 
         .gateway-container {
             width: 100%;
-            max-width: 650px;
-            padding: 40px 20px;
+            max-width: 680px;
+            padding: 50px 30px;
             text-align: center;
             box-sizing: border-box;
         }
 
-        /* Branding and Typography */
-        .logo-placeholder {
-            font-size: 28px;
-            font-weight: 700;
-            letter-spacing: 2px;
+        /* Sovereign Highlighting Style */
+        .sx-sovereign {
+            font-weight: 500;
             color: #ffffff;
-            margin-bottom: 10px;
+        }
+
+        /* Branding Layer */
+        .logo-container {
+            width: 100%;
+            max-width: 320px;
+            margin: 0 auto 15px auto;
+        }
+
+        .logo-container img {
+            width: 100%;
+            height: auto;
+            display: block;
         }
 
         h1 {
-            font-size: 24px;
-            font-weight: 600;
-            margin: 0 0 20px 0;
-            letter-spacing: 0.5px;
+            font-size: 20px;
+            font-weight: 400;
+            margin: 0 0 30px 0;
+            letter-spacing: 3px;
+            color: #ffffff;
+            text-transform: uppercase;
         }
 
         .manifesto-text {
-            color: #a0a5ad;
+            color: #8e929a;
             font-size: 14px;
-            line-height: 1.6;
-            margin-bottom: 35px;
+            font-weight: 300;
+            line-height: 1.7;
+            margin-bottom: 40px;
             text-align: justify;
+            text-justify: inter-word;
         }
 
-        /* Interactive Element Track Boxes */
+        /* High-End Interface Selection Box */
         .track-selection-box {
-            background-color: #1a1a1e;
-            border: 1px solid #2d2d34;
-            border-radius: 8px;
-            padding: 25px;
-            margin-bottom: 30px;
+            background: linear-gradient(145deg, #121215, #17171c);
+            border: 1px solid #222227;
+            border-radius: 14px;
+            padding: 30px;
+            margin-bottom: 35px;
             text-align: left;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
         }
 
         .track-label {
             display: flex;
             align-items: flex-start;
-            margin-bottom: 18px;
+            margin-bottom: 22px;
             cursor: pointer;
             font-size: 14px;
+            font-weight: 300;
             color: #e2e4e9;
+            transition: transform 0.2s ease;
+        }
+
+        .track-label:hover {
+            transform: translateX(2px);
         }
 
         .track-label:last-child {
@@ -74,69 +99,81 @@
         }
 
         .track-label input[type="radio"] {
-            margin-right: 12px;
+            margin-right: 14px;
             margin-top: 3px;
             accent-color: #0066ff;
+            transform: scale(1.1);
+        }
+
+        .track-title {
+            font-weight: 500;
+            letter-spacing: 0.5px;
         }
 
         .track-description {
             display: block;
-            color: #71757f;
+            color: #636773;
             font-size: 12px;
-            margin-top: 4px;
+            font-weight: 300;
+            margin-top: 5px;
+            line-height: 1.4;
         }
 
-        /* High-End Action Button */
+        /* Smooth Frictionless Action Button */
         .google-auth-btn {
             background-color: #0066ff;
             color: #ffffff;
             border: none;
-            border-radius: 6px;
-            padding: 14px 28px;
+            border-radius: 8px;
+            padding: 16px 32px;
+            font-family: 'Montserrat', sans-serif;
             font-size: 14px;
-            font-weight: 600;
+            font-weight: 500;
+            letter-spacing: 1px;
             width: 100%;
             cursor: pointer;
-            transition: background-color 0.2s ease;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 15px rgba(0, 102, 255, 0.2);
         }
 
         .google-auth-btn:hover {
             background-color: #0052cc;
+            box-shadow: 0 6px 20px rgba(0, 102, 255, 0.4);
         }
 
         .identity-notice {
-            color: #71757f;
+            color: #636773;
             font-size: 11px;
-            margin-top: 12px;
-            margin-bottom: 25px;
+            font-weight: 300;
+            margin-top: 14px;
+            margin-bottom: 35px;
+            letter-spacing: 0.5px;
         }
 
-        /* Security Disclaimer Box */
+        /* Governance Disclaimer Layer */
         .security-disclaimer {
-            color: #51555f;
+            color: #444750;
             font-size: 11px;
-            line-height: 1.5;
+            font-weight: 300;
+            line-height: 1.6;
             text-align: justify;
-            border-top: 1px solid #1f1f23;
-            padding-top: 20px;
-            margin-bottom: 20px;
+            border-top: 1px solid #18181c;
+            padding-top: 25px;
+            margin-bottom: 15px;
         }
 
         /* Structural Footer */
         footer {
-            margin-top: 40px;
-            border-top: 1px solid #2d2d34;
-            padding-top: 20px;
+            margin-top: 45px;
+            border-top: 1px solid #222227;
+            padding-top: 25px;
         }
 
         .tagline {
-            color: #71757f;
-            font-size: 12px;
-            letter-spacing: 1px;
+            color: #525560;
+            font-size: 11px;
+            font-weight: 400;
+            letter-spacing: 2px;
             text-transform: uppercase;
         }
     </style>
@@ -146,12 +183,15 @@
     <div class="gateway-container">
         
         <!-- Top Branding Zone -->
-        <div class="logo-placeholder">SingularityX</div>
-        <h1>sXEnter™ GATEWAY</h1>
+        <div class="logo-container">
+            <img src="logo.png" alt="SingularityX" onerror="this.style.display='none'; document.getElementById('fallback-title').style.display='block';">
+            <div id="fallback-title" style="display:none; font-size:26px; font-weight:300; letter-spacing:4px; margin-bottom:10px;">SingularityX</div>
+        </div>
+        <h1><span class="sx-sovereign">sX</span>Enter™ GATEWAY</h1>
         
-        <!-- Clean Sub-Header Copy Layer -->
+        <!-- Manifesto Copy Layer -->
         <div class="manifesto-text">
-            Inside the sXEcoStructure™, technology is no longer allowed to consume your life. sXProvinceZERO™ (sXPRO™) is established as the definitive, live sandbox environment engineered to prove a singular operational reality: That a high-value business track can be mapped, automated, and scaled with absolute efficiency while completely sXRemovingFounder™ from the day-to-day machine. We have built this architecture to grant ordinary everyday people total systemic relief. By processing your trajectory through the hard-coded GiAE™ matrix, manual labor is eliminated. You transition from a stressed manual worker to a sXSovereignOperator™, guided every single step of the way by your personal sXCoCreator™ (CC™) intelligence dashboard engine.
+            Inside the <span class="sx-sovereign">sX</span>EcoStructure™, technology is no longer allowed to consume your life. <span class="sx-sovereign">sX</span>ProvinceZERO™ (<span class="sx-sovereign">sX</span>PRO™) is established as the definitive, live sandbox environment engineered to prove a singular operational reality: That a high-value business track can be mapped, automated, and scaled with absolute efficiency while completely <span class="sx-sovereign">sX</span>RemovingFounder™ from the day-to-day machine. We have built this architecture to grant ordinary everyday people total systemic relief. By processing your trajectory through the hard-coded GiAE™ matrix, manual labor is eliminated. You transition from a stressed manual worker to a <span class="sx-sovereign">sX</span>SovereignOperator™, guided every single step of the way by your personal <span class="sx-sovereign">sX</span>CoCreator nest™ (CC™) intelligence dashboard engine.
         </div>
 
         <!-- The Entrance Selection Box -->
@@ -159,7 +199,7 @@
             <label class="track-label">
                 <input type="radio" name="sx_track" value="corporate" checked>
                 <div>
-                    <strong>Service Corporate Clients</strong>
+                    <span class="track-title">Service Corporate Clients</span>
                     <span class="track-description">Engineered for Doctors, Lawyers, and Agencies.</span>
                 </div>
             </label>
@@ -167,7 +207,7 @@
             <label class="track-label">
                 <input type="radio" name="sx_track" value="business">
                 <div>
-                    <strong>Operate My Own Business</strong>
+                    <span class="track-title">Operate My Own Business</span>
                     <span class="track-description">Engineered for Coaches, MRR operators, and MLM structures.</span>
                 </div>
             </label>
@@ -175,21 +215,21 @@
             <label class="track-label">
                 <input type="radio" name="sx_track" value="affiliate">
                 <div>
-                    <strong>Initialize sXAffiliate™</strong>
-                    <span class="track-description">No existing business model? The sX™ system sells itself.</span>
+                    <span class="track-title">Initialize <span class="sx-sovereign">sX</span>Affiliate™</span>
+                    <span class="track-description">No existing business model? The <span class="sx-sovereign">sX</span>™ system sells itself.</span>
                 </div>
             </label>
         </div>
 
         <!-- Frictionless Native Auth Trigger -->
-        <button class="google-auth-btn" onclick="alert('Google Authentication Portal Initializing...')">
+        <button class="google-auth-btn" onclick="alert('Google Native Sign-In Active. Redirecting straight to your workspace sandbox...')">
             Continue with Google
         </button>
         <div class="identity-notice">Entry requires a verified Google identity to initialize your secure workspace.</div>
 
         <!-- Data Governance & Security Protocol Layer -->
         <div class="security-disclaimer">
-            <strong>Data Governance & System Security Protocol:</strong> In strict compliance with the Protection of Personal Information Act (POPIA) and advanced global data privacy architectures, your submitted identity credentials are automatically encrypted and processed with zero human involvement. We maintain absolute data integrity; your information is never shared, rented, or exposed to external digital networks. Proceeding past this gateway automatically initializes the sXVerify™ Protocol on the subsequent step. The system will issue a temporary, single-use 6-digit security token to your active Gmail inbox to validate your sXOperatorIdentity™ before entry to the live sandbox environment is permitted.
+            <strong>Data Governance & System Security Protocol:</strong> In strict compliance with the Protection of Personal Information Act (POPIA) and advanced global data privacy architectures, your submitted identity credentials are automatically encrypted and processed with zero human involvement. We maintain absolute data integrity; your information is never shared, rented, or exposed to external digital networks. Proceeding past this gateway automatically initializes your secure workspace dashboard environment seamlessly.
         </div>
 
         <!-- Structural Footer Zone -->
