@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>sXEnter Gateway</title>
     
-    <!-- Native Favicon Integration linked to your Logo asset -->
-    <link rel="icon" type="image/png" href="logo.png">
+    <!-- Native Vector Favicon Integration linked strictly to your x.svg asset -->
+    <link rel="icon" type="image/svg+xml" href="x.svg">
     
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap');
@@ -61,13 +61,15 @@
             border: none;
         }
 
-        /* Cinematic Silver Reflection Wash Header */
+        /* Scaled Cinematic Silver Reflection Wash Header */
         h1 {
-            font-size: 20px;
+            font-size: 25px;
             font-weight: 400;
-            margin: 0 auto 8px auto;
+            margin: 0 auto 12px auto;
             letter-spacing: 3px;
             display: block;
+            width: 100%;
+            max-width: 310px; /* Locked to the exact length of the divider */
             
             /* Reflection wash effect setup */
             background: linear-gradient(90deg, #ffffff 0%, #ffffff 35%, #9da1aa 48%, #ffffff 55%, #ffffff 100%);
@@ -116,15 +118,15 @@
             margin-bottom: 0;
         }
 
-        /* High-End Interface Selection Box */
+        /* High-End Embedded Interface Selection Box */
         .track-selection-box {
-            background-color: #222324;
-            border: 1px solid #44454a;
+            background-color: #292a2b; 
+            border: 1px solid #414247;
             border-radius: 14px;
             padding: 30px;
             margin-bottom: 35px;
             text-align: left;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+            box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.15); 
         }
 
         .track-label {
@@ -245,7 +247,7 @@
         <!-- Balanced Proportional Divider Line -->
         <hr class="brand-divider">
 
-        <!-- Animated Header -->
+        <!-- Animated, Scaled Header -->
         <h1><span class="sx-sovereign">sX</span>Enter™ GATEWAY</h1>
         <div class="sub-tagline">BUSINESS INFRASTRUCTURE | STRIPPED OF HUMAN NOISE</div>
         
@@ -259,7 +261,7 @@
             </p>
         </div>
 
-        <!-- The Entrance Selection Box -->
+        <!-- Embedded Entrance Selection Box -->
         <div class="track-selection-box">
             <label class="track-label">
                 <input type="radio" name="sx_track" value="corporate" checked>
