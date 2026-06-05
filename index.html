@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>sXEnter Gateway</title>
+    
+    <!-- Native Favicon Integration linked to your Logo asset -->
+    <link rel="icon" type="image/png" href="logo.png">
+    
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap');
 
@@ -33,7 +37,6 @@
         /* Sovereign Highlighting Style */
         .sx-sovereign {
             font-weight: 500;
-            color: #ffffff;
         }
 
         /* Branding Layer */
@@ -49,7 +52,7 @@
             display: block;
         }
 
-        /* Re-proportioned Brighter Grey Minimalist Divider Line */
+        /* Balanced Proportional Divider Line */
         .brand-divider {
             width: 310px;
             height: 1px;
@@ -58,12 +61,32 @@
             border: none;
         }
 
+        /* Cinematic Silver Reflection Wash Header */
         h1 {
             font-size: 20px;
             font-weight: 400;
-            margin: 0 0 8px 0;
+            margin: 0 auto 8px auto;
             letter-spacing: 3px;
-            color: #ffffff;
+            display: block;
+            
+            /* Reflection wash effect setup */
+            background: linear-gradient(90deg, #ffffff 0%, #ffffff 35%, #9da1aa 48%, #ffffff 55%, #ffffff 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+            animation: reflectionWash 4s infinite linear;
+        }
+
+        /* Continuous Left to Right Reflection Keyframes */
+        @keyframes reflectionWash {
+            0% {
+                background-position: 200% center;
+            }
+            100% {
+                background-position: -200% center;
+            }
         }
 
         /* Sub-Header Tagline style */
@@ -222,6 +245,7 @@
         <!-- Balanced Proportional Divider Line -->
         <hr class="brand-divider">
 
+        <!-- Animated Header -->
         <h1><span class="sx-sovereign">sX</span>Enter™ GATEWAY</h1>
         <div class="sub-tagline">BUSINESS INFRASTRUCTURE | STRIPPED OF HUMAN NOISE</div>
         
