@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>sXEnter Gateway</title>
     
+    <!-- Native Vector Favicon Integration linked strictly to your x.svg asset -->
     <link rel="icon" type="image/svg+xml" href="x.svg" sizes="any">
     
     <style>
@@ -28,8 +29,8 @@
         /* Container Layout */
         .gateway-container {
             width: 100%;
-            max-width: 1100px; /* CALIBRATED: Pulled in slightly for tighter grid layout */
-            padding: 30px 40px;
+            max-width: 1000px; /* Pulled in for a lean, elegant footprint */
+            padding: 20px 40px;
             text-align: center;
             box-sizing: border-box;
             margin: 0 auto;
@@ -40,10 +41,10 @@
         .sx-sovereign { font-weight: 500; display: inline; }
         .sx-bold { font-weight: 700; display: inline; }
 
-        /* Crown Branding Layer - CALIBRATED: Scaled down for sleek footprint */
+        /* Crown Branding Layer */
         .logo-container {
             width: 100%;
-            max-width: 340px; 
+            max-width: 310px; /* Tighter layout presence */
             margin: 0 auto;
             position: relative;
         }
@@ -56,16 +57,16 @@
 
         /* Balanced Proportional Divider Line */
         .brand-divider {
-            width: 380px;
+            width: 340px;
             height: 1px;
             background-color: #636773;
-            margin: 12px auto 18px auto;
+            margin: 12px auto 16px auto;
             border: none;
         }
 
-        /* Massive Authoritative Header - CALIBRATED: Lowered font size to eliminate zoom illusion */
+        /* Massive Authoritative Header - Restored to classic clean proportions */
         h1 {
-            font-size: 44px; 
+            font-size: 38px; 
             font-weight: 400;
             margin: 0 auto 4px auto; 
             letter-spacing: 4px;
@@ -92,13 +93,13 @@
             100% { background-position: -200% center; }
         }
 
-        /* Sub-Header Tagline style - CALIBRATED: Tightened margin separation */
+        /* Sub-Header Tagline style */
         .sub-tagline {
             text-transform: uppercase;
-            font-size: 12px;
+            font-size: 11px;
             letter-spacing: 2px;
             color: #b0b4be;
-            margin: 0 auto 45px auto; 
+            margin: 0 auto 40px auto; 
             font-weight: 400;
             max-width: 950px;
             display: block;
@@ -107,9 +108,9 @@
         /* Symmetrical Master Grid Split Structure */
         .split-cockpit-layout {
             display: flex;
-            gap: 45px; /* CALIBRATED: Tighter axis gap */
+            gap: 50px; 
             text-align: left;
-            margin-bottom: 35px;
+            margin-bottom: 30px;
             align-items: flex-start;
             justify-content: center;
         }
@@ -121,14 +122,13 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            min-height: 260px;
-            padding-right: 0; 
+            min-height: 240px;
         }
 
-        /* Manifesto Text - CALIBRATED: Set to 15px for elite tech density look */
+        /* Manifesto Text - Clean, precise command weight */
         .manifesto-text {
             color: #ffffff;
-            font-size: 15px;
+            font-size: 14.5px;
             font-weight: 300;
             line-height: 1.7;
             margin: 0 0 14px 0;
@@ -155,7 +155,7 @@
             background-color: #424344; 
             border: none;
             border-radius: 14px;
-            padding: 30px 35px; 
+            padding: 28px 32px; 
             margin-top: 2px; 
             margin-bottom: 24px; 
             text-align: left;
@@ -228,7 +228,7 @@
         }
 
         .track-title {
-            font-size: 18px; 
+            font-size: 17.5px; 
             font-weight: 400; 
             letter-spacing: 0.5px;
         }
@@ -236,7 +236,7 @@
         .track-description {
             display: block;
             color: #e5e7eb; 
-            font-size: 13.5px; 
+            font-size: 13px; 
             font-weight: 300;
             margin-top: 5px;
             line-height: 1.5;
@@ -250,7 +250,7 @@
             border-radius: 5px;
             padding: 12px 28px;
             font-family: 'Montserrat', sans-serif;
-            font-size: 14px;
+            font-size: 13.5px;
             font-weight: 500;
             letter-spacing: 0.2px;
             width: auto;
@@ -274,7 +274,7 @@
         /* Centered subtle notice format */
         .identity-notice {
             color: #b0b4be;
-            font-size: 12px;
+            font-size: 11.5px;
             font-weight: 300;
             margin-top: 14px;
             margin-bottom: 0;
@@ -304,7 +304,7 @@
         /* Anchor Governance Disclaimer Layer */
         .security-disclaimer {
             color: #b0b4be;
-            font-size: 11.5px;
+            font-size: 11px;
             font-weight: 300;
             line-height: 1.7;
             text-align: center;
@@ -338,18 +338,23 @@
 
     <div class="gateway-container">
         
+        <!-- Crown Branding Zone -->
         <div class="logo-container">
             <img src="logo.png" alt="SingularityX" onerror="this.style.display='none'; document.getElementById('fallback-title').style.display='block';">
             <div id="fallback-title" style="display:none; font-size:26px; font-weight:300; letter-spacing:4px; margin-bottom:10px;">SingularityX</div>
         </div>
 
+        <!-- Balanced Proportional Divider Line -->
         <hr class="brand-divider">
 
+        <!-- Animated, Scaled Authoritative Header -->
         <h1><span class="sx-sovereign">sX</span>Enter™ <span class="bold-gateway">GATEWAY</span></h1>
         <div class="sub-tagline">BUSINESS INFRASTRUCTURE | STRIPPED OF HUMAN NOISE</div>
         
+        <!-- SIDE-BY-SIDE SPLIT COCKPIT FRAMEWORK -->
         <div class="split-cockpit-layout">
             
+            <!-- PANEL A: Left-aligned narrative field -->
             <div class="column-manifesto">
                 <p class="manifesto-text">
                     Inside the <span class="sx-sovereign">sX</span>EcoStructure™, technology is no longer allowed to consume your life. <span class="sx-sovereign">sX</span>ProvinceZERO™ (<span class="sx-sovereign">sX</span>PRO™) is established as the definitive, live sandbox environment engineered to prove a singular operational reality: That a high-value business track can be mapped, automated, and scaled with absolute efficiency while completely <span class="sx-sovereign">sX</span>FounderRemoved™ from the day-to-day machine.
@@ -359,6 +364,7 @@
                 </p>
             </div>
             
+            <!-- PANEL B: Right-aligned interaction control field -->
             <div class="column-controls">
                 <div class="track-selection-box">
                     <label class="track-label">
@@ -389,6 +395,7 @@
                     </label>
                 </div>
 
+                <!-- Frictionless Native Auth Trigger -->
                 <div>
                     <button class="google-auth-btn" onclick="alert('Google Native Sign-In Active. Redirecting straight to your workspace sandbox...')">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
@@ -402,8 +409,10 @@
 
         </div>
 
+        <!-- System Baseline Boundary Line -->
         <hr class="base-divider">
 
+        <!-- Data Governance & Security Protocol Full Width Frame -->
         <div class="security-disclaimer">
             <strong>Data Governance & System Security Protocol:</strong> In strict compliance with the Protection of Personal Information Act (POPIA) and advanced global data privacy architectures, your submitted identity credentials are automatically encrypted and processed with zero human involvement. We maintain absolute data integrity; your information is never shared, rented, or exposed to external digital networks.<br>
             <span class="bolded-execution-notice">Proceeding past this gateway automatically initializes your secure workspace dashboard environment seamlessly.</span>
