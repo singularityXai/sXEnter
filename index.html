@@ -10,7 +10,7 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
-        /* Core Layout Elements - RESTORED: Beautiful Vertical Lock */
+        /* Core Layout Elements */
         body {
             background-color: #303132;
             color: #ffffff;
@@ -28,8 +28,8 @@
         /* Container Layout */
         .gateway-container {
             width: 100%;
-            max-width: 1200px;
-            padding: 20px 40px 40px 40px;
+            max-width: 1100px; /* CALIBRATED: Pulled in slightly for tighter grid layout */
+            padding: 30px 40px;
             text-align: center;
             box-sizing: border-box;
             margin: 0 auto;
@@ -37,20 +37,13 @@
         }
 
         /* Sovereign Highlighting Style */
-        .sx-sovereign {
-            font-weight: 500;
-            display: inline;
-        }
+        .sx-sovereign { font-weight: 500; display: inline; }
+        .sx-bold { font-weight: 700; display: inline; }
 
-        .sx-bold {
-            font-weight: 700;
-            display: inline;
-        }
-
-        /* Crown Branding Layer */
+        /* Crown Branding Layer - CALIBRATED: Scaled down for sleek footprint */
         .logo-container {
             width: 100%;
-            max-width: 460px; 
+            max-width: 340px; 
             margin: 0 auto;
             position: relative;
         }
@@ -63,18 +56,18 @@
 
         /* Balanced Proportional Divider Line */
         .brand-divider {
-            width: 420px;
+            width: 380px;
             height: 1px;
             background-color: #636773;
-            margin: 15px auto 20px auto;
+            margin: 12px auto 18px auto;
             border: none;
         }
 
-        /* Massive Authoritative Header */
+        /* Massive Authoritative Header - CALIBRATED: Lowered font size to eliminate zoom illusion */
         h1 {
-            font-size: 64px; 
+            font-size: 44px; 
             font-weight: 400;
-            margin: 0 auto 2px auto; 
+            margin: 0 auto 4px auto; 
             letter-spacing: 4px;
             display: block;
             width: 100%;
@@ -99,13 +92,13 @@
             100% { background-position: -200% center; }
         }
 
-        /* Sub-Header Tagline style */
+        /* Sub-Header Tagline style - CALIBRATED: Tightened margin separation */
         .sub-tagline {
             text-transform: uppercase;
-            font-size: 13px;
+            font-size: 12px;
             letter-spacing: 2px;
             color: #b0b4be;
-            margin: 0 auto 65px auto; 
+            margin: 0 auto 45px auto; 
             font-weight: 400;
             max-width: 950px;
             display: block;
@@ -114,31 +107,31 @@
         /* Symmetrical Master Grid Split Structure */
         .split-cockpit-layout {
             display: flex;
-            gap: 60px;
+            gap: 45px; /* CALIBRATED: Tighter axis gap */
             text-align: left;
-            margin-bottom: 40px;
+            margin-bottom: 35px;
             align-items: flex-start;
             justify-content: center;
         }
 
-        /* COLUMN A: Narrative Frame - RESTORED: Golden Master natural flex */
+        /* COLUMN A: Narrative Frame */
         .column-manifesto {
             flex: 1;
             box-sizing: border-box;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            min-height: 280px;
+            min-height: 260px;
             padding-right: 0; 
         }
 
-        /* Manifesto Text - Squared Framework */
+        /* Manifesto Text - CALIBRATED: Set to 15px for elite tech density look */
         .manifesto-text {
             color: #ffffff;
-            font-size: 17px;
+            font-size: 15px;
             font-weight: 300;
-            line-height: 1.8;
-            margin: 0 0 18px 0;
+            line-height: 1.7;
+            margin: 0 0 14px 0;
             text-align: justify; 
             text-justify: inter-word;
         }
@@ -147,7 +140,7 @@
             margin-bottom: 0;
         }
 
-        /* COLUMN B: Action Control Frame - RESTORED: Golden Master natural flex */
+        /* COLUMN B: Action Control Frame */
         .column-controls {
             flex: 1;
             box-sizing: border-box;
@@ -162,8 +155,8 @@
             background-color: #424344; 
             border: none;
             border-radius: 14px;
-            padding: 35px 40px; 
-            margin-top: 4px; 
+            padding: 30px 35px; 
+            margin-top: 2px; 
             margin-bottom: 24px; 
             text-align: left;
             width: 100%;
@@ -174,7 +167,7 @@
         .track-label {
             display: flex;
             align-items: flex-start;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
             cursor: pointer;
             color: #ffffff;
             transition: transform 0.2s ease;
@@ -217,7 +210,6 @@
             background-color: #1877f2;
         }
 
-        /* Safe Micro-Fix: Perfect dot centering */
         .track-label input[type="radio"]:checked + .custom-radio::after {
             content: '';
             position: absolute;
@@ -236,7 +228,7 @@
         }
 
         .track-title {
-            font-size: 19px; 
+            font-size: 18px; 
             font-weight: 400; 
             letter-spacing: 0.5px;
         }
@@ -244,13 +236,13 @@
         .track-description {
             display: block;
             color: #e5e7eb; 
-            font-size: 14px; 
+            font-size: 13.5px; 
             font-weight: 300;
-            margin-top: 6px;
+            margin-top: 5px;
             line-height: 1.5;
         }
 
-        /* Action Activation Element - Plain White Vector Frame */
+        /* Compact Unified Brand Blue Action Button */
         .google-auth-btn {
             background-color: #1877f2;
             color: #ffffff;
@@ -284,7 +276,7 @@
             color: #b0b4be;
             font-size: 12px;
             font-weight: 300;
-            margin-top: 16px;
+            margin-top: 14px;
             margin-bottom: 0;
             letter-spacing: 0.5px;
             text-align: center;
@@ -305,14 +297,14 @@
             width: 100%;
             height: 1px;
             background-color: #44454a;
-            margin: 40px 0 30px 0;
+            margin: 35px 0 25px 0;
             border: none;
         }
 
         /* Anchor Governance Disclaimer Layer */
         .security-disclaimer {
             color: #b0b4be;
-            font-size: 12px;
+            font-size: 11.5px;
             font-weight: 300;
             line-height: 1.7;
             text-align: center;
@@ -324,7 +316,7 @@
             font-weight: 600;
             color: #ffffff;
             display: inline-block;
-            margin-top: 10px;
+            margin-top: 8px;
         }
 
         /* Responsive Break */
