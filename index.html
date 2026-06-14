@@ -379,6 +379,10 @@
             .track-selection-box {
                 padding: 25px 20px;
             }
+            /* Reset specific desktop disclaimer break on small mobile layouts */
+            .security-disclaimer br {
+                display: none;
+            }
         }
     </style>
     
@@ -420,7 +424,6 @@
                         <span class="custom-radio"></span>
                         <div class="track-text-container">
                             <span class="track-title">Operate My Own Business</span>
-                            <!-- Term update: Adjusted cleanly to 'MLMs' -->
                             <span class="track-description">Engineered for Coaches, MRR operators, and MLMs.</span>
                         </div>
                     </label>
@@ -463,9 +466,9 @@
         <!-- System Baseline Boundary Line -->
         <hr class="base-divider">
 
-        <!-- Data Governance Layer -->
+        <!-- Data Governance Layer with Controlled Paragraph Break -->
         <div class="security-disclaimer">
-            <strong>Data Governance & System Security Protocol:</strong> In strict compliance with the Protection of Personal Information Act (POPIA) and advanced global data privacy architectures, your submitted identity credentials are automatically encrypted and processed with zero human involvement. We maintain absolute data integrity; your information is never shared, rented, or exposed to external digital networks.<br>
+            <strong>Data Governance & System Security Protocol:</strong> In strict compliance with the Protection of Personal Information Act (POPIA) and advanced global data privacy architectures, your submitted identity credentials are automatically encrypted and processed with zero human involvement. We maintain absolute data integrity; <br>your information is never shared, rented, or exposed to external digital networks.<br>
             <span class="bolded-execution-notice">Proceeding past this gateway automatically initializes your secure workspace dashboard environment seamlessly.</span>
         </div>
 
