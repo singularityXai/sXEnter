@@ -126,7 +126,7 @@
             color: #ffffff;
         }
 
-        /* Sleek Control Form Elements - Scaled Down Evenly */
+        /* Sleek 3D Control Input Box Frame */
         .control-input-wrapper {
             width: 100%;
             max-width: 280px;
@@ -136,7 +136,7 @@
         .code-input {
             width: 100%;
             background-color: #424344;
-            border: 1px solid #ffffff;
+            border: 1px solid #555657;
             border-radius: 12px;
             padding: 16px;
             font-size: 16px;
@@ -147,7 +147,12 @@
             letter-spacing: 2px;
             box-sizing: border-box;
             outline: none;
-            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+            box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.85);
+            transition: border-color 0.2s ease;
+        }
+
+        .code-input:focus {
+            border-color: #1877f2;
         }
 
         .code-input::placeholder {
@@ -155,7 +160,7 @@
             font-weight: 300;
         }
 
-        /* Signature Blue Action Button - Proportional downscale (smaller than input container) */
+        /* Signature Blue Action Button - Proportional Type Scaling */
         .verify-auth-btn {
             background-color: #1877f2;
             color: #ffffff;
@@ -163,9 +168,9 @@
             border-radius: 25px;
             padding: 16px 20px;
             font-family: 'Montserrat', sans-serif;
-            font-size: 14px;
+            font-size: 12px;
             font-weight: 500;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.6px;
             width: 100%;
             max-width: 230px;
             margin: 0 auto;
@@ -222,25 +227,30 @@
 
     <div class="gateway-container">
         
+        <!-- Crown Branding Zone -->
         <div class="logo-container">
             <img src="logo.png" alt="SingularityX" onerror="this.style.display='none';">
         </div>
 
         <hr class="brand-divider">
 
+        <!-- Immersive Clean Header Layout -->
         <h1><span class="sx-sovereign">sX</span>Verify <span class="sx-bold">PROTOCOL</span></h1>
         
+        <!-- Identity Alert Layer -->
         <div class="identity-focus-heading">Securing Your Identity...</div>
         <div class="sub-tagline">
             A Secure Verification Code has been sent to your <span class="gmail-highlight">Gmail</span>.<br>
             Enter the 6-digit code below to initialize your session.
         </div>
 
+        <!-- Deep Recessed Input Control Frame -->
         <div class="control-input-wrapper">
             <input type="text" class="code-input" id="sessionCodeInput" placeholder="Enter 6-digit Code" maxlength="6">
             <div class="error-message" id="verificationError">Invalid token parameter. Please crosscheck your session code.</div>
         </div>
 
+        <!-- Signature Compressed Brand Action Button -->
         <div>
             <button class="verify-auth-btn" id="submitVerifyTrigger">
                 <span>VERIFY → OperatorIdentity</span>
@@ -258,7 +268,6 @@
 
             if (enteredCode === storedCode && storedCode !== null) {
                 errorDisplay.style.display = 'none';
-                // Direct route to core engine environment
                 window.location.href = "https://creatorapp.zoho.com/singularityx8/sXEngine";
             } else {
                 errorDisplay.style.display = 'block';
