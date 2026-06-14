@@ -1,9 +1,240 @@
-/* Unified Living Brand Action Button Layout */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sXEnter Gateway</title>
+    
+    <link rel="icon" type="image/png" href="favicon.png?v=3" sizes="any">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+        /* Core Layout Elements */
+        body {
+            background-color: #303132;
+            color: #ffffff;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            letter-spacing: 0.5px;
+            overflow-x: hidden;
+        }
+
+        /* Container Layout - Compact tracking for above-the-fold enforcement */
+        .gateway-container {
+            width: 100%;
+            max-width: 1200px;
+            padding: 10px 40px;
+            text-align: center;
+            box-sizing: border-box;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 95vh;
+        }
+
+        /* Sovereign Highlighting Style */
+        .sx-sovereign {
+            font-weight: 500;
+            display: inline;
+        }
+
+        .sx-bold {
+            font-weight: 700;
+            display: inline;
+            color: #ffffff;
+        }
+
+        /* Crown Branding Layer */
+        .logo-container {
+            width: 100%;
+            max-width: 420px; 
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .logo-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Balanced Proportional Divider Line */
+        .brand-divider {
+            width: 420px;
+            height: 1px;
+            background-color: #636773;
+            margin: 10px auto 15px auto;
+            border: none;
+        }
+
+        /* Massive Authoritative Header */
+        h1 {
+            font-size: 54px; 
+            font-weight: 400;
+            margin: 0 auto 2px auto; 
+            letter-spacing: 4px;
+            display: block;
+            width: 100%;
+            max-width: 950px;
+            background: linear-gradient(90deg, #ffffff 0%, #ffffff 35%, #9da1aa 48%, #ffffff 55%, #ffffff 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+            animation: textReflectionWash 6s infinite linear;
+        }
+
+        .bold-gateway {
+            font-weight: 700;
+            letter-spacing: 3px;
+        }
+
+        @keyframes textReflectionWash {
+            0% { background-position: 200% center; }
+            100% { background-position: -200% center; }
+        }
+
+        /* Sub-Header Tagline style */
+        .sub-tagline {
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 2px;
+            color: #b0b4be;
+            margin: 0 auto 35px auto; 
+            font-weight: 400;
+            max-width: 950px;
+            display: block;
+        }
+
+        /* Symmetrical Master Grid Split Structure */
+        .split-cockpit-layout {
+            display: flex;
+            gap: 50px;
+            text-align: left;
+            margin-bottom: 20px;
+            align-items: flex-start;
+            justify-content: center;
+        }
+
+        /* COLUMN Action Control Frame */
+        .column-controls {
+            flex: 1;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        /* High-End Deep Equidistant 3D Interface Box */
+        .track-selection-box {
+            background-color: #424344; 
+            border: none;
+            border-radius: 14px;
+            padding: 30px 35px; 
+            margin-top: 4px; 
+            margin-bottom: 20px; 
+            text-align: left;
+            width: 100%;
+            box-sizing: border-box;
+            box-shadow: inset 0 0 24px rgba(0, 0, 0, 0.85);
+        }
+
+        .track-label {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            cursor: pointer;
+            color: #ffffff;
+            transition: transform 0.2s ease;
+            position: relative;
+        }
+
+        .track-label:hover {
+            transform: translateX(2px);
+        }
+
+        .track-label:last-child {
+            margin-bottom: 0;
+        }
+
+        .track-label input[type="radio"] {
+            position: absolute;
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        /* Custom Unified Radio Metrics */
+        .custom-radio {
+            width: 16px;
+            height: 16px;
+            border: 2px solid #b0b4be;
+            border-radius: 50%;
+            margin-right: 14px;
+            margin-top: 4px;
+            display: inline-block;
+            flex-shrink: 0;
+            position: relative;
+            background-color: transparent;
+            transition: all 0.2s ease;
+            box-sizing: border-box;
+        }
+
+        .track-label input[type="radio"]:checked + .custom-radio {
+            border-color: #1877f2;
+            background-color: #1877f2;
+        }
+
+        .track-label input[type="radio"]:checked + .custom-radio::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 6px;
+            height: 6px;
+            background-color: #ffffff;
+            border-radius: 50%;
+        }
+
+        .track-text-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Track Title - EXACT same scale as manifesto body text */
+        .track-title {
+            font-size: 16px; 
+            font-weight: 300; 
+            letter-spacing: 0.5px;
+        }
+
+        /* Track Description - Exactly two sizes smaller than track title */
+        .track-description {
+            display: block;
+            color: #b0b4be; 
+            font-size: 14px; 
+            font-weight: 300;
+            margin-top: 5px;
+            line-height: 1.5;
+        }
+
+        /* Living Unified Blue Brand Action Button Layout */
         .google-auth-btn {
             background-color: #1877f2;
             color: #ffffff;
             border: none;
-            border-radius: 8px; /* Uniform Semi-Rounded Geometry */
+            border-radius: 8px;
             padding: 16px 28px;
             font-family: 'Montserrat', sans-serif;
             font-size: 13px;
@@ -19,11 +250,176 @@
             gap: 12px;
             box-shadow: 0 4px 14px rgba(24, 119, 242, 0.2);
             box-sizing: border-box;
-            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* Liquid Translation Stream */
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
 
         .google-auth-btn:hover {
             background-color: #1565d8;
-            transform: scale(1.02); /* Living Expansion */
-            box-shadow: 0 6px 24px rgba(24, 119, 242, 0.5); /* Ambient Aura Radiation */
+            transform: scale(1.02);
+            box-shadow: 0 6px 24px rgba(24, 119, 242, 0.5);
         }
+
+        /* Centered subtle notice format */
+        .identity-notice {
+            color: #b0b4be;
+            font-size: 12px;
+            font-weight: 300;
+            margin-top: 14px;
+            margin-bottom: 0;
+            letter-spacing: 0.5px;
+            text-align: center;
+            width: 100%;
+            line-height: 1.6;
+        }
+
+        /* High-Contrast Target Highlight */
+        .google-highlight {
+            font-weight: 500;
+            color: #ffffff;
+            text-decoration: none !important;
+            border-bottom: none !important;
+            outline: none !important;
+        }
+
+        /* COLUMN Narrative Frame */
+        .column-manifesto {
+            flex: 1;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 250px;
+            padding-right: 0; 
+        }
+
+        /* Manifesto Text */
+        .manifesto-text {
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 1.7;
+            margin: 0 0 20px 0;
+            text-align: left; 
+        }
+
+        .manifesto-text:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Horizontal Split Base Line */
+        .base-divider {
+            width: 100%;
+            height: 1px;
+            background-color: #44454a;
+            margin: 20px 0 15px 0;
+            border: none;
+        }
+
+        /* Anchor Governance Disclaimer Layer */
+        .security-disclaimer {
+            color: #b0b4be;
+            font-size: 11px;
+            font-weight: 300;
+            line-height: 1.6;
+            text-align: center;
+            box-sizing: border-box;
+            padding: 0 10px;
+        }
+
+        .bolded-execution-notice {
+            font-weight: 600;
+            color: #ffffff;
+            display: inline-block;
+            margin-top: 6px;
+        }
+
+        /* Responsive Breaks & Mobile Architecture Realignment */
+        @media (max-width: 900px) {
+            body, html {
+                overflow-y: auto; 
+                height: auto;
+            }
+            .gateway-container {
+                min-height: 100vh;
+                padding: 30px 20px;
+                justify-content: flex-start;
+                gap: 20px;
+            }
+            h1 {
+                font-size: 34px; 
+                letter-spacing: 2px;
+            }
+            .sub-tagline {
+                font-size: 10px;
+                margin-bottom: 25px;
+            }
+            .brand-divider {
+                width: 200px;
+            }
+            .split-cockpit-layout {
+                flex-direction: column;
+                gap: 30px;
+                margin-bottom: 10px;
+            }
+            .manifesto-text {
+                text-align: left;
+                font-size: 15px;
+            }
+            .manifesto-text br {
+                display: none;
+            }
+            .column-controls {
+                order: 1; 
+                width: 100%;
+            }
+            .column-manifesto {
+                order: 2; 
+                width: 100%;
+                min-height: auto;
+            }
+            .track-selection-box {
+                padding: 25px 20px;
+            }
+            .security-disclaimer br {
+                display: none;
+            }
+        }
+    </style>
+    
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body>
+
+    <div class="gateway-container">
+        
+        <div class="logo-container">
+            <img src="logo.png" alt="SingularityX" onerror="this.style.display='none'; document.getElementById('fallback-title').style.display='block';">
+            <div id="fallback-title" style="display:none; font-size:26px; font-weight:300; letter-spacing:4px; margin-bottom:10px;">SingularityX</div>
+        </div>
+
+        <hr class="brand-divider">
+
+        <h1><span class="sx-sovereign">sX</span>Enter™ <span class="bold-gateway">GATEWAY</span></h1>
+        <div class="sub-tagline">BUSINESS INFRASTRUCTURE ENGINES STRIPPED OF HUMAN NOISE</div>
+        
+        <div class="split-cockpit-layout">
+            
+            <div class="column-controls">
+                <div class="track-selection-box">
+                    <label class="track-label">
+                        <input type="radio" name="sx_track" value="corporate" checked>
+                        <span class="custom-radio"></span>
+                        <div class="track-text-container">
+                            <span class="track-title">Service Corporate Clients</span>
+                            <span class="track-description">Engineered for Doctors, Lawyers, and Agencies.</span>
+                        </div>
+                    </label>
+                    
+                    <label class="track-label">
+                        <input type="radio" name="sx_track" value="business">
+                        <span class="custom-radio"></span>
+                        <div class="track-text-container">
+                            <span class="track-title">Operate My Own Business</span>
+                            <span class="track-description">Engineered for Coaches, MRR operators, and MLMs.</span>
+                        </div>
+                    </label>
