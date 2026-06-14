@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sXVerify Session</title>
+    <link rel="icon" type="image/png" href="favicon.png?v=3" sizes="any">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+        body {
+            background-color: #303132;
+            color: #ffffff;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            letter-spacing: 0.5px;
+        }
+        .verify-container {
+            width: 100%;
+            max-width: 450px;
+            padding: 40px;
+            text-align: center;
+            box-sizing: border-box;
+            background-color: #424344;
+            border-radius: 14px;
+            box-shadow: inset 0 0 24px rgba(0, 0, 0, 0.85);
+            margin: 20px;
+        }
+        h1 {
+            font-size: 28px;
+            font-weight: 400;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+        p {
+            color: #b0b4be;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+        .code-input {
+            width: 100%;
+            background-color: #303132;
+            border: 1px solid #636773;
+            border-radius: 6px;
+            padding: 14px;
+            font-size: 24px;
+            color: #ffffff;
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 8px;
+            box-sizing: border-box;
+            outline: none;
+            margin-bottom: 25px;
+        }
+        .code-input:focus {
+            border-color: #1877f2;
+        }
+        .verify-btn {
+            background-color: #1877f2;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            padding: 14px;
+            font-size: 15px;
+            font-weight: 500;
+            width: 100%;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 15px rgba(24, 119, 242, 0.3);
+        }
+        .verify-btn:hover {
+            background-color: #115cc9;
+        }
+        .error-message {
+            color: #ff4a4a;
+            font-size: 13px;
+            margin-top: 15px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="verify-container">
+        <h1>SESSION VERIFICATION</h1>
+        <p>Type the secure 6-digit initialization code assigned to your gateway session to finalize workspace setup.</p>
+        
+        <input type="text" class="code-input" id="sessionCodeInput" placeholder="000000" maxlength="6">
+        <button class="verify-btn" id="submitVerifyTrigger">Verify Identity Token</button>
+        <div class="error-message" id="verificationError">Invalid session verification token. Please verify code parameters.</div>
+    </div>
+
+    <script>
+        document.getElementById('submitVerifyTrigger').addEventListener('click', function() {
+            const enteredCode = document.getElementById('sessionCodeInput').value.trim();
+            const storedCode = localStorage.getItem('sX_generated_code');
+            const errorDisplay = document.getElementById('verificationError');
+
+            if (enteredCode === storedCode && storedCode !== null) {
+                errorDisplay.style.display = 'none';
+                // Success path routing directly into active Zoho Creator deployment environment
+                window.location.href = "https://creatorapp.zoho.com/singularityx8/sXEngine";
+            } else {
+                errorDisplay.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>
