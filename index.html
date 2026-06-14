@@ -17,7 +17,6 @@
         body, html {
             height: 100vh;
             width: 100vw;
-            overflow: hidden;
             background: linear-gradient(135deg, #303132 0%, #1e1f20 100%);
             font-family: 'Montserrat', sans-serif;
             color: #e0e0e0;
@@ -28,7 +27,7 @@
 
         .gateway-container {
             width: 100%;
-            max-width: 680px;
+            max-width: 650px;
             padding: 2rem;
             display: flex;
             flex-direction: column;
@@ -42,28 +41,22 @@
             font-weight: 400;
             line-height: 1.6;
             letter-spacing: -0.01em;
-            margin-bottom: 2.5rem;
+            margin-bottom: 2rem;
         }
 
         .body-copy p {
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
         }
 
         .body-copy p:last-child {
             margin-bottom: 0;
         }
 
-        /* Strict Rule: Only prefix sX is bolded and white */
-        .sX-bold {
-            font-weight: 700;
-            color: #ffffff;
-        }
-
         .google-auth-container {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 1.2rem;
+            gap: 1rem;
         }
 
         .google-btn {
@@ -89,6 +82,7 @@
         .google-icon-wrapper {
             background-color: #ffffff;
             border-radius: 3px;
+            padding: 11px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -123,19 +117,21 @@
     <div class="gateway-container">
         
         <div class="body-copy">
-            <p>Inside the <span class="sX-bold">sX</span>EcoStructure™, technology is no longer allowed to consume your life. <span class="sX-bold">sX</span>ProvinceZERO™ (<span class="sX-bold">sX</span>PRO™) is established as the definitive, live sandbox environment engineered to prove a singular operational reality: That a high-value business track can be mapped, automated, and scaled with absolute efficiency while completely <span class="sX-bold">sX</span>LeaderRemoved™ from the day-to-day machine.</p>
+            <p>Inside the <strong>sX</strong>EcoStructure™, technology is no longer allowed to consume your life. <strong>sX</strong>ProvinceZERO™ (<strong>sX</strong>PRO™) is established as the definitive, live sandbox environment engineered to prove a singular operational reality: That a high-value business track can be mapped, automated, and scaled with absolute efficiency while completely <strong>sX</strong>FounderRemoved™ from the day-to-day machine.</p>
             
-            <p>We have built this architecture to grant ordinary everyday people total systemic relief. By processing your layout through the hard-coded GiAE™ matrix, manual labor is eliminated. You transition from a stressed manual worker to a <span class="sX-bold">sX</span>SovereignOperator™, guided every single step of the way by your personal sXCoCreator (CC) intelligence dashboard engine.</p>
+            <p>We have built this architecture to grant ordinary everyday people total systemic relief. By processing your trajectory through the hard-coded GiAE™ matrix, manual labor is eliminated. You transition from a stressed manual worker to a <strong>sX</strong>SovereignOperator™, guided every single step of the way by your personal sXCoCreator (CC™) intelligence dashboard engine.</p>
             
-            <p>Proceeding past this gateway automatically initializes your secure <span class="sX-bold">sX</span>ProvinceZERO™ seamlessly.</p>
+            <p>Proceeding past this gateway automatically initializes your secure workspace dashboard environment seamlessly.</p>
         </div>
 
         <div class="google-auth-container">
             <button class="google-btn" id="googleSignInBtn">
                 <div class="google-icon-wrapper">
-                    <!-- Clean, stark plain white Google "G" vector -->
                     <svg class="google-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path d="M12.24 10.285V13.4h6.86c-.277 1.56-1.602 4.585-6.86 4.585-4.54 0-8.24-3.76-8.24-8.385s3.7-8.385 8.24-8.385c2.58 0 4.307 1.095 5.298 2.045l2.465-2.37C18.285 1.05 15.545 0 12.24 0 5.58 0 0 5.37 0 12s5.58 12 12.24 12c6.96 0 11.57-4.89 11.57-11.79 0-.795-.085-1.4-.195-1.925H12.24z" fill="#ffffff"/>
+                        <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                        <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                        <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" fill="#FBBC05"/>
+                        <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
                     </svg>
                 </div>
                 <span class="btn-text">Continue with Google</span>
@@ -148,7 +144,7 @@
 
     <script>
         document.getElementById('googleSignInBtn').addEventListener('click', function() {
-            // Google OAuth 2.0 live handshake triggers here
+            // Your original Google OAuth initialization logic stays un-touched here
         });
     </script>
 </body>
