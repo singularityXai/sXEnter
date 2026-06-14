@@ -126,7 +126,7 @@
             color: #ffffff;
         }
 
-        /* Sleek 3D Control Input Box Frame - Borders Completely Vaporized */
+        /* Sleek 3D Control Input Box Frame - Borders Fully Exterminated */
         .control-input-wrapper {
             width: 100%;
             max-width: 280px;
@@ -163,32 +163,33 @@
             font-weight: 300;
         }
 
-        /* Signature Blue Action Button - Proportional Type Scaling */
+        /* Living Unified Blue Brand Action Button Layout */
         .verify-auth-btn {
             background-color: #1877f2;
             color: #ffffff;
             border: none;
-            border-radius: 25px;
+            border-radius: 8px;
             padding: 16px 20px;
             font-family: 'Montserrat', sans-serif;
-            font-size: 12px;
+            font-size: 13px;
             font-weight: 500;
-            letter-spacing: 0.6px;
+            letter-spacing: 0.5px;
             width: 100%;
-            max-width: 230px;
+            max-width: 260px;
             margin: 0 auto;
             cursor: pointer;
-            transition: all 0.2s ease;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 15px rgba(24, 119, 242, 0.3);
+            box-shadow: 0 4px 14px rgba(24, 119, 242, 0.2);
             box-sizing: border-box;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
 
         .verify-auth-btn:hover {
-            background-color: #115cc9;
-            box-shadow: 0 6px 20px rgba(24, 119, 242, 0.5);
+            background-color: #1565d8;
+            transform: scale(1.02);
+            box-shadow: 0 6px 24px rgba(24, 119, 242, 0.5);
         }
 
         .error-message {
@@ -230,30 +231,25 @@
 
     <div class="gateway-container">
         
-        <!-- Crown Branding Zone -->
         <div class="logo-container">
             <img src="logo.png" alt="SingularityX" onerror="this.style.display='none';">
         </div>
 
         <hr class="brand-divider">
 
-        <!-- Immersive Clean Header Layout -->
         <h1><span class="sx-sovereign">sX</span>Verify <span class="sx-bold">PROTOCOL</span></h1>
         
-        <!-- Identity Alert Layer -->
         <div class="identity-focus-heading">Securing Your Identity...</div>
         <div class="sub-tagline">
             A Secure Verification Code has been sent to your <span class="gmail-highlight">Gmail</span>.<br>
             Enter the 6-digit code below to initialize your session.
         </div>
 
-        <!-- Deep Recessed Input Control Frame -->
         <div class="control-input-wrapper">
             <input type="text" class="code-input" id="sessionCodeInput" placeholder="Enter 6-digit Code" maxlength="6" autocomplete="off">
             <div class="error-message" id="verificationError">Invalid token parameter. Please crosscheck your session code.</div>
         </div>
 
-        <!-- Signature Compressed Brand Action Button -->
         <div>
             <button class="verify-auth-btn" id="submitVerifyTrigger">
                 <span>VERIFY → OperatorIdentity</span>
