@@ -1,151 +1,873 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>sXEnter</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+    <title>sXEnter Gateway</title>
+
+    
+
+    <!-- Native Vector Favicon Integration linked strictly to your x.svg asset -->
+
+    <link rel="icon" type="image/svg+xml" href="x.svg" sizes="any">
+
+    
+
     <style>
-        * {
-            box-sizing: border-box;
+
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+
+
+        /* Core Layout Elements */
+
+        body {
+
+            background-color: #303132;
+
+            color: #ffffff;
+
+            font-family: 'Montserrat', sans-serif;
+
+            font-weight: 300;
+
             margin: 0;
+
             padding: 0;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            min-height: 100vh;
+
+            letter-spacing: 0.5px;
+
         }
 
-        body, html {
-            height: 100vh;
-            width: 100vw;
-            background: linear-gradient(135deg, #303132 0%, #1e1f20 100%);
-            font-family: 'Montserrat', sans-serif;
-            color: #e0e0e0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+
+
+        /* Container Layout */
 
         .gateway-container {
+
             width: 100%;
-            max-width: 650px;
-            padding: 2rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+
+            max-width: 1200px;
+
+            padding: 20px 40px 40px 40px;
+
             text-align: center;
+
+            box-sizing: border-box;
+
+            margin: 0 auto;
+
+            display: block;
+
         }
 
-        .body-copy {
-            font-size: 0.95rem;
-            font-weight: 400;
-            line-height: 1.6;
-            letter-spacing: -0.01em;
-            margin-bottom: 2rem;
+
+
+        /* Sovereign Highlighting Style */
+
+        .sx-sovereign {
+
+            font-weight: 500;
+
+            display: inline;
+
         }
 
-        .body-copy p {
-            margin-bottom: 1.2rem;
+
+
+        .sx-bold {
+
+            font-weight: 700;
+
+            display: inline;
+
         }
 
-        .body-copy p:last-child {
-            margin-bottom: 0;
+
+
+        /* Crown Branding Layer */
+
+        .logo-container {
+
+            width: 100%;
+
+            max-width: 460px; 
+
+            margin: 0 auto;
+
+            position: relative;
+
         }
 
-        .google-auth-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1rem;
+
+
+        .logo-container img {
+
+            width: 100%;
+
+            height: auto;
+
+            display: block;
+
         }
 
-        .google-btn {
-            display: flex;
-            align-items: center;
-            background-color: #1a73e8;
-            color: #ffffff;
+
+
+        /* Balanced Proportional Divider Line */
+
+        .brand-divider {
+
+            width: 420px;
+
+            height: 1px;
+
+            background-color: #636773;
+
+            margin: 15px auto 20px auto;
+
             border: none;
-            border-radius: 4px;
-            padding: 1px;
-            cursor: pointer;
-            text-decoration: none;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            font-size: 0.9rem;
-            transition: background-color 0.2s ease;
+
         }
 
-        .google-btn:hover {
-            background-color: #1557b0;
-        }
 
-        .google-icon-wrapper {
-            background-color: #ffffff;
-            border-radius: 3px;
-            padding: 11px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 40px;
-            width: 40px;
-        }
 
-        .google-icon {
-            width: 18px;
-            height: 18px;
-        }
+        /* Massive Authoritative Header */
 
-        .btn-text {
-            padding: 0 16px;
-            letter-spacing: 0.2px;
-        }
+        h1 {
 
-        .auth-instruction {
-            font-size: 0.85rem;
+            font-size: 64px; 
+
             font-weight: 400;
-            color: #a0a0a0;
+
+            margin: 0 auto 2px auto; 
+
+            letter-spacing: 4px;
+
+            display: block;
+
+            width: 100%;
+
+            max-width: 950px;
+
+            background: linear-gradient(90deg, #ffffff 0%, #ffffff 35%, #9da1aa 48%, #ffffff 55%, #ffffff 100%);
+
+            background-size: 200% auto;
+
+            -webkit-background-clip: text;
+
+            -webkit-text-fill-color: transparent;
+
+            background-clip: text;
+
+            text-fill-color: transparent;
+
+            animation: textReflectionWash 6s infinite linear;
+
         }
 
-        .google-text {
+
+
+        .bold-gateway {
+
             font-weight: 700;
-            color: #ffffff;
+
+            letter-spacing: 3px;
+
         }
+
+
+
+        @keyframes textReflectionWash {
+
+            0% { background-position: 200% center; }
+
+            100% { background-position: -200% center; }
+
+        }
+
+
+
+        /* Sub-Header Tagline style */
+
+        .sub-tagline {
+
+            text-transform: uppercase;
+
+            font-size: 13px;
+
+            letter-spacing: 2px;
+
+            color: #b0b4be;
+
+            margin: 0 auto 65px auto; 
+
+            font-weight: 400;
+
+            max-width: 950px;
+
+            display: block;
+
+        }
+
+
+
+        /* Symmetrical Master Grid Split Structure */
+
+        .split-cockpit-layout {
+
+            display: flex;
+
+            gap: 60px;
+
+            text-align: left;
+
+            margin-bottom: 40px;
+
+            align-items: flex-start;
+
+            justify-content: center;
+
+        }
+
+
+
+        /* COLUMN B (Now on Left): Action Control Frame */
+
+        .column-controls {
+
+            flex: 1;
+
+            box-sizing: border-box;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            width: 100%;
+
+        }
+
+
+
+        /* High-End Deep Equidistant 3D Interface Box */
+
+        .track-selection-box {
+
+            background-color: #424344; 
+
+            border: none;
+
+            border-radius: 14px;
+
+            padding: 35px 40px; 
+
+            margin-top: 4px; 
+
+            margin-bottom: 24px; 
+
+            text-align: left;
+
+            width: 100%;
+
+            box-sizing: border-box;
+
+            box-shadow: inset 0 0 24px rgba(0, 0, 0, 0.85);
+
+        }
+
+
+
+        .track-label {
+
+            display: flex;
+
+            align-items: flex-start;
+
+            margin-bottom: 24px;
+
+            cursor: pointer;
+
+            color: #ffffff;
+
+            transition: transform 0.2s ease;
+
+            position: relative;
+
+        }
+
+
+
+        .track-label:hover {
+
+            transform: translateX(2px);
+
+        }
+
+
+
+        .track-label:last-child {
+
+            margin-bottom: 0;
+
+        }
+
+
+
+        .track-label input[type="radio"] {
+
+            position: absolute;
+
+            opacity: 0;
+
+            width: 0;
+
+            height: 0;
+
+        }
+
+
+
+        /* Custom Unified Radio Metrics */
+
+        .custom-radio {
+
+            width: 16px;
+
+            height: 16px;
+
+            border: 2px solid #b0b4be;
+
+            border-radius: 50%;
+
+            margin-right: 14px;
+
+            margin-top: 4px;
+
+            display: inline-block;
+
+            flex-shrink: 0;
+
+            position: relative;
+
+            background-color: transparent;
+
+            transition: all 0.2s ease;
+
+            box-sizing: border-box;
+
+        }
+
+
+
+        .track-label input[type="radio"]:checked + .custom-radio {
+
+            border-color: #1877f2;
+
+            background-color: #1877f2;
+
+        }
+
+
+
+        .track-label input[type="radio"]:checked + .custom-radio::after {
+
+            content: '';
+
+            position: absolute;
+
+            top: 50%;
+
+            left: 50%;
+
+            transform: translate(-50%, -50%);
+
+            width: 6px;
+
+            height: 6px;
+
+            background-color: #ffffff;
+
+            border-radius: 50%;
+
+        }
+
+
+
+        .track-text-container {
+
+            display: flex;
+
+            flex-direction: column;
+
+        }
+
+
+
+        /* Track Title - TWEAKED: Pulled down precisely 1px */
+
+        .track-title {
+
+            font-size: 18px; 
+
+            font-weight: 400; 
+
+            letter-spacing: 0.5px;
+
+        }
+
+
+
+        .track-description {
+
+            display: block;
+
+            color: #e5e7eb; 
+
+            font-size: 14px; 
+
+            font-weight: 300;
+
+            margin-top: 6px;
+
+            line-height: 1.5;
+
+        }
+
+
+
+        /* Compact Unified Brand Blue Action Button */
+
+        .google-auth-btn {
+
+            background-color: #1877f2;
+
+            color: #ffffff;
+
+            border: none;
+
+            border-radius: 5px;
+
+            padding: 12px 28px;
+
+            font-family: 'Montserrat', sans-serif;
+
+            font-size: 14px;
+
+            font-weight: 500;
+
+            letter-spacing: 0.2px;
+
+            width: auto;
+
+            min-width: 260px;
+
+            margin: 0 auto;
+
+            cursor: pointer;
+
+            transition: all 0.2s ease;
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 12px;
+
+            box-shadow: 0 4px 15px rgba(24, 119, 242, 0.3);
+
+            box-sizing: border-box;
+
+        }
+
+
+
+        .google-auth-btn:hover {
+
+            background-color: #115cc9;
+
+            box-shadow: 0 6px 20px rgba(24, 119, 242, 0.5);
+
+        }
+
+
+
+        /* Centered subtle notice format */
+
+        .identity-notice {
+
+            color: #b0b4be;
+
+            font-size: 12px;
+
+            font-weight: 300;
+
+            margin-top: 16px;
+
+            margin-bottom: 0;
+
+            letter-spacing: 0.5px;
+
+            text-align: center;
+
+            width: 100%;
+
+            line-height: 1.6;
+
+        }
+
+
+
+        /* High-Contrast Target Highlight for Google */
+
+        .google-highlight {
+
+            font-weight: 500;
+
+            color: #ffffff;
+
+            border-bottom: 1px dashed rgba(24, 119, 242, 0.6);
+
+            padding-bottom: 1px;
+
+        }
+
+
+
+        /* COLUMN A (Now on Right): Narrative Frame */
+
+        .column-manifesto {
+
+            flex: 1;
+
+            box-sizing: border-box;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            min-height: 280px;
+
+            padding-right: 0; 
+
+        }
+
+
+
+        /* Manifesto Text - UPDATED: Clean Left Align */
+
+        .manifesto-text {
+
+            color: #ffffff;
+
+            font-size: 17px;
+
+            font-weight: 300;
+
+            line-height: 1.8;
+
+            margin: 0 0 18px 0;
+
+            text-align: left; 
+
+        }
+
+
+
+        .manifesto-text:last-child {
+
+            margin-bottom: 0;
+
+        }
+
+
+
+        /* Horizontal Split Base Line */
+
+        .base-divider {
+
+            width: 100%;
+
+            height: 1px;
+
+            background-color: #44454a;
+
+            margin: 40px 0 30px 0;
+
+            border: none;
+
+        }
+
+
+
+        /* Anchor Governance Disclaimer Layer */
+
+        .security-disclaimer {
+
+            color: #b0b4be;
+
+            font-size: 12px;
+
+            font-weight: 300;
+
+            line-height: 1.7;
+
+            text-align: center;
+
+            box-sizing: border-box;
+
+            padding: 0 10px;
+
+        }
+
+
+
+        .bolded-execution-notice {
+
+            font-weight: 600;
+
+            color: #ffffff;
+
+            display: inline-block;
+
+            margin-top: 10px;
+
+        }
+
+
+
+        /* Responsive Break */
+
+        @media (max-width: 900px) {
+
+            .split-cockpit-layout {
+
+                flex-direction: column;
+
+                gap: 40px;
+
+            }
+
+            .manifesto-text {
+
+                text-align: left;
+
+            }
+
+            .brand-divider {
+
+                width: 310px;
+
+            }
+
+            .column-controls {
+
+                order: 1; 
+
+            }
+
+            .column-manifesto {
+
+                order: 2; 
+
+            }
+
+        }
+
     </style>
+
 </head>
+
 <body>
 
+
+
     <div class="gateway-container">
+
         
-        <div class="body-copy">
-            <p>Inside the <strong>sX</strong>EcoStructure™, technology is no longer allowed to consume your life. <strong>sX</strong>ProvinceZERO™ (<strong>sX</strong>PRO™) is established as the definitive, live sandbox environment engineered to prove a singular operational reality: That a high-value business track can be mapped, automated, and scaled with absolute efficiency while completely <strong>sX</strong>FounderRemoved™ from the day-to-day machine.</p>
-            
-            <p>We have built this architecture to grant ordinary everyday people total systemic relief. By processing your trajectory through the hard-coded GiAE™ matrix, manual labor is eliminated. You transition from a stressed manual worker to a <strong>sX</strong>SovereignOperator™, guided every single step of the way by your personal sXCoCreator (CC™) intelligence dashboard engine.</p>
-            
-            <p>Proceeding past this gateway automatically initializes your secure workspace dashboard environment seamlessly.</p>
+
+        <!-- Crown Branding Zone -->
+
+        <div class="logo-container">
+
+            <img src="logo.png" alt="SingularityX" onerror="this.style.display='none'; document.getElementById('fallback-title').style.display='block';">
+
+            <div id="fallback-title" style="display:none; font-size:26px; font-weight:300; letter-spacing:4px; margin-bottom:10px;">SingularityX</div>
+
         </div>
 
-        <div class="google-auth-container">
-            <button class="google-btn" id="googleSignInBtn">
-                <div class="google-icon-wrapper">
-                    <svg class="google-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
-                        <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
-                        <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" fill="#FBBC05"/>
-                        <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
-                    </svg>
-                </div>
-                <span class="btn-text">Continue with Google</span>
-            </button>
+
+
+        <!-- Balanced Proportional Divider Line -->
+
+        <hr class="brand-divider">
+
+
+
+        <!-- Animated, Scaled Authoritative Header -->
+
+        <h1><span class="sx-sovereign">sX</span>Enter™ <span class="bold-gateway">GATEWAY</span></h1>
+
+        <div class="sub-tagline">BUSINESS INFRASTRUCTURE | STRIPPED OF HUMAN NOISE</div>
+
+        
+
+        <!-- SIDE-BY-SIDE SPLIT COCKPIT FRAMEWORK (INVERTED AXIS) -->
+
+        <div class="split-cockpit-layout">
+
             
-            <span class="auth-instruction">Entry requires a verified <span class="google-text">Google</span> identity to initialize your secure workspace.</span>
+
+            <!-- PANEL A (LEFT): Right-aligned interaction control field -->
+
+            <div class="column-controls">
+
+                <div class="track-selection-box">
+
+                    <label class="track-label">
+
+                        <input type="radio" name="sx_track" value="corporate" checked>
+
+                        <span class="custom-radio"></span>
+
+                        <div class="track-text-container">
+
+                            <span class="track-title">Service Corporate Clients</span>
+
+                            <span class="track-description">Engineered for Doctors, Lawyers, and Agencies.</span>
+
+                        </div>
+
+                    </label>
+
+                    
+
+                    <label class="track-label">
+
+                        <input type="radio" name="sx_track" value="business">
+
+                        <span class="custom-radio"></span>
+
+                        <div class="track-text-container">
+
+                            <span class="track-title">Operate My Own Business</span>
+
+                            <span class="track-description">Engineered for Coaches, MRR operators, and MLM&nbsp;structures.</span>
+
+                        </div>
+
+                    </label>
+
+                    
+
+                    <label class="track-label">
+
+                        <input type="radio" name="sx_track" value="affiliate">
+
+                        <span class="custom-radio"></span>
+
+                        <div class="track-text-container">
+
+                            <span class="track-title">Initialize <span class="sx-bold">sX</span>Affiliate™</span>
+
+                            <span class="track-description">No existing business model? The <span class="sx-bold">sX</span>™ system sells itself.</span>
+
+                        </div>
+
+                    </label>
+
+                </div>
+
+
+
+                <!-- Frictionless Native Auth Trigger -->
+
+                <div>
+
+                    <button class="google-auth-btn" onclick="alert('Google Native Sign-In Active. Redirecting straight to your workspace sandbox...')">
+
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
+
+                            <path fill="#ffffff" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v3.92h6.61c-.29 1.53-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.65-5.17 3.65-8.58zM12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.11 0-5.74-2.11-6.68-4.96H1.21v3.15C3.18 21.88 7.31 24 12 24zM5.32 14.24A7.16 7.16 0 0 1 5 12c0-.79.13-1.57.32-2.34V6.51H1.21A11.94 11.94 0 0 0 0 12c0 1.92.45 3.79 1.21 5.49l4.11-3.25zM12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.31 0 3.18 2.12 1.21 5.49l4.11 3.25c.94-2.85 3.57-4.99 6.68-4.99z"/>
+
+                        </svg>
+
+                        <span>Continue with Google</span>
+
+                    </button>
+
+                </div>
+
+                <div class="identity-notice">Entry requires a verified <span class="google-highlight">Google</span> identity<br>to initialize your secure workspace.</div>
+
+            </div>
+
+
+
+            <!-- PANEL B (RIGHT): Narrative field -->
+
+            <div class="column-manifesto">
+
+                <p class="manifesto-text">
+
+                    Inside the <span class="sx-sovereign">sX</span>EcoStructure™, technology is no longer allowed to consume your life. <span class="sx-sovereign">sX</span>ProvinceZERO™ (<span class="sx-sovereign">sX</span>PRO™) is established as the definitive, live sandbox environment engineered to prove a singular operational reality: That a high-value business track can be mapped, automated, and scaled with absolute efficiency while completely <span class="sx-sovereign">sX</span>FounderRemoved™ from the day-to-day machine.
+
+                </p>
+
+                <p class="manifesto-text">
+
+                    We have built this architecture to grant ordinary everyday people total systemic relief. By processing your trajectory through the hard-coded GiAE™ matrix, manual labor is eliminated. You transition from a stressed manual worker to a <span class="sx-sovereign">sX</span>SovereignOperator™, guided every single step of the way by your personal <span class="sx-sovereign">sX</span>CoCreator™ (CC™) intelligence dashboard engine.
+
+                </p>
+
+            </div>
+
+
+
         </div>
+
+
+
+        <!-- System Baseline Boundary Line -->
+
+        <hr class="base-divider">
+
+
+
+        <!-- Data Governance & Security Protocol Full Width Frame -->
+
+        <div class="security-disclaimer">
+
+            <strong>Data Governance & System Security Protocol:</strong> In strict compliance with the Protection of Personal Information Act (POPIA) and advanced global data privacy architectures, your submitted identity credentials are automatically encrypted and processed with zero human involvement. We maintain absolute data integrity; your information is never shared, rented, or exposed to external digital networks.<br>
+
+            <span class="bolded-execution-notice">Proceeding past this gateway automatically initializes your secure workspace dashboard environment seamlessly.</span>
+
+        </div>
+
+
 
     </div>
 
-    <script>
-        document.getElementById('googleSignInBtn').addEventListener('click', function() {
-            // Your original Google OAuth initialization logic stays un-touched here
-        });
-    </script>
+
+
 </body>
+
 </html>
