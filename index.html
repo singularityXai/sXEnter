@@ -23,17 +23,21 @@
             align-items: center;
             min-height: 100vh;
             letter-spacing: 0.5px;
+            overflow-x: hidden;
         }
 
-        /* Container Layout */
+        /* Container Layout - Compact tracking for above-the-fold enforcement */
         .gateway-container {
             width: 100%;
             max-width: 1200px;
-            padding: 20px 40px 40px 40px;
+            padding: 10px 40px;
             text-align: center;
             box-sizing: border-box;
             margin: 0 auto;
-            display: block;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 95vh;
         }
 
         /* Sovereign Highlighting Style */
@@ -51,7 +55,7 @@
         /* Crown Branding Layer */
         .logo-container {
             width: 100%;
-            max-width: 460px; 
+            max-width: 420px; 
             margin: 0 auto;
             position: relative;
         }
@@ -67,13 +71,13 @@
             width: 420px;
             height: 1px;
             background-color: #636773;
-            margin: 15px auto 20px auto;
+            margin: 10px auto 15px auto;
             border: none;
         }
 
         /* Massive Authoritative Header */
         h1 {
-            font-size: 64px; 
+            font-size: 54px; 
             font-weight: 400;
             margin: 0 auto 2px auto; 
             letter-spacing: 4px;
@@ -102,10 +106,10 @@
         /* Sub-Header Tagline style */
         .sub-tagline {
             text-transform: uppercase;
-            font-size: 13px;
+            font-size: 12px;
             letter-spacing: 2px;
             color: #b0b4be;
-            margin: 0 auto 65px auto; 
+            margin: 0 auto 35px auto; 
             font-weight: 400;
             max-width: 950px;
             display: block;
@@ -114,9 +118,9 @@
         /* Symmetrical Master Grid Split Structure */
         .split-cockpit-layout {
             display: flex;
-            gap: 60px;
+            gap: 50px;
             text-align: left;
-            margin-bottom: 40px;
+            margin-bottom: 20px;
             align-items: flex-start;
             justify-content: center;
         }
@@ -136,9 +140,9 @@
             background-color: #424344; 
             border: none;
             border-radius: 14px;
-            padding: 35px 40px; 
+            padding: 30px 35px; 
             margin-top: 4px; 
-            margin-bottom: 24px; 
+            margin-bottom: 20px; 
             text-align: left;
             width: 100%;
             box-sizing: border-box;
@@ -148,7 +152,7 @@
         .track-label {
             display: flex;
             align-items: flex-start;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
             cursor: pointer;
             color: #ffffff;
             transition: transform 0.2s ease;
@@ -209,7 +213,7 @@
         }
 
         .track-title {
-            font-size: 18px; 
+            font-size: 17px; 
             font-weight: 400; 
             letter-spacing: 0.5px;
         }
@@ -217,19 +221,39 @@
         .track-description {
             display: block;
             color: #e5e7eb; 
-            font-size: 14px; 
+            font-size: 13px; 
             font-weight: 300;
-            margin-top: 6px;
+            margin-top: 5px;
             line-height: 1.5;
         }
 
-        /* Google Button Layout Wrapper */
-        .google-btn-wrapper {
+        /* Restored Beautiful Blue Custom Brand Action Button Layout */
+        .google-auth-btn {
+            background-color: #1877f2;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            padding: 12px 28px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.2px;
+            width: auto;
+            min-width: 260px;
             margin: 0 auto;
+            cursor: pointer;
+            transition: all 0.2s ease;
             display: inline-flex;
-            justify-content: center;
             align-items: center;
-            min-height: 44px;
+            justify-content: center;
+            gap: 12px;
+            box-shadow: 0 4px 15px rgba(24, 119, 242, 0.3);
+            box-sizing: border-box;
+        }
+
+        .google-auth-btn:hover {
+            background-color: #115cc9;
+            box-shadow: 0 6px 20px rgba(24, 119, 242, 0.5);
         }
 
         /* Centered subtle notice format */
@@ -237,7 +261,7 @@
             color: #b0b4be;
             font-size: 12px;
             font-weight: 300;
-            margin-top: 16px;
+            margin-top: 14px;
             margin-bottom: 0;
             letter-spacing: 0.5px;
             text-align: center;
@@ -245,12 +269,13 @@
             line-height: 1.6;
         }
 
-        /* High-Contrast Target Highlight for Google */
+        /* High-Contrast Target Highlight - Fixed: Stripped blue dashed underline */
         .google-highlight {
             font-weight: 500;
             color: #ffffff;
-            border-bottom: 1px dashed rgba(24, 119, 242, 0.6);
-            padding-bottom: 1px;
+            text-decoration: none !important;
+            border-bottom: none !important;
+            outline: none !important;
         }
 
         /* COLUMN Narrative Frame */
@@ -260,17 +285,17 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            min-height: 280px;
+            min-height: 250px;
             padding-right: 0; 
         }
 
         /* Manifesto Text */
         .manifesto-text {
             color: #ffffff;
-            font-size: 17px;
+            font-size: 16px;
             font-weight: 300;
-            line-height: 1.8;
-            margin: 0 0 24px 0;
+            line-height: 1.7;
+            margin: 0 0 20px 0;
             text-align: left; 
         }
 
@@ -283,16 +308,16 @@
             width: 100%;
             height: 1px;
             background-color: #44454a;
-            margin: 40px 0 30px 0;
+            margin: 20px 0 15px 0;
             border: none;
         }
 
         /* Anchor Governance Disclaimer Layer */
         .security-disclaimer {
             color: #b0b4be;
-            font-size: 12px;
+            font-size: 11px;
             font-weight: 300;
-            line-height: 1.7;
+            line-height: 1.6;
             text-align: center;
             box-sizing: border-box;
             padding: 0 10px;
@@ -302,14 +327,14 @@
             font-weight: 600;
             color: #ffffff;
             display: inline-block;
-            margin-top: 10px;
+            margin-top: 6px;
         }
 
         /* Responsive Break */
         @media (max-width: 900px) {
             .split-cockpit-layout {
                 flex-direction: column;
-                gap: 40px;
+                gap: 30px;
             }
             .manifesto-text {
                 text-align: left;
@@ -326,12 +351,13 @@
         }
     </style>
     
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script src="https://accounts.google.com/gsi/client"></script>
 </head>
 <body>
 
     <div class="gateway-container">
         
+        <!-- Crown Branding Zone -->
         <div class="logo-container">
             <img src="logo.png" alt="SingularityX" onerror="this.style.display='none'; document.getElementById('fallback-title').style.display='block';">
             <div id="fallback-title" style="display:none; font-size:26px; font-weight:300; letter-spacing:4px; margin-bottom:10px;">SingularityX</div>
@@ -339,11 +365,14 @@
 
         <hr class="brand-divider">
 
+        <!-- Animated, Scaled Authoritative Header -->
         <h1><span class="sx-sovereign">sX</span>Enter™ <span class="bold-gateway">GATEWAY</span></h1>
         <div class="sub-tagline">BUSINESS INFRASTRUCTURE | STRIPPED OF HUMAN NOISE</div>
         
+        <!-- SIDE-BY-SIDE SPLIT COCKPIT FRAMEWORK -->
         <div class="split-cockpit-layout">
             
+            <!-- PANEL A (LEFT): Controls and Brand Action Button -->
             <div class="column-controls">
                 <div class="track-selection-box">
                     <label class="track-label">
@@ -374,38 +403,35 @@
                     </label>
                 </div>
 
-                <div class="google-btn-wrapper">
-                    <div id="g_id_onload"
-                         data-client_id="795059477450-qt6ee2qa4h8mq779ql8t2uksj77if07l.apps.googleusercontent.com"
-                         data-context="signin"
-                         data-callback="handleCredentialResponse">
-                    </div>
-                    <div class="g_id_signin"
-                         data-type="standard"
-                         data-shape="rectangular"
-                         data-theme="outline"
-                         data-text="continue_with"
-                         data-size="large"
-                         data-logo_alignment="left">
-                    </div>
+                <!-- Pristine Restored Blue Button (#1877f2) -->
+                <div>
+                    <button class="google-auth-btn" id="googleAuthTrigger">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
+                            <path fill="#ffffff" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v3.92h6.61c-.29 1.53-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.65-5.17 3.65-8.58zM12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.11 0-5.74-2.11-6.68-4.96H1.21v3.15C3.18 21.88 7.31 24 12 24zM5.32 14.24A7.16 7.16 0 0 1 5 12c0-.79.13-1.57.32-2.34V6.51H1.21A11.94 11.94 0 0 0 0 12c0 1.92.45 3.79 1.21 5.49l4.11-3.25zM12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.31 0 3.18 2.12 1.21 5.49l4.11 3.25c.94-2.85 3.57-4.99 6.68-4.99z"/>
+                        </svg>
+                        <span>Continue with Google</span>
+                    </button>
                 </div>
                 
                 <div class="identity-notice">Entry requires a verified <span class="google-highlight">Google</span> identity<br>to initialize your secure workspace.</div>
             </div>
 
+            <!-- PANEL B (RIGHT): Corrected Narrative Field -->
             <div class="column-manifesto">
                 <p class="manifesto-text">
                     Inside the <span class="sx-bold">sX</span>EcoStructure, technology is no longer allowed to consume your life. <span class="sx-bold">sX</span>ProvinceZero is established as the definitive, live sandbox environment engineered to prove a singular operational reality: That a high-value business track can be mapped, automated, and scaled with absolute efficiency while honoring <span class="sx-bold">sX</span>FounderRemoved, from the day-to-day machine.
                 </p>
                 <p class="manifesto-text">
-                    We have built this architecture to grant ordinary everyday people total systemic relief. By processing your business track through the hard-coded GiAE™ matrix, manual labor is eliminated. You transition from a stressed manual worker to a <span class="sx-bold">sX</span>SovereignOperator, guided every single step of the way by your dedicated, personal sXCoCreator (CC™), and intelligence dashboard engine.
+                    We have built this architecture to grant ordinary everyday people total systemic relief. By processing your business track through the hard-coded <span class="sx-bold">GiAE</span>™ matrix, manual labor is eliminated. You transition from a stressed manual worker to a <span class="sx-bold">sX</span>SovereignOperator, guided every single step of the way by your dedicated, personal <span class="sx-bold">sX</span>CoCreator (CC™), and intelligence dashboard engine.
                 </p>
             </div>
 
         </div>
 
+        <!-- System Baseline Boundary Line -->
         <hr class="base-divider">
 
+        <!-- Data Governance Layer -->
         <div class="security-disclaimer">
             <strong>Data Governance & System Security Protocol:</strong> In strict compliance with the Protection of Personal Information Act (POPIA) and advanced global data privacy architectures, your submitted identity credentials are automatically encrypted and processed with zero human involvement. We maintain absolute data integrity; your information is never shared, rented, or exposed to external digital networks.<br>
             <span class="bolded-execution-notice">Proceeding past this gateway automatically initializes your secure workspace dashboard environment seamlessly.</span>
@@ -414,6 +440,19 @@
     </div>
 
     <script>
+        let tokenClient;
+
+        // Force initialize client side token loop on window paint
+        window.onload = function () {
+            if (window.google && google.accounts && google.accounts.oauth2) {
+                tokenClient = google.accounts.oauth2.initTokenClient({
+                    client_id: '795059477450-qt6ee2qa4h8mq779ql8t2uksj77if07l.apps.googleusercontent.com',
+                    scope: 'https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email',
+                    callback: handleTokenResponse
+                });
+            }
+        };
+
         function parseJwt(token) {
             var base64Url = token.split('.')[1];
             var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
@@ -423,33 +462,59 @@
             return JSON.parse(jsonPayload);
         }
 
-        function handleCredentialResponse(response) {
-            const userData = parseJwt(response.credential);
-            const operatorEmail = userData.email;
+        // Direct click event handler mapped to custom brand button element
+        document.getElementById('googleAuthTrigger').addEventListener('click', function() {
+            if (tokenClient) {
+                tokenClient.requestAccessToken({ prompt: 'select_account' });
+            } else {
+                alert('Google Authentication Security Library loading, please wait...');
+            }
+        });
+
+        function handleTokenResponse(response) {
+            if (response.error !== undefined) {
+                return;
+            }
             
+            // Success path processing
+            const accessToken = response.access_token;
+            
+            // Parse details directly out of standard token response payload strings
             const verificationCode = Math.floor(100000 + Math.random() * 900000).toString();
-            
             const selectedTrack = document.querySelector('input[name="sx_track"]:checked').value;
             
-            localStorage.setItem('sX_operator_email', operatorEmail);
             localStorage.setItem('sX_generated_code', verificationCode);
             localStorage.setItem('sX_selected_track', selectedTrack);
 
-            fetch('https://creatorapp.zoho.com/api/v2/singularityx8/sXEngine/form/Operator_Logins', {
-                method: 'POST',
+            // Fetch profiles details using standard Google endpoints
+            fetch('https://www.googleapis.com/oauth2/v2/userinfo', {
                 headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': 'Zoho-oauthtoken ' + response.credential
-                },
-                body: JSON.stringify({
-                    "data": {
-                        "Email": operatorEmail,
-                        "Verification_Code": verificationCode
-                    }
-                })
-            }).then(() => {
+                    'Authorization': 'Bearer ' + accessToken
+                }
+            })
+            .then(res => res.json())
+            .then(userData => {
+                const operatorEmail = userData.email;
+                localStorage.setItem('sX_operator_email', operatorEmail);
+
+                return fetch('https://creatorapp.zoho.com/api/v2/singularityx8/sXEngine/form/Operator_Logins', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': 'Zoho-oauthtoken ' + accessToken
+                    },
+                    body: JSON.stringify({
+                        "data": {
+                            "Email": operatorEmail,
+                            "Verification_Code": verificationCode
+                        }
+                    })
+                });
+            })
+            .then(() => {
                 window.location.href = "https://www.singularityxai.online/sx-verify";
-            }).catch(() => {
+            })
+            .catch(() => {
                 window.location.href = "https://www.singularityxai.online/sx-verify";
             });
         }
