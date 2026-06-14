@@ -330,23 +330,49 @@
             margin-top: 6px;
         }
 
-        /* Responsive Break */
+        /* Responsive Breaks & Mobile Architecture Realignment */
         @media (max-width: 900px) {
+            body, html {
+                overflow-y: auto; /* Allow natural scrolling on mobile frames */
+                height: auto;
+            }
+            .gateway-container {
+                min-height: 100vh;
+                padding: 30px 20px;
+                justify-content: flex-start;
+                gap: 20px;
+            }
+            h1 {
+                font-size: 34px; /* Dynamically scale text down so it doesn't clip headers on mobile */
+                letter-spacing: 2px;
+            }
+            .sub-tagline {
+                font-size: 10px;
+                margin-bottom: 25px;
+            }
+            .brand-divider {
+                width: 200px;
+            }
             .split-cockpit-layout {
                 flex-direction: column;
                 gap: 30px;
+                margin-bottom: 10px;
             }
             .manifesto-text {
                 text-align: left;
-            }
-            .brand-divider {
-                width: 310px;
+                font-size: 15px;
             }
             .column-controls {
                 order: 1; 
+                width: 100%;
             }
             .column-manifesto {
                 order: 2; 
+                width: 100%;
+                min-height: auto;
+            }
+            .track-selection-box {
+                padding: 25px 20px;
             }
         }
     </style>
@@ -442,7 +468,6 @@
     <script>
         let tokenClient;
 
-        // Force initialize client side token loop on window paint
         window.onload = function () {
             if (window.google && google.accounts && google.accounts.oauth2) {
                 tokenClient = google.accounts.oauth2.initTokenClient({
@@ -462,7 +487,6 @@
             return JSON.parse(jsonPayload);
         }
 
-        // Direct click event handler mapped to custom brand button element
         document.getElementById('googleAuthTrigger').addEventListener('click', function() {
             if (tokenClient) {
                 tokenClient.requestAccessToken({ prompt: 'select_account' });
@@ -476,17 +500,13 @@
                 return;
             }
             
-            // Success path processing
             const accessToken = response.access_token;
-            
-            // Parse details directly out of standard token response payload strings
             const verificationCode = Math.floor(100000 + Math.random() * 900000).toString();
             const selectedTrack = document.querySelector('input[name="sx_track"]:checked').value;
             
             localStorage.setItem('sX_generated_code', verificationCode);
             localStorage.setItem('sX_selected_track', selectedTrack);
 
-            // Fetch profiles details using standard Google endpoints
             fetch('https://www.googleapis.com/oauth2/v2/userinfo', {
                 headers: {
                     'Authorization': 'Bearer ' + accessToken
