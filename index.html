@@ -121,7 +121,7 @@
             justify-content: center;
         }
 
-        /* COLUMN B (Now on Left): Action Control Frame */
+        /* COLUMN Action Control Frame */
         .column-controls {
             flex: 1;
             box-sizing: border-box;
@@ -208,7 +208,6 @@
             flex-direction: column;
         }
 
-        /* Track Title - TWEAKED: Pulled down precisely 1px */
         .track-title {
             font-size: 18px; 
             font-weight: 400; 
@@ -224,33 +223,13 @@
             line-height: 1.5;
         }
 
-        /* Compact Unified Brand Blue Action Button */
-        .google-auth-btn {
-            background-color: #1877f2;
-            color: #ffffff;
-            border: none;
-            border-radius: 5px;
-            padding: 12px 28px;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 14px;
-            font-weight: 500;
-            letter-spacing: 0.2px;
-            width: auto;
-            min-width: 260px;
+        /* Google Button Layout Wrapper */
+        .google-btn-wrapper {
             margin: 0 auto;
-            cursor: pointer;
-            transition: all 0.2s ease;
             display: inline-flex;
-            align-items: center;
             justify-content: center;
-            gap: 12px;
-            box-shadow: 0 4px 15px rgba(24, 119, 242, 0.3);
-            box-sizing: border-box;
-        }
-
-        .google-auth-btn:hover {
-            background-color: #115cc9;
-            box-shadow: 0 6px 20px rgba(24, 119, 242, 0.5);
+            align-items: center;
+            min-height: 44px;
         }
 
         /* Centered subtle notice format */
@@ -274,7 +253,7 @@
             padding-bottom: 1px;
         }
 
-        /* COLUMN A (Now on Right): Narrative Frame */
+        /* COLUMN Narrative Frame */
         .column-manifesto {
             flex: 1;
             box-sizing: border-box;
@@ -285,7 +264,7 @@
             padding-right: 0; 
         }
 
-        /* Manifesto Text - UPDATED: Clean Left Align */
+        /* Manifesto Text */
         .manifesto-text {
             color: #ffffff;
             font-size: 17px;
@@ -346,6 +325,9 @@
             }
         }
     </style>
+    
+    <!-- Load Official Google API Library -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
 </head>
 <body>
 
@@ -364,10 +346,10 @@
         <h1><span class="sx-sovereign">sX</span>Enter™ <span class="bold-gateway">GATEWAY</span></h1>
         <div class="sub-tagline">BUSINESS INFRASTRUCTURE | STRIPPED OF HUMAN NOISE</div>
         
-        <!-- SIDE-BY-SIDE SPLIT COCKPIT FRAMEWORK (INVERTED AXIS) -->
+        <!-- SIDE-BY-SIDE SPLIT COCKPIT FRAMEWORK -->
         <div class="split-cockpit-layout">
             
-            <!-- PANEL A (LEFT): Right-aligned interaction control field -->
+            <!-- PANEL A: Interaction controls -->
             <div class="column-controls">
                 <div class="track-selection-box">
                     <label class="track-label">
@@ -384,7 +366,7 @@
                         <span class="custom-radio"></span>
                         <div class="track-text-container">
                             <span class="track-title">Operate My Own Business</span>
-                            <span class="track-description">Engineered for Coaches, MRR operators, and MLM&nbsp;structures.</span>
+                            <span class="track-description">Engineered for Coaches, MRR operators, and MLM structures.</span>
                         </div>
                     </label>
                     
@@ -398,25 +380,33 @@
                     </label>
                 </div>
 
-                <!-- Frictionless Native Auth Trigger -->
-                <div>
-                    <button class="google-auth-btn" onclick="alert('Google Native Sign-In Active. Redirecting straight to your workspace sandbox...')">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
-                            <path fill="#ffffff" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v3.92h6.61c-.29 1.53-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.65-5.17 3.65-8.58zM12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.11 0-5.74-2.11-6.68-4.96H1.21v3.15C3.18 21.88 7.31 24 12 24zM5.32 14.24A7.16 7.16 0 0 1 5 12c0-.79.13-1.57.32-2.34V6.51H1.21A11.94 11.94 0 0 0 0 12c0 1.92.45 3.79 1.21 5.49l4.11-3.25zM12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.31 0 3.18 2.12 1.21 5.49l4.11 3.25c.94-2.85 3.57-4.99 6.68-4.99z"/>
-                        </svg>
-                        <span>Continue with Google</span>
-                    </button>
+                <!-- Hardwired Google Sign-In Native Integration -->
+                <div class="google-btn-wrapper">
+                    <div id="g_id_onload"
+                         data-client_id="PASTE_YOUR_GOOGLE_CLIENT_ID_HERE"
+                         data-context="signin"
+                         data-callback="handleCredentialResponse">
+                    </div>
+                    <div class="g_id_signin"
+                         data-type="standard"
+                         data-shape="rectangular"
+                         data-theme="filled_blue"
+                         data-text="continue_with"
+                         data-size="large"
+                         data-logo_alignment="left">
+                    </div>
                 </div>
+                
                 <div class="identity-notice">Entry requires a verified <span class="google-highlight">Google</span> identity<br>to initialize your secure workspace.</div>
             </div>
 
-            <!-- PANEL B (RIGHT): Narrative field -->
+            <!-- PANEL B: Narrative field -->
             <div class="column-manifesto">
                 <p class="manifesto-text">
                     Inside the <span class="sx-sovereign">sX</span>EcoStructure™, technology is no longer allowed to consume your life. <span class="sx-sovereign">sX</span>ProvinceZERO™ (<span class="sx-sovereign">sX</span>PRO™) is established as the definitive, live sandbox environment engineered to prove a singular operational reality: That a high-value business track can be mapped, automated, and scaled with absolute efficiency while completely <span class="sx-sovereign">sX</span>FounderRemoved™ from the day-to-day machine.
                 </p>
                 <p class="manifesto-text">
-                    We have built this architecture to grant ordinary everyday people total systemic relief. By processing your trajectory through the hard-coded GiAE™ matrix, manual labor is eliminated. You transition from a stressed manual worker to a <span class="sx-sovereign">sX</span>SovereignOperator™, guided every single step of the way by your personal <span class="sx-sovereign">sX</span>CoCreator™ (CC™) intelligence dashboard engine.
+                    We have built this architecture to grant ordinary everyday people total systemic relief. By processing your trajectory through the hard-coded GiAE™ matrix, manual labor is eliminated. You transition from a stressed manual worker to a <span class="sx-sovereign">sX</span>SovereignOperator™, guided every single step of the way by your personal <span class="sx-sovereign">sX</span>CoCreator/**CC™** intelligence dashboard engine.
                 </p>
             </div>
 
@@ -425,7 +415,7 @@
         <!-- System Baseline Boundary Line -->
         <hr class="base-divider">
 
-        <!-- Data Governance & Security Protocol Full Width Frame -->
+        <!-- Data Governance & Security Protocol -->
         <div class="security-disclaimer">
             <strong>Data Governance & System Security Protocol:</strong> In strict compliance with the Protection of Personal Information Act (POPIA) and advanced global data privacy architectures, your submitted identity credentials are automatically encrypted and processed with zero human involvement. We maintain absolute data integrity; your information is never shared, rented, or exposed to external digital networks.<br>
             <span class="bolded-execution-notice">Proceeding past this gateway automatically initializes your secure workspace dashboard environment seamlessly.</span>
@@ -433,5 +423,50 @@
 
     </div>
 
+    <!-- Automated sX Verification Loop Handling Script -->
+    <script>
+        function parseJwt(token) {
+            var base64Url = token.split('.')[1];
+            var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+            var jsonPayload = decodeURIComponent(window.atob(base64).split('').map(function(c) {
+                return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+            }).join(''));
+            return JSON.parse(jsonPayload);
+        }
+
+        function handleCredentialResponse(response) {
+            // 1. Grab identity from Google response
+            const userData = parseJwt(response.credential);
+            const operatorEmail = userData.email;
+            
+            // 2. Generate the 6-digit session verification token
+            const verificationCode = Math.floor(100000 + Math.random() * 900000);
+            
+            // 3. Grab chosen track selection form data
+            const selectedTrack = document.querySelector('input[name="sx_track"]:checked').value;
+            
+            // 4. Temporarily stash details to local storage so the verify page can read it
+            localStorage.setItem('sX_operator_email', operatorEmail);
+            localStorage.setItem('sX_generated_code', verificationCode);
+            localStorage.setItem('sX_selected_track', selectedTrack);
+
+            // 5. Fire background webhook data directly into your open Zoho endpoint
+            fetch('PASTE_YOUR_ZOHO_CRM_OR_CREATOR_WEBHOOK_URL_HERE', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    email: operatorEmail,
+                    code: verificationCode,
+                    track: selectedTrack
+                })
+            }).then(() => {
+                // 6. Instant Teleport to sXVerify page
+                window.location.href = "https://www.singularityxai.online/sx-verify";
+            }).catch(() => {
+                // Fail-safe redirect even if background logging delays
+                window.location.href = "https://www.singularityxai.online/sx-verify";
+            });
+        }
+    </script>
 </body>
 </html>
