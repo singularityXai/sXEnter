@@ -45,6 +45,7 @@
         .sx-bold {
             font-weight: 700;
             display: inline;
+            color: #ffffff;
         }
 
         /* Crown Branding Layer */
@@ -269,7 +270,7 @@
             font-size: 17px;
             font-weight: 300;
             line-height: 1.8;
-            margin: 0 0 18px 0;
+            margin: 0 0 24px 0;
             text-align: left; 
         }
 
@@ -382,7 +383,7 @@
                     <div class="g_id_signin"
                          data-type="standard"
                          data-shape="rectangular"
-                         data-theme="filled_blue"
+                         data-theme="outline"
                          data-text="continue_with"
                          data-size="large"
                          data-logo_alignment="left">
@@ -394,10 +395,10 @@
 
             <div class="column-manifesto">
                 <p class="manifesto-text">
-                    Inside the <span class="sx-sovereign">sX</span>EcoStructure™, technology is no longer allowed to consume your life. <span class="sx-sovereign">sX</span>ProvinceZERO™ (<span class="sx-sovereign">sX</span>PRO™) is established as the definitive, live sandbox environment engineered to prove a singular operational reality: That a high-value business track can be mapped, automated, and scaled with absolute efficiency while completely <span class="sx-sovereign">sX</span>FounderRemoved™ from the day-to-day machine.
+                    Inside the <span class="sx-bold">sX</span>EcoStructure, technology is no longer allowed to consume your life. <span class="sx-bold">sX</span>ProvinceZero is established as the definitive, live sandbox environment engineered to prove a singular operational reality: That a high-value business track can be mapped, automated, and scaled with absolute efficiency while honoring <span class="sx-bold">sX</span>FounderRemoved, from the day-to-day machine.
                 </p>
                 <p class="manifesto-text">
-                    We have built this architecture to grant ordinary everyday people total systemic relief. By processing your trajectory through the hard-coded GiAE™ matrix, manual labor is eliminated. You transition from a stressed manual worker to a <span class="sx-sovereign">sX</span>SovereignOperator™, guided every single step of the way by your personal <span class="sx-sovereign">sX</span>CoCreator (CC™) intelligence dashboard engine.
+                    We have built this architecture to grant ordinary everyday people total systemic relief. By processing your business track through the hard-coded GiAE™ matrix, manual labor is eliminated. You transition from a stressed manual worker to a <span class="sx-bold">sX</span>SovereignOperator, guided every single step of the way by your dedicated, personal sXCoCreator (CC™), and intelligence dashboard engine.
                 </p>
             </div>
 
@@ -423,22 +424,17 @@
         }
 
         function handleCredentialResponse(response) {
-            // 1. Grab identity from Google response
             const userData = parseJwt(response.credential);
             const operatorEmail = userData.email;
             
-            // 2. Generate the 6-digit session verification token
             const verificationCode = Math.floor(100000 + Math.random() * 900000).toString();
             
-            // 3. Grab chosen track selection form data
             const selectedTrack = document.querySelector('input[name="sx_track"]:checked').value;
             
-            // 4. Temporarily stash details to local storage so the verify page can read it
             localStorage.setItem('sX_operator_email', operatorEmail);
             localStorage.setItem('sX_generated_code', verificationCode);
             localStorage.setItem('sX_selected_track', selectedTrack);
 
-            // 5. Fire background payload directly into Zoho Creator Production API
             fetch('https://creatorapp.zoho.com/api/v2/singularityx8/sXEngine/form/Operator_Logins', {
                 method: 'POST',
                 headers: {
@@ -452,10 +448,8 @@
                     }
                 })
             }).then(() => {
-                // 6. Instant Teleport to sXVerify page
                 window.location.href = "https://www.singularityxai.online/sx-verify";
             }).catch(() => {
-                // Fail-safe redirect even if background handshake delays
                 window.location.href = "https://www.singularityxai.online/sx-verify";
             });
         }
