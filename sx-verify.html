@@ -126,7 +126,7 @@
             color: #ffffff;
         }
 
-        /* Sleek 3D Control Input Box Frame */
+        /* Sleek 3D Control Input Box Frame - Borders Completely Vaporized */
         .control-input-wrapper {
             width: 100%;
             max-width: 280px;
@@ -136,7 +136,8 @@
         .code-input {
             width: 100%;
             background-color: #424344;
-            border: 1px solid #555657;
+            border: none;
+            outline: none;
             border-radius: 12px;
             padding: 16px;
             font-size: 16px;
@@ -146,13 +147,15 @@
             font-weight: 300;
             letter-spacing: 2px;
             box-sizing: border-box;
-            outline: none;
             box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.85);
-            transition: border-color 0.2s ease;
+            -webkit-appearance: none;
+            appearance: none;
         }
 
         .code-input:focus {
-            border-color: #1877f2;
+            outline: none;
+            border: none;
+            box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.95), 0 0 8px rgba(24, 119, 242, 0.3);
         }
 
         .code-input::placeholder {
@@ -246,7 +249,7 @@
 
         <!-- Deep Recessed Input Control Frame -->
         <div class="control-input-wrapper">
-            <input type="text" class="code-input" id="sessionCodeInput" placeholder="Enter 6-digit Code" maxlength="6">
+            <input type="text" class="code-input" id="sessionCodeInput" placeholder="Enter 6-digit Code" maxlength="6" autocomplete="off">
             <div class="error-message" id="verificationError">Invalid token parameter. Please crosscheck your session code.</div>
         </div>
 
