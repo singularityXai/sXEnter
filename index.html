@@ -64,6 +64,7 @@
             width: 100%;
             height: auto;
             display: block;
+            margin: 0 auto;
         }
 
         /* Balanced Proportional Divider Line */
@@ -229,7 +230,7 @@
             line-height: 1.5;
         }
 
-        /* Uniform Clean Action Button - Narrow, Sharp, No Tacky Glows */
+        /* Uniform Clean Action Button - Narrow, Static, Proportional Icon Size */
         .google-auth-btn {
             background-color: #1877f2;
             color: #ffffff;
@@ -259,7 +260,7 @@
             box-shadow: none;
         }
 
-        /* Fixed Proportional Icon Wrapper */
+        /* Explicit sizing to protect the crisp white G */
         .google-icon-svg {
             width: 18px;
             height: 18px;
@@ -400,6 +401,7 @@
 
     <div class="gateway-container">
         
+        <!-- Crown Branding Zone -->
         <div class="logo-container">
             <img src="logo.png" alt="SingularityX" onerror="this.style.display='none'; document.getElementById('fallback-title').style.display='block';">
             <div id="fallback-title" style="display:none; font-size:26px; font-weight:300; letter-spacing:4px; margin-bottom:10px;">SingularityX</div>
@@ -407,11 +409,14 @@
 
         <hr class="brand-divider">
 
+        <!-- Animated, Scaled Authoritative Header -->
         <h1><span class="sx-sovereign">sX</span>Enter™ <span class="bold-gateway">GATEWAY</span></h1>
         <div class="sub-tagline">BUSINESS INFRASTRUCTURE ENGINES STRIPPED OF HUMAN NOISE</div>
         
+        <!-- SIDE-BY-SIDE SPLIT COCKPIT FRAMEWORK -->
         <div class="split-cockpit-layout">
             
+            <!-- PANEL A (LEFT): Controls and Brand Action Button -->
             <div class="column-controls">
                 <div class="track-selection-box">
                     <label class="track-label">
@@ -442,6 +447,116 @@
                     </label>
                 </div>
 
+                <!-- Clean, Sized Action Button -->
                 <div>
                     <button class="google-auth-btn" id="googleAuthTrigger">
-                        <svg class="google-icon-svg" xmlns="http://
+                        <svg class="google-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path fill="#ffffff" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v3.92h6.61c-.29 1.53-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.65-5.17 3.65-8.58zM12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.11 0-5.74-2.11-6.68-4.96H1.21v3.15C3.18 21.88 7.31 24 12 24zM5.32 14.24A7.16 7.16 0 0 1 5 12c0-.79.13-1.57.32-2.34V6.51H1.21A11.94 11.94 0 0 0 0 12c0 1.92.45 3.79 1.21 5.49l4.11-3.25zM12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.31 0 3.18 2.12 1.21 5.49l4.11 3.25c.94-2.85 3.57-4.99 6.68-4.99z"/>
+                        </svg>
+                        <span>Continue with Google</span>
+                    </button>
+                </div>
+                
+                <div class="identity-notice">Entry requires a verified <span class="google-highlight">Google</span> identity<br>to initialize your secure workspace.</div>
+            </div>
+
+            <!-- PANEL B (RIGHT): Corrected Terminology Frame -->
+            <div class="column-manifesto">
+                <p class="manifesto-text">
+                    Inside the <span class="sx-bold">sX</span>EcoStructure, technology is no longer allowed to consume your life. <span class="sx-bold">sX</span>ProvinceZero is established as the definitive, live sandbox environment engineered to prove a singular operational reality: That a high-value business track can be mapped, automated, and scaled with absolute efficiency while honoring <span class="sx-bold">sX</span>FounderRemoved™, <br>from the day-to-day machine.
+                </p>
+                <p class="manifesto-text">
+                    We have built this architecture to grant ordinary everyday people total systemic relief. By processing your business track through the hard-coded <span class="sx-bold">GiAE</span>™ matrix, manual labor is eliminated. You transition from a stressed manual worker to a <span class="sx-bold">sX</span>SovereignOperator, guided every single step of the way by your dedicated, personal <span class="sx-bold">sX</span>CoCreator (CC™), <br>and intelligence dashboard engine.
+                </p>
+            </div>
+
+        </div>
+
+        <!-- System Baseline Boundary Line -->
+        <hr class="base-divider">
+
+        <!-- Data Governance Layer with Controlled Paragraph Break -->
+        <div class="security-disclaimer">
+            <strong>Data Governance & System Security Protocol:</strong> In strict compliance with the Protection of Personal Information Act (POPIA) and advanced global data privacy architectures, your submitted identity credentials are automatically encrypted and processed with zero human involvement. We maintain absolute data integrity; <br>your information is never shared, rented, or exposed to external digital networks.<br>
+            <span class="bolded-execution-notice">Proceeding past this gateway automatically initializes your secure workspace dashboard environment seamlessly.</span>
+        </div>
+
+    </div>
+
+    <script>
+        let tokenClient;
+
+        // Force reset any lingering login states to handle seamless authentication switching
+        function setupAuthEngine() {
+            if (window.google && google.accounts && google.accounts.oauth2) {
+                tokenClient = google.accounts.oauth2.initTokenClient({
+                    client_id: '795059477450-qt6ee2qa4h8mq779ql8t2uksj77if07l.apps.googleusercontent.com',
+                    scope: 'https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email',
+                    callback: handleTokenResponse
+                });
+            }
+        }
+
+        document.getElementById('googleAuthTrigger').addEventListener('click', function(e) {
+            e.preventDefault();
+            if (!tokenClient) {
+                setupAuthEngine();
+            }
+            
+            if (tokenClient) {
+                tokenClient.requestAccessToken({ prompt: 'select_account' });
+            } else {
+                alert('Initializing identity protocol streams... Please click again in 1 second.');
+            }
+        });
+
+        function handleTokenResponse(response) {
+            if (response.error !== undefined) {
+                return;
+            }
+            
+            const accessToken = response.access_token;
+            const verificationCode = Math.floor(100000 + Math.random() * 900000).toString();
+            const selectedTrack = document.querySelector('input[name="sx_track"]:checked').value;
+            
+            localStorage.setItem('sX_generated_code', verificationCode);
+            localStorage.setItem('sX_selected_track', selectedTrack);
+
+            fetch('https://www.googleapis.com/oauth2/v2/userinfo', {
+                headers: {
+                    'Authorization': 'Bearer ' + accessToken
+                }
+            })
+            .then(res => res.json())
+            .then(userData => {
+                const operatorEmail = userData.email;
+                localStorage.setItem('sX_operator_email', operatorEmail);
+
+                return fetch('https://creatorapp.zoho.com/api/v2/singularityx8/sXEngine/form/Operator_Logins', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': 'Zoho-oauthtoken ' + accessToken
+                    },
+                    body: JSON.stringify({
+                        "data": {
+                            "Email": operatorEmail,
+                            "Verification_Code": verificationCode
+                        }
+                    })
+                });
+            })
+            .then(() => {
+                window.location.href = "https://www.singularityxai.online/sx-verify";
+            })
+            .catch(() => {
+                window.location.href = "https://www.singularityxai.online/sx-verify";
+            });
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            setTimeout(setupAuthEngine, 500);
+        });
+    </script>
+</body>
+</html>
