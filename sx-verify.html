@@ -155,7 +155,7 @@
         .code-input:focus {
             outline: none;
             border: none;
-            box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.95), 0 0 8px rgba(24, 119, 242, 0.3);
+            box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.95);
         }
 
         .code-input::placeholder {
@@ -163,7 +163,7 @@
             font-weight: 300;
         }
 
-        /* Uniform Clean Action Button - Narrowed Proportions */
+        /* Uniform Clean Action Button - Narrow, Sharp, No Tacky Glows */
         .verify-auth-btn {
             background-color: #1877f2;
             color: #ffffff;
@@ -182,14 +182,14 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 14px rgba(24, 119, 242, 0.2);
+            box-shadow: none;
             box-sizing: border-box;
-            transition: box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), background-color 0.3s ease;
+            transition: background-color 0.2s ease;
         }
 
         .verify-auth-btn:hover {
             background-color: #1565d8;
-            box-shadow: 0 0 24px rgba(24, 119, 242, 0.85);
+            box-shadow: none;
         }
 
         .error-message {
@@ -231,25 +231,30 @@
 
     <div class="gateway-container">
         
+        <!-- Crown Branding Zone -->
         <div class="logo-container">
             <img src="logo.png" alt="SingularityX" onerror="this.style.display='none';">
         </div>
 
         <hr class="brand-divider">
 
+        <!-- Immersive Clean Header Layout -->
         <h1><span class="sx-sovereign">sX</span>Verify <span class="sx-bold">PROTOCOL</span></h1>
         
+        <!-- Identity Alert Layer -->
         <div class="identity-focus-heading">Securing Your Identity...</div>
         <div class="sub-tagline">
             A Secure Verification Code has been sent to your <span class="gmail-highlight">Gmail</span>.<br>
             Enter the 6-digit code below to initialize your session.
         </div>
 
+        <!-- Deep Recessed Input Control Frame -->
         <div class="control-input-wrapper">
             <input type="text" class="code-input" id="sessionCodeInput" placeholder="Enter 6-digit Code" maxlength="6" autocomplete="off">
             <div class="error-message" id="verificationError">Invalid token parameter. Please crosscheck your session code.</div>
         </div>
 
+        <!-- Signature Compressed Brand Action Button -->
         <div>
             <button class="verify-auth-btn" id="submitVerifyTrigger">
                 <span>VERIFY → OperatorIdentity</span>
