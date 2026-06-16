@@ -10,12 +10,20 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
-        /* Core Layout Elements */
+        /* Global Sovereign Protection Styles */
+        * {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-touch-callout: none;
+        }
+
         body {
-            background-color: #303132;
+            background-color: #303133;
             color: #ffffff;
             font-family: 'Montserrat', sans-serif;
-            font-weight: 300;
+            font-weight: 400;
             margin: 0;
             padding: 0;
             display: flex;
@@ -26,11 +34,10 @@
             overflow-x: hidden;
         }
 
-        /* Container Layout matching template bounds */
         .gateway-container {
             width: 100%;
             max-width: 800px;
-            padding: 40px 20px;
+            padding: 60px 20px;
             text-align: center;
             box-sizing: border-box;
             margin: 0 auto;
@@ -39,114 +46,170 @@
             align-items: center;
         }
 
-        /* Crown Branding Layer - Dual Logo Setup */
-        .header-images-container {
+        /* Crown Branding Layer */
+        .header-branding-container {
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 25px;
+            gap: 35px;
             width: 100%;
-            max-width: 450px;
-            margin: 0 auto 25px auto;
+            max-width: 600px;
+            margin: 0 auto 5px auto; 
         }
 
-        .header-images-container img {
-            height: 45px;
+        .header-branding-container .main-namelogo {
+            height: 125px; 
             width: auto;
             display: block;
         }
 
-        /* Identity Confirmed Stamp Layout */
+        /* CC Capsule Orb */
+        .cc-capsule-avatar {
+            width: 55px;
+            height: 42px;
+            background: #424345;
+            border-radius: 20px 20px 4px 20px;
+            border: 1.5px solid #1a79ef;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            box-shadow: 0 4px 15px rgba(26, 121, 239, 0.2);
+            position: relative;
+        }
+
+        .cc-dot {
+            width: 5px;
+            height: 5px;
+            background-color: #c7cad2;
+            border-radius: 50%;
+        }
+
+        @keyframes pulseIndicator {
+            0%, 100% { opacity: 0.3; background-color: #c7cad2; }
+            50% { opacity: 1; background-color: #1a79ef; }
+        }
+
+        .cc-dot:nth-child(1) { animation: pulseIndicator 1.5s infinite ease-in-out; }
+        .cc-dot:nth-child(2) { animation: pulseIndicator 1.5s infinite ease-in-out 0.3s; }
+        .cc-dot:nth-child(3) { animation: pulseIndicator 1.5s infinite ease-in-out 0.6s; }
+
+        /* Identity Confirmed Stamp */
         .identity-status-stamp {
-            font-size: 28px;
+            font-size: 28px; 
             font-weight: 500;
-            color: #1877f2;
-            margin-bottom: 10px;
+            color: #1a79ef;
+            margin-bottom: 20px;
             letter-spacing: 1px;
         }
 
-        /* Authoritative Main Terminal Header */
-        h1 {
-            font-size: 42px;
-            font-weight: 400;
-            margin: 0 auto 6px auto;
-            letter-spacing: 2px;
-            color: #ffffff;
+        /* sXEnter Metallic Glisten Engine */
+        @keyframes textReflectionWash {
+            0% { background-position: 200% center; }
+            100% { background-position: -200% center; }
         }
+
+        h1 {
+            margin: 0 auto 4px auto; 
+            letter-spacing: 2px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            line-height: 1.25;
+            background: linear-gradient(90deg, #ffffff 0%, #ffffff 35%, #9da1aa 48%, #ffffff 55%, #ffffff 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+            animation: textReflectionWash 6s infinite linear;
+        }
+
+        .h1-line-1 { font-size: 38px; font-weight: 400; }
+        .h1-line-2 { font-size: 46px; }
+        .sx-reg { font-weight: 400; }
+        .pz-bold { font-weight: 700; }
 
         .sub-track-title {
             font-size: 11px;
-            font-weight: 500;
-            letter-spacing: 3px;
-            color: #b0b4be;
+            letter-spacing: 3px; 
+            color: #c7cad2;
             text-transform: uppercase;
-            margin-bottom: 35px;
+            margin-bottom: 40px; /* FINAL TWEAK: Reduced outer spacing globally */
         }
 
-        /* Animated Pastel Aurora Logic */
-        @keyframes auroraWash {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        /* Universal Layout Dividers */
+        .sx-divider {
+            width: 75%;
+            max-width: 500px;
+            height: 1px;
+            background-color: #555861;
+            margin: 0 auto;
+            border: none;
         }
 
-        /* Canonical sX-Box Layer */
+        /* Isolated Intro Block Frame */
+        .intro-block {
+            max-width: 680px;
+            margin-top: 25px;    /* Locked perfect inward distance */
+            margin-bottom: 25px; /* Locked perfect inward distance */
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* White Pseudo-Headings Rule */
+        .block-title, .intro-bold {
+            font-size: 13px;
+            font-weight: 400;
+            color: #ffffff;
+            letter-spacing: 0.5px;
+            margin-top: 0;
+            margin-bottom: 8px;
+            display: block;
+            text-align: center;
+            text-transform: none; 
+        }
+
+        /* Unified Body Text Layout */
+        .intro-text, .block-body {
+            font-size: 13px; 
+            color: #c7cad2;
+            line-height: 1.1; 
+        }
+
+        .text-line {
+            display: block;
+            text-align: center;
+            margin-bottom: 3px;
+        }
+
+        /* Canonical sXBox Container */
         .manifesto-console-box {
             position: relative;
             background-color: #424345;
             border: none;
             border-radius: 12px;
-            padding: 45px 40px;
+            padding: 50px 40px; 
             text-align: center;
             width: 100%;
             box-sizing: border-box;
-            margin-bottom: 35px;
-            overflow: hidden;
+            margin-top: 40px; /* FINAL TWEAK: Reduced outer spacing globally to match top */
+            margin-bottom: 45px;
+            box-shadow: inset 0 0 24px rgba(0, 0, 0, 0.85);
         }
 
-        /* The morphing pastel gradient overlay */
-        .manifesto-console-box::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: linear-gradient(-45deg, #a18cd1, #fbc2eb, #8fd3f4, #ff9a9e);
-            background-size: 300% 300%;
-            animation: auroraWash 12s ease infinite;
-            opacity: 0.15;
-            z-index: 1;
-            pointer-events: none;
+        /* Explicit Inner Spacing Rules Supporting the Law of Equidistance */
+        .manifesto-console-box .inner-top {
+            margin-top: 30px !important;    /* FINAL TWEAK: Reduced outer content distance inside container */
+            margin-bottom: 20px !important; /* Retained close inside headline distance */
         }
 
-        /* Protects text rendering above the animated background */
-        .manifesto-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        /* Balanced Structural Separation Lines */
-        .section-divider {
-            width: 180px;
-            height: 1px;
-            background-color: #636773;
-            margin: 25px auto;
-            border: none;
-        }
-
-        /* Block Narrative Text Layer Structures */
-        .block-title {
-            font-size: 16px;
-            font-weight: 600;
-            color: #ffffff;
-            margin-top: 0;
-            margin-bottom: 12px;
-            letter-spacing: 0.5px;
+        .manifesto-console-box .inner-bottom {
+            margin-top: 20px !important;    /* Retained close inside headline distance */
+            margin-bottom: 30px !important; /* FINAL TWEAK: Reduced outer content distance inside container */
         }
 
         .block-body {
-            color: #e0e2e6;
-            font-size: 14px;
-            font-weight: 300;
-            line-height: 1.7;
             margin-top: 0;
             margin-bottom: 30px;
             max-width: 680px;
@@ -158,159 +221,231 @@
             margin-bottom: 0;
         }
 
-        /* Clean Fixed Action Control Button */
+        /* Chasing Border Blueprint Engine */
+        @keyframes spinBorder { 100% { transform: rotate(360deg); } }
+
         .initialize-terminal-btn {
-            background-color: #1877f2;
+            position: relative;
+            background-color: transparent;
             color: #ffffff;
             border: none;
-            border-radius: 8px;
+            border-radius: 10px;
             padding: 16px 32px;
             font-family: 'Montserrat', sans-serif;
-            font-size: 14px;
-            font-weight: 600;
+            font-size: 13px; 
+            font-weight: 400; 
             letter-spacing: 0.5px;
             width: 100%;
             max-width: 280px;
             white-space: nowrap;
-            margin: 0 auto 20px auto;
+            margin: 0 auto 10px auto;
             cursor: pointer;
             display: inline-flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             gap: 4px;
-            box-shadow: none;
             box-sizing: border-box;
-            transition: background-color 0.2s ease;
+            overflow: hidden;
+            z-index: 1;
+            box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+            transition: box-shadow 0.25s ease;
         }
 
+        .initialize-terminal-btn::before {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%; width: 200%; height: 200%;
+            background: conic-gradient(transparent 0%, transparent 33%, #a18cd1 45%, #8fd3f4 65%, #fbc2eb 85%, #ff9a9e 100%);
+            animation: spinBorder 3.5s linear infinite;
+            z-index: -2;
+            transition: opacity 0.25s ease;
+        }
+
+        .initialize-terminal-btn::after {
+            content: '';
+            position: absolute;
+            inset: 2px;
+            background-color: #303133;
+            border-radius: 8px;
+            z-index: -1;
+            transition: inset 0.25s ease, border-radius 0.25s ease, background-color 0.25s ease;
+        }
+
+        /* Master Hover Blueprint Profile Configuration */
         .initialize-terminal-btn:hover {
-            background-color: #1565d8;
-            box-shadow: none;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.75);
+        }
+
+        .initialize-terminal-btn:hover::before {
+            opacity: 0;
+        }
+
+        .initialize-terminal-btn:hover::after {
+            inset: 0px;
+            border-radius: 10px;
+            background-color: #343537;
         }
 
         .btn-subtext {
             font-size: 11px;
-            font-weight: 300;
             color: rgba(255, 255, 255, 0.8);
         }
 
-        /* Language Metric Selection Component */
-        .language-toggle-notice {
-            font-size: 11px;
+        /* Right-Aligned Footer Component Frame */
+        .footer-branding {
+            margin-top: 120px; 
+            text-align: right;  
+            width: 100%;
+            max-width: 680px;
             color: #b0b4be;
-            margin-top: 15px;
+            font-size: 11px;
             letter-spacing: 0.5px;
-            line-height: 1.8;
+            line-height: 1.2;
+            box-sizing: border-box;
         }
 
-        .lang-highlight {
-            font-weight: 600;
-            color: #ffffff;
-        }
+        .lang-highlight { font-weight: 600; color: #ffffff; }
 
         .sx-global-branding {
-            font-size: 10px;
-            color: #8c9099;
-            text-transform: uppercase;
-            letter-spacing: 1px;
             display: block;
-            margin-top: 2px;
+            margin-top: 4px; 
+            font-size: 11px;
+            color: #8c9099;
+            letter-spacing: 1px;
         }
 
-        /* Mobile Optimization Responsive Viewport Adjustments */
         @media (max-width: 768px) {
-            .gateway-container {
-                padding: 25px 15px;
-            }
-            h1 {
-                font-size: 32px;
-            }
-            .manifesto-console-box {
-                padding: 30px 20px;
-            }
+            .gateway-container { padding: 30px 15px; }
+            .h1-line-1 { font-size: 28px; }
+            .h1-line-2 { font-size: 34px; }
+            .manifesto-console-box { padding: 35px 20px; }
+            .sx-divider { width: 90%; }
+            .footer-branding { text-align: center; margin-top: 80px; }
         }
     </style>
 </head>
-<body>
+<body oncontextmenu="return false;">
 
     <div class="gateway-container">
         
-        <!-- Crown Branding Zone -->
-        <div class="header-images-container">
-            <img src="logo.png" alt="SingularityX" onerror="this.style.display='none'; document.getElementById('fallback-title').style.display='block';">
-            <img src="cc-avatar.png" alt="CC Avatar" onerror="this.style.display='none';">
-            <div id="fallback-title" style="display:none; font-size:26px; font-weight:300; letter-spacing:4px; margin-bottom:10px;">SingularityX</div>
+        <div class="header-branding-container">
+            <img src="logo.png" alt="SingularityX" class="main-namelogo" onerror="this.style.display='none'; document.getElementById('fallback-title').style.display='block';">
+            <div class="cc-capsule-avatar">
+                <div class="cc-dot"></div>
+                <div class="cc-dot"></div>
+                <div class="cc-dot"></div>
+            </div>
+            <div id="fallback-title" style="display:none; font-size:26px; font-weight:300; letter-spacing:4px;">SingularityX</div>
         </div>
 
-        <!-- Identity Handshake Header Metrics -->
-        <div class="identity-status-stamp">Identity Verified ✓</div>
-        <h1>Welcome to sXProvinceZero</h1>
-        <div class="sub-track-title">Entry Track | 100% Free Access Sandbox</div>
+        <div class="identity-status-stamp">Identity Verified ✔</div>
+        
+        <h1>
+            <span class="h1-line-1">Welcome to</span>
+            <span class="h1-line-2"><span class="sx-reg">sX</span><span class="pz-bold">ProvinceZero</span></span>
+        </h1>
+        
+        <div class="sub-track-title">ENTRY TRACK | 100% FREE ACCESS SANDBOX</div>
 
-        <!-- Canonical Console Box Frame Container -->
+        <hr class="sx-divider">
+        
+        <div class="intro-block">
+            <span class="intro-bold">You have successfully cleared the sXEnter Gateway!</span>
+            <div class="intro-text">
+                <span class="text-line">You are now standing inside sXProvinceZero, the foundational layer of SingularityX™.</span>
+                <span class="text-line">Before you take your first step, you need to understand exactly where you are,</span>
+                <span class="text-line">how this business model works, and why it is impossible for you to fail here.</span>
+            </div>
+        </div>
+        
+        <hr class="sx-divider">
+
         <div class="manifesto-console-box">
             <div class="manifesto-content">
+
+                <span class="block-title">The Complete Picture: SingularityXPRIME</span>
+                <div class="block-body">
+                    <span class="text-line">You are not here to build a single, isolated webpage. You have stepped into the</span>
+                    <span class="text-line">foundational layer of the sXEcoStructure. Your ultimate destination on this trajectory is</span>
+                    <span class="text-line">SingularityXPRIME, the fully realized, completely unified sovereign operating system that</span>
+                    <span class="text-line">automates your entire independent business track, comprised of the four sXElements:</span>
+                    <span class="text-line">atomONE, vectorPRO, matrixELITE & singularityX = SingularityXPRIME</span>
+                    <span class="text-line">Every massive structure requires a flawless point of origin. To clear your path to SingularityXPRIME, you must first establish your foundation, atomONE.</span>
+                </div>
+
+                <span class="block-title">The Core Foundations: The GiAE™ Matrix</span>
+                <div class="block-body">
+                    <span class="text-line">Your business growth relies on four powerful, recursive governing forces: sXGrowth,</span>
+                    <span class="text-line">sXIntelligence, sXAutomation & sXExpansion. On this free track, we start with block</span>
+                    <span class="text-line">number one: atomONE. This is your front-facing sXGrowth & automated customer framework.</span>
+                </div>
+
+                <span class="block-title">The sXFounderRemoved Mandate</span>
+                <div class="block-body">
+                    <span class="text-line">This entire system is engineered to run with zero human friction. There are no human managers,</span>
+                    <span class="text-line">no corporate bosses, & no human staff to get in your way. The code handles</span>
+                    <span class="text-line">the heavy lifting so you can run your independent business hands-free.</span>
+                </div>
+
+                <span class="block-title">sXCoCreator (CC™)</span>
+                <div class="block-body">
+                    <span class="text-line">The floating capsule at the top of your screen is your dedicated, personal Ai powered</span>
+                    <span class="text-line">sXEcoStructure systems builder. She is integrated directly into your workspace terminal</span>
+                    <span class="text-line">to guide you click-by-click, in your native language. There are NO training manuals,</span>
+                    <span class="text-line">hours of outdated training videos or static PDF documents to absorb.</span>
+                    <span class="text-line">CC™ is by your side all the way!</span>
+                </div>
+
+                <span class="block-title">Absolute Independence</span>
+                <div class="block-body">
+                    <span class="text-line">SingularityX™ business structure has zero relationship to network marketing,</span>
+                    <span class="text-line">multi-level marketing (MLM), or pyramid structures.</span>
+                    <span class="text-line">You do not have a sponsor, an upline or a leader.</span>
+                    <span class="text-line">You are in no way affiliated with another fractal of SingularityX™.</span>
+                    <span class="text-line">You are a completely independent owner building an</span>
+                    <span class="text-line">unlinked digital framework that you control 100%.</span>
+                </div>
+
+                <span class="block-title">The No-Fail Design</span>
+                <div class="block-body">
+                    <span class="text-line">Entry into this sandbox track is completely gratis. We do not ask for your credit card & we take</span>
+                    <span class="text-line">no money upfront. The system proves itself to you before you ever pay a single cent.</span>
+                    <span class="text-line">Your objective is to build out your own copy of the SingularityX™ sXEcoStructure framework,</span>
+                    <span class="text-line">to be an independent fractal of the whole. Providing the same offers you saw upon landing on</span>
+                    <span class="text-line">sXEnter Gateway, to your own clients!</span>
+                </div>
+
+                <hr class="sx-divider inner-top">
+
+                <div class="block-body" style="color: #ffffff; margin-bottom: 15px;">
+                    <span class="text-line">You have two paths to success:</span>
+                </div>
                 
-                <div class="block-body" style="color: #ffffff; font-weight: 400;">
-                    You have successfully cleared the sXEnter Gateway!<br>
-                    You are now standing inside sXProvinceZero, the foundational layer of SingularityX™. Before you take your first step, you need to understand exactly where you are, how this business model works, and why it is impossible for you to fail here.
-                </div>
-
-                <hr class="section-divider">
-
-                <div class="block-title">The Complete Picture: SingularityXPRIME</div>
                 <div class="block-body">
-                    You are not here to build a single, isolated webpage. You have stepped into the foundational layer of the sXEcoStructure. Your ultimate destination on this trajectory is SingularityXPRIME, the fully realized, completely unified sovereign operating system that automates your entire independent business track, comprised of the four sXElements; atomONE, vectorPRO, matrixELITE & SingularityXPRIME. Every massive structure requires a flawless point of origin. To clear your path to SingularityXPRIME, you must first establish your foundation, atomONE.
+                    <span class="text-line">BUILD: You follow the simple steps along with your personal sXCoCreator (CC™),</span>
+                    <span class="text-line">complete the sXElement successfully & activate your system, as owner/operator.</span>
+                    <br>
+                    <span class="text-line">ASSIST: If you get stuck, confused, or struggle with the setup at any point, your</span>
+                    <span class="text-line">sXCoCreator (CC™) will automatically drop the finalized, completely pre-built</span>
+                    <span class="text-line">atomONE sXElement straight into your track, providing the complete asset to you.</span>
                 </div>
 
-                <div class="block-title">The Core Foundations: The GiAE™ Matrix</div>
-                <div class="block-body">
-                    Your business growth relies on four powerful, recursive governing forces: sXGrowth, sXIntelligence, sXAutomation & sXExpansion. On this free track, we start with block number one: atomONE. This is your front-facing sXGrowth & automated customer framework.
+                <hr class="sx-divider inner-bottom">
+
+                <div class="block-body" style="color: #ffffff; margin-bottom: 15px;">
+                    <span class="text-line">You will only choose to acquire your official sXNodeLicense (sXNDL) once you are looking</span>
+                    <span class="text-line">at a fully completed, perfectly working atomONE system setup that has been verified by CC™.</span>
                 </div>
 
-                <div class="block-title">The sXFounderRemoved Mandate</div>
-                <div class="block-body">
-                    This entire system is engineered to run with zero human friction. There are no human managers, no corporate bosses, & no human staff to get in your way. The code handles the heavy lifting so you can run your independent business hands-free.
-                </div>
-
-                <div class="block-title">sXCoCreator (CC™)</div>
-                <div class="block-body">
-                    The floating capsule at the top of your screen is your dedicated, personal AI powered sXEcoStructure systems builder. She is integrated directly into your workspace terminal to guide you click-by-click, in your native language. There are NO training manuals, hours of outdated training videos or static PDF documents to absorb. CC™ is by your side all the way!
-                </div>
-
-                <div class="block-title">Absolute Independence</div>
-                <div class="block-body">
-                    SingularityX™ business structure has zero relationship to network marketing, multi-level marketing (MLM), or pyramid structures. You do not have a sponsor, an upline or a leader. You are in no way affiliated with another fractal of SingularityX™. You are a completely independent owner building an unlinked digital framework that you control 100%.
-                </div>
-
-                <div class="block-title">The No-Fall Design</div>
-                <div class="block-body">
-                    Entry into this sandbox track is completely gratis. We do not ask for your credit card & we take no money upfront. The system proves itself to you before you ever pay a single cent. Your objective is to build out your own copy of the SingularityX™ sXEcoStructure framework, to be an independent fractal of the whole. Providing the same offers you saw upon landing on sXEnter Gateway, to your own clients!
-                </div>
-
-                <hr class="section-divider">
-
-                <div class="block-body" style="color: #ffffff; font-weight: 400; margin-bottom: 12px;">
-                    You have two paths to success:
-                </div>
-                
-                <div class="block-body">
-                    <strong>BUILD:</strong> You follow the simple steps along with your personal sXCoCreator (CC™), complete the sXElement successfully & activate your system, as owner/operator.<br><br>
-                    <strong>ASSIST:</strong> If you get stuck, confused, or struggle with the setup at any point, your sXCoCreator (CC™) will automatically drop the finalized, completely pre-built atomONE sXElement straight into your track, providing the complete asset to you.
-                </div>
-
-                <hr class="section-divider">
-
-                <div class="block-body" style="color: #ffffff; font-weight: 400;">
-                    You will only choose to acquire your official sXNodeLicense (sXNDL) once you are looking at a fully completed, perfectly working atomONE system setup that has been verified by CC™.<br><br>
-                    If you do not walk away with a fully functional income system ready to make money, you have not lost anything. On the other hand, you're on your way to sXSovereignOperator!
+                <div class="block-body" style="color: #ffffff;">
+                    <span class="text-line">If you do not walk away with a fully functional income system ready to make money,</span>
+                    <span class="text-line">you have not lost anything. On the other hand, you're on your way to sXSovereignOperator!</span>
                 </div>
 
             </div>
         </div>
 
-        <!-- Symmetrical Action Button Control -->
         <div>
             <button class="initialize-terminal-btn" id="initializeSandboxTrigger">
                 <span>Initialize sXProvinceZero</span>
@@ -318,8 +453,7 @@
             </button>
         </div>
 
-        <!-- Language Metric Selection Component -->
-        <div class="language-toggle-notice">
+        <div class="footer-branding">
             Switch to default: <span class="lang-highlight">ENGLISH</span><br>
             <span class="sx-global-branding">Powered by sXGlobalLanguage</span>
         </div>
@@ -327,6 +461,13 @@
     </div>
 
     <script>
+        document.addEventListener('keydown', function(e) {
+            if ((e.ctrlKey || e.metaKey) && (e.key === 'c' || e.key === 'u' || e.key === 's' || e.key === 'i')) {
+                e.preventDefault();
+                return false;
+            }
+        });
+
         document.getElementById('initializeSandboxTrigger').addEventListener('click', function(e) {
             e.preventDefault();
             window.location.href = "https://go.singularityxai.online/sx-provincezero";
