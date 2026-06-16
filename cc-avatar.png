@@ -1,1 +1,7 @@
-
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="640" viewBox="0 0 640 640">
+  <rect width="640" height="640" fill="#E2E8F0"/>
+  <line x1="0" y1="0" x2="640" y2="640" stroke="#CBD5E1" stroke-width="2"/>
+  <line x1="640" y1="0" x2="0" y2="640" stroke="#CBD5E1" stroke-width="2"/>
+  <circle cx="320" cy="320" r="60" fill="#CBD5E1"/>
+  <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="system-ui, sans-serif" font-size="24" font-weight="bold" fill="#64748B">640 x 640</text>
+</svg>
