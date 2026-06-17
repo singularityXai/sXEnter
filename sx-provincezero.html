@@ -124,7 +124,12 @@
         .cc-dot:nth-child(3) { animation: pulseIndicator 1.5s infinite ease-in-out 0.6s; }
 
         /* IDENTITY VERIFICATION ANIMATION */
-        .verification-wrapper { height: 60px; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; margin-bottom: 20px; }
+        .verification-wrapper { 
+            height: 60px; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; margin-bottom: 20px; 
+            animation: shrinkWrapper 2s ease-in 6s forwards;
+        }
+        @keyframes shrinkWrapper { to { height: 0; margin-bottom: 0; opacity: 0; } }
+
         .verification-bar { 
             width: 200px; height: 2px; position: relative; 
             background: linear-gradient(90deg, transparent, #555861, transparent);
@@ -138,12 +143,14 @@
         }
         @keyframes moveBall { 0% { left: 0; } 50% { left: 194px; } 100% { left: 0; } }
         @keyframes fadeOutBar { to { opacity: 0; } }
+        
         .identity-status-stamp { 
             font-size: 28px; font-weight: 500; color: #1a79ef; letter-spacing: 1px; 
             opacity: 0; white-space: nowrap; position: absolute;
-            animation: slowFadeIn 2s ease-in 3s forwards; 
+            animation: slowFadeIn 2s ease-in 3s forwards, fadeOut 2s ease-in 6s forwards; 
         }
         @keyframes slowFadeIn { to { opacity: 1; } }
+        @keyframes fadeOut { to { opacity: 0; } }
 
         /* sXEnter Metallic Glisten Engine */
         @keyframes textReflectionWash {
@@ -238,17 +245,6 @@
             margin-top: 40px; 
             margin-bottom: 45px;
             box-shadow: inset 0 0 24px rgba(0, 0, 0, 0.85);
-        }
-
-        /* Explicit Inner Spacing Rules Supporting the Law of Equidistance */
-        .manifesto-console-box .inner-top {
-            margin-top: 30px !important;    
-            margin-bottom: 20px !important; 
-        }
-
-        .manifesto-console-box .inner-bottom {
-            margin-top: 20px !important;    
-            margin-bottom: 30px !important; 
         }
 
         .block-body {
