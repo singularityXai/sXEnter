@@ -12,10 +12,10 @@
 
         /* Global Sovereign Protection Styles */
         * {
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
+            -webkit-user-select: none !important;
+            -moz-user-select: none !important;
+            -ms-user-select: none !important;
+            user-select: none !important;
             -webkit-touch-callout: none;
         }
 
@@ -32,6 +32,35 @@
             min-height: 100vh;
             letter-spacing: 0.5px;
             overflow-x: hidden;
+            transition: opacity 0.05s ease-out; /* Required for blackout layer */
+        }
+
+        /* SOVEREIGNTY GUARD: Anti-Screenshot Blackout Layer */
+        body.breach-blackout {
+            opacity: 0 !important;
+        }
+
+        /* TUNED SOVEREIGNTY GUARD: Fixed position on exit, smooth mid-slow fade out */
+        .security-alert {
+            position: fixed; bottom: -50px; left: 50%; transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.25); backdrop-filter: blur(8px);
+            padding: 6px 16px; border-radius: 50px;
+            color: #e2e4e9; font-size: 9px; letter-spacing: 2px;
+            opacity: 0; visibility: hidden; pointer-events: none;
+            z-index: 9999;
+            white-space: nowrap;
+        }
+        .security-alert.show { 
+            opacity: 1; 
+            bottom: 30px; 
+            visibility: visible; 
+            transition: bottom 2.5s cubic-bezier(0.1, 1, 0.1, 1), opacity 0.1s linear; 
+        }
+        .security-alert.fade {
+            bottom: 30px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.8s linear, visibility 0.8s linear;
         }
 
         .gateway-container {
@@ -135,7 +164,7 @@
             letter-spacing: 3px; 
             color: #c7cad2;
             text-transform: uppercase;
-            margin-bottom: 40px; /* FINAL TWEAK: Reduced outer spacing globally */
+            margin-bottom: 40px; 
         }
 
         /* Universal Layout Dividers */
@@ -151,8 +180,8 @@
         /* Isolated Intro Block Frame */
         .intro-block {
             max-width: 680px;
-            margin-top: 25px;    /* Locked perfect inward distance */
-            margin-bottom: 25px; /* Locked perfect inward distance */
+            margin-top: 25px;    
+            margin-bottom: 25px; 
             margin-left: auto;
             margin-right: auto;
         }
@@ -193,20 +222,20 @@
             text-align: center;
             width: 100%;
             box-sizing: border-box;
-            margin-top: 40px; /* FINAL TWEAK: Reduced outer spacing globally to match top */
+            margin-top: 40px; 
             margin-bottom: 45px;
             box-shadow: inset 0 0 24px rgba(0, 0, 0, 0.85);
         }
 
         /* Explicit Inner Spacing Rules Supporting the Law of Equidistance */
         .manifesto-console-box .inner-top {
-            margin-top: 30px !important;    /* FINAL TWEAK: Reduced outer content distance inside container */
-            margin-bottom: 20px !important; /* Retained close inside headline distance */
+            margin-top: 30px !important;    
+            margin-bottom: 20px !important; 
         }
 
         .manifesto-console-box .inner-bottom {
-            margin-top: 20px !important;    /* Retained close inside headline distance */
-            margin-bottom: 30px !important; /* FINAL TWEAK: Reduced outer content distance inside container */
+            margin-top: 20px !important;    
+            margin-bottom: 30px !important; 
         }
 
         .block-body {
@@ -292,27 +321,28 @@
             color: rgba(255, 255, 255, 0.8);
         }
 
-        /* Right-Aligned Footer Component Frame */
+        /* Right-Aligned Footer Component Frame Synced With sXEnter */
         .footer-branding {
-            margin-top: 120px; 
+            margin-top: 250px; 
             text-align: right;  
             width: 100%;
             max-width: 680px;
-            color: #b0b4be;
+            color: #c7cad2;
             font-size: 11px;
-            letter-spacing: 0.5px;
-            line-height: 1.2;
             box-sizing: border-box;
         }
 
-        .lang-highlight { font-weight: 600; color: #ffffff; }
+        .lang-highlight { 
+            color: #ffffff; 
+            font-weight: 500; 
+            cursor: pointer; 
+        }
 
         .sx-global-branding {
-            display: block;
+            font-size: 9px; 
+            opacity: 0.5; 
+            display: block; 
             margin-top: 4px; 
-            font-size: 11px;
-            color: #8c9099;
-            letter-spacing: 1px;
         }
 
         @media (max-width: 768px) {
@@ -326,6 +356,9 @@
     </style>
 </head>
 <body oncontextmenu="return false;">
+
+    <!-- SOVEREIGNTY GUARD: Ambient Security Capsule -->
+    <div id="securityAlert" class="security-alert">ACCESS DENIED: Sovereignty Breach Detected.</div>
 
     <div class="gateway-container">
         
@@ -461,13 +494,93 @@
     </div>
 
     <script>
+        // SOVEREIGNTY GUARD: Global Controller & Interceptors
+        let alertTimeout;
+        let isMouseDown = false;
+
+        function triggerAlert() {
+            const alertBox = document.getElementById('securityAlert');
+            
+            // Wipe absolute state classes instantly to cleanly override back-to-back breaches
+            alertBox.classList.remove('show', 'fade');
+            clearTimeout(alertTimeout);
+            
+            // Execute state mechanics
+            setTimeout(() => {
+                alertBox.classList.add('show');
+                
+                // Hold on layout line, then pivot strictly into visual opacity fade track
+                alertTimeout = setTimeout(() => {
+                    alertBox.classList.remove('show');
+                    alertBox.classList.add('fade');
+                }, 2000);
+            }, 50);
+        }
+
+        function triggerBlackout() {
+            document.body.classList.add('breach-blackout');
+            triggerAlert();
+            setTimeout(() => {
+                document.body.classList.remove('breach-blackout');
+            }, 400);
+        }
+        
+        // Capture Vector: Right-Clicks, Context Menus, and Base Drag Blocks
+        document.addEventListener('contextmenu', e => { triggerAlert(); e.preventDefault(); });
+        document.addEventListener('copy', e => { triggerAlert(); e.preventDefault(); });
+        document.addEventListener('selectstart', e => { triggerAlert(); e.preventDefault(); });
+        document.addEventListener('dragstart', e => { triggerAlert(); e.preventDefault(); });
+
+        // Capture Vector: Active Left-Click-Hold-Drag Trackers
+        document.addEventListener('mousedown', function(e) {
+            isMouseDown = true;
+            if (e.detail > 1) { e.preventDefault(); } // Stop fast multi-click selection blocks
+        });
+        document.addEventListener('mouseup', function() {
+            isMouseDown = false;
+        });
+        document.addEventListener('mousemove', function(e) {
+            // Trigger the alert layout cascade the millisecond a click-hold movement path is initiated
+            if (isMouseDown) {
+                triggerAlert();
+            }
+        });
+
+        // Capture Vector: Outside Overlay Focus Capture (OS Snipping Tools)
+        window.addEventListener('blur', function() {
+            triggerBlackout();
+        });
+
+        // Capture Vector: Keyboard Shell Screenshot Triggers & Standard Key Interceptors
+        document.addEventListener('keyup', function(e) {
+            if (e.key === 'PrintScreen') {
+                triggerBlackout();
+                if (navigator.clipboard) { navigator.clipboard.writeText('Access Denied'); }
+            }
+        });
+
         document.addEventListener('keydown', function(e) {
+            // Screen grab combinations
+            if (
+                e.key === 'PrintScreen' ||
+                ((e.ctrlKey || e.metaKey) && e.key === 'p') ||
+                ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 's' || e.key === 'S')) ||
+                ((e.metaKey || e.ctrlKey) && e.shiftKey && e.key === '4')
+            ) {
+                triggerBlackout();
+                e.preventDefault();
+                return false;
+            }
+            
+            // Developer Tools & Source viewing interception
             if ((e.ctrlKey || e.metaKey) && (e.key === 'c' || e.key === 'u' || e.key === 's' || e.key === 'i')) {
+                triggerAlert();
                 e.preventDefault();
                 return false;
             }
         });
 
+        // Initialize Action Tracker
         document.getElementById('initializeSandboxTrigger').addEventListener('click', function(e) {
             e.preventDefault();
             window.location.href = "https://go.singularityxai.online/sx-provincezero";
