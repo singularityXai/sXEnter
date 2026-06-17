@@ -236,9 +236,6 @@
         </div>
     </div>
 
-    <!-- ========================================== -->
-    <!-- sX TRiPWIRE: UI SECURITY TRIGGERS (V2.2)   -->
-    <!-- ========================================== -->
     <script id="sx-security-tripwire">
         const alertBox = document.getElementById('securityAlert');
         const body = document.body;
@@ -247,7 +244,7 @@
         let startX = 0;
         let startY = 0;
 
-        // Level 1: Visual Warning Only (Right-Click, Drag, Highlight)
+        // Level 1: Visual Warning Only (1.5 Second Fade)
         function triggerWarningOnly() {
             clearTimeout(alertTimeout);
             alertBox.classList.remove('fade');
@@ -256,10 +253,10 @@
             alertTimeout = setTimeout(() => {
                 alertBox.classList.remove('show');
                 alertBox.classList.add('fade');
-            }, 3500); 
+            }, 1500); // Sovereign Override: 1.5s
         }
 
-        // Level 2: Full Breach Blackout (DevTools, Source Code, Screenshots)
+        // Level 2: Full Breach Blackout (1.5 Second Fade)
         function triggerFullBreach() {
             clearTimeout(alertTimeout);
             alertBox.classList.remove('fade');
@@ -270,60 +267,60 @@
                 alertBox.classList.remove('show');
                 alertBox.classList.add('fade');
                 body.classList.remove('breach-blackout');
-            }, 1250); 
+            }, 1500); // Sovereign Override: 1.5s
         }
 
-        // TRAP 1: Right-Click (Warning Only)
+        // TRAP 1: Right-Click (Intercepts before payload)
         document.addEventListener('contextmenu', function(e) {
             e.preventDefault();
+            e.stopImmediatePropagation();
             triggerWarningOnly();
-        });
+        }, true);
 
-        // TRAP 2: Image Drag (Warning Only)
+        // TRAP 2: Image Drag (Intercepts before payload)
         document.addEventListener('dragstart', function(e) {
             e.preventDefault();
+            e.stopImmediatePropagation();
             triggerWarningOnly();
-        });
+        }, true);
 
-        // TRAP 3: Click-and-Drag Detection (Warning Only)
+        // TRAP 3: Click-and-Drag (Intercepts before payload)
         document.addEventListener('mousedown', function(e) {
-            // Allow normal clicks on inputs, buttons, and labels
             if (e.target.tagName === 'INPUT' || e.target.tagName === 'BUTTON' || e.target.tagName === 'LABEL' || e.target.closest('button') || e.target.closest('.track-label')) {
                 return;
             }
+            e.stopImmediatePropagation();
             isClicking = true;
             startX = e.clientX;
             startY = e.clientY;
-        });
+        }, true);
 
         document.addEventListener('mousemove', function(e) {
             if (!isClicking) return;
-            
-            // If they hold click and drag more than 10 pixels, fire the warning
+            e.stopImmediatePropagation();
             if (Math.abs(e.clientX - startX) > 10 || Math.abs(e.clientY - startY) > 10) {
                 triggerWarningOnly();
-                isClicking = false; // Reset to avoid spamming the animation
+                isClicking = false; 
             }
-        });
+        }, true);
 
-        document.addEventListener('mouseup', function() {
+        document.addEventListener('mouseup', function(e) {
             isClicking = false;
-        });
+        }, true);
 
-        // TRAP 4: DevTools & Source Code (Full Blackout)
+        // TRAP 4: DevTools, Source Code, Screenshots (Intercepts before payload)
         document.addEventListener('keydown', function(e) {
             if (e.key === 'F12' || 
                (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'i' || e.key === 'J' || e.key === 'j' || e.key === 'C' || e.key === 'c')) ||
-               (e.ctrlKey && (e.key === 'U' || e.key === 'u'))) {
+               (e.ctrlKey && (e.key === 'U' || e.key === 'u')) ||
+               e.key === 'PrintScreen' || (e.metaKey && e.shiftKey)) {
+                
                 e.preventDefault();
+                e.stopImmediatePropagation();
                 triggerFullBreach();
             }
-            
-            // TRAP 5: Best-Effort Screenshot Catch (PrintScreen, Mac Cmd+Shift, Win+Shift+S)
-            if (e.key === 'PrintScreen' || (e.metaKey && e.shiftKey)) {
-                triggerFullBreach();
-            }
-        });
+        }, true);
+    </script>
     </script>
     </script>
     </script>
