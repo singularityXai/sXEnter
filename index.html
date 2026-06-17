@@ -237,12 +237,15 @@
     </div>
 
     <!-- ========================================== -->
-    <!-- sX TRiPWIRE: UI SECURITY TRIGGERS (V2.1)   -->
+    <!-- sX TRiPWIRE: UI SECURITY TRIGGERS (V2.2)   -->
     <!-- ========================================== -->
     <script id="sx-security-tripwire">
         const alertBox = document.getElementById('securityAlert');
         const body = document.body;
         let alertTimeout;
+        let isClicking = false;
+        let startX = 0;
+        let startY = 0;
 
         // Level 1: Visual Warning Only (Right-Click, Drag, Highlight)
         function triggerWarningOnly() {
@@ -282,10 +285,29 @@
             triggerWarningOnly();
         });
 
-        // TRAP 3: Text Highlight & Selection (Warning Only)
-        document.addEventListener('selectstart', function(e) {
-            e.preventDefault();
-            triggerWarningOnly();
+        // TRAP 3: Click-and-Drag Detection (Warning Only)
+        document.addEventListener('mousedown', function(e) {
+            // Allow normal clicks on inputs, buttons, and labels
+            if (e.target.tagName === 'INPUT' || e.target.tagName === 'BUTTON' || e.target.tagName === 'LABEL' || e.target.closest('button') || e.target.closest('.track-label')) {
+                return;
+            }
+            isClicking = true;
+            startX = e.clientX;
+            startY = e.clientY;
+        });
+
+        document.addEventListener('mousemove', function(e) {
+            if (!isClicking) return;
+            
+            // If they hold click and drag more than 10 pixels, fire the warning
+            if (Math.abs(e.clientX - startX) > 10 || Math.abs(e.clientY - startY) > 10) {
+                triggerWarningOnly();
+                isClicking = false; // Reset to avoid spamming the animation
+            }
+        });
+
+        document.addEventListener('mouseup', function() {
+            isClicking = false;
         });
 
         // TRAP 4: DevTools & Source Code (Full Blackout)
@@ -302,6 +324,7 @@
                 triggerFullBreach();
             }
         });
+    </script>
     </script>
     </script>
 
