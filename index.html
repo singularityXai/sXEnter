@@ -237,14 +237,14 @@
     </div>
 
     <!-- ========================================== -->
-    <!-- sX TRiPWIRE: UI SECURITY TRIGGERS (V2)     -->
+    <!-- sX TRiPWIRE: UI SECURITY TRIGGERS (V2.1)   -->
     <!-- ========================================== -->
     <script id="sx-security-tripwire">
         const alertBox = document.getElementById('securityAlert');
         const body = document.body;
         let alertTimeout;
 
-        // Level 1: Visual Warning Only (Right-Click, Drag)
+        // Level 1: Visual Warning Only (Right-Click, Drag, Highlight)
         function triggerWarningOnly() {
             clearTimeout(alertTimeout);
             alertBox.classList.remove('fade');
@@ -276,13 +276,19 @@
             triggerWarningOnly();
         });
 
-        // TRAP 2: Image/Text Drag (Warning Only)
+        // TRAP 2: Image Drag (Warning Only)
         document.addEventListener('dragstart', function(e) {
             e.preventDefault();
             triggerWarningOnly();
         });
 
-        // TRAP 3: DevTools & Source Code (Full Blackout)
+        // TRAP 3: Text Highlight & Selection (Warning Only)
+        document.addEventListener('selectstart', function(e) {
+            e.preventDefault();
+            triggerWarningOnly();
+        });
+
+        // TRAP 4: DevTools & Source Code (Full Blackout)
         document.addEventListener('keydown', function(e) {
             if (e.key === 'F12' || 
                (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'i' || e.key === 'J' || e.key === 'j' || e.key === 'C' || e.key === 'c')) ||
@@ -291,11 +297,12 @@
                 triggerFullBreach();
             }
             
-            // TRAP 4: Best-Effort Screenshot Catch (PrintScreen, Mac Cmd+Shift, Win+Shift+S)
+            // TRAP 5: Best-Effort Screenshot Catch (PrintScreen, Mac Cmd+Shift, Win+Shift+S)
             if (e.key === 'PrintScreen' || (e.metaKey && e.shiftKey)) {
                 triggerFullBreach();
             }
         });
+    </script>
     </script>
 
     <!-- ========================================== -->
