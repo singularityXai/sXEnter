@@ -23,7 +23,6 @@
             min-height: 100vh;
             letter-spacing: 0.5px;
             overflow-x: hidden;
-            /* SOVEREIGNTY GUARD: Global browser highlighting lockdown */
             -webkit-user-select: none !important;
             -moz-user-select: none !important;
             -ms-user-select: none !important;
@@ -31,33 +30,18 @@
             transition: opacity 0.05s ease-out;
         }
 
-        /* SOVEREIGNTY GUARD: Anti-Screenshot Blackout Layer */
-        body.breach-blackout {
-            opacity: 0 !important;
-        }
+        body.breach-blackout { opacity: 0 !important; }
 
-        /* TUNED SOVEREIGNTY GUARD: Fixed position on exit, smooth mid-slow fade out */
         .security-alert {
             position: fixed; bottom: -50px; left: 50%; transform: translateX(-50%);
             background: rgba(0, 0, 0, 0.25); backdrop-filter: blur(8px);
             padding: 6px 16px; border-radius: 50px;
             color: #e2e4e9; font-size: 9px; letter-spacing: 2px;
             opacity: 0; visibility: hidden; pointer-events: none;
-            z-index: 9999;
-            white-space: nowrap;
+            z-index: 9999; white-space: nowrap;
         }
-        .security-alert.show { 
-            opacity: 1; 
-            bottom: 30px; 
-            visibility: visible; 
-            transition: bottom 2.5s cubic-bezier(0.1, 1, 0.1, 1), opacity 0.1s linear; 
-        }
-        .security-alert.fade {
-            bottom: 30px;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.8s linear, visibility 0.8s linear;
-        }
+        .security-alert.show { opacity: 1; bottom: 30px; visibility: visible; transition: bottom 2.5s cubic-bezier(0.1, 1, 0.1, 1), opacity 0.1s linear; }
+        .security-alert.fade { bottom: 30px; opacity: 0; visibility: hidden; transition: opacity 0.8s linear, visibility 0.8s linear; }
 
         .gateway-container {
             width: 100%;
@@ -72,8 +56,26 @@
             min-height: 95vh;
         }
 
-        .logo-container { width: 100%; max-width: 420px; margin: 0 auto; position: relative; }
-        .logo-container img { width: 100%; height: auto; display: block; margin: 0 auto; }
+        .logo-container { 
+            width: 100%; max-width: 600px; margin: 0 auto; position: relative; 
+            display: flex; justify-content: center; align-items: center; gap: 30px;
+        }
+        .logo-container img { width: 100%; max-width: 420px; height: auto; display: block; }
+        
+        .cc-capsule-group { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+        .cc-capsule-capsule {
+            width: 55px; height: 42px; background: #424345; border-radius: 20px 20px 4px 20px;
+            border: 1.5px solid #1a79ef; display: flex; align-items: center; justify-content: center;
+            gap: 4px; box-shadow: 0 4px 15px rgba(26, 121, 239, 0.1); opacity: 0.6;
+        }
+        .cc-dot { width: 5px; height: 5px; background-color: #c7cad2; border-radius: 50%; opacity: 0.3; }
+        .cc-glisten { 
+            font-size: 8px; letter-spacing: 1px; color: #c7cad2; text-transform: uppercase;
+            background: linear-gradient(90deg, #ffffff 0%, #ffffff 35%, #9da1aa 48%, #ffffff 55%, #ffffff 100%);
+            background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            animation: textReflectionWash 6s infinite linear;
+        }
+
         .brand-divider { width: 420px; height: 1px; background-color: #555861; margin: 15px auto; border: none; }
 
         h1 {
@@ -93,13 +95,8 @@
         }
 
         .split-cockpit-layout {
-            display: flex;
-            gap: 50px;
-            text-align: left;
-            margin: 0 auto 20px auto;
-            max-width: 980px;
-            align-items: flex-start;
-            justify-content: center;
+            display: flex; gap: 50px; text-align: left; margin: 0 auto 20px auto;
+            max-width: 980px; align-items: flex-start; justify-content: center;
         }
 
         .column-controls { flex: 0 0 430px; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; width: 100%; }
@@ -172,6 +169,14 @@
         <div class="logo-container">
             <img src="logo.png" alt="SingularityX" onerror="this.style.display='none'; document.getElementById('fallback-title').style.display='block';">
             <div id="fallback-title" style="display:none; font-size:26px; font-weight:300; letter-spacing:4px; margin-bottom:10px;">SingularityX</div>
+            <div class="cc-capsule-group">
+                <div class="cc-capsule-capsule">
+                    <div class="cc-dot"></div>
+                    <div class="cc-dot"></div>
+                    <div class="cc-dot"></div>
+                </div>
+                <div class="cc-glisten">sXCoCreator</div>
+            </div>
         </div>
         <hr class="brand-divider">
         <h1><span class="sx-sovereign">sX</span>Enter <span class="bold-gateway">GATEWAY</span></h1>
@@ -232,90 +237,4 @@
     </div>
     
     <script>
-        // SOVEREIGNTY GUARD: Global Controller
-        let alertTimeout;
-        let isMouseDown = false;
-
-        function triggerAlert() {
-            const alertBox = document.getElementById('securityAlert');
-            
-            // Wipe absolute state classes instantly to cleanly override back-to-back breaches
-            alertBox.classList.remove('show', 'fade');
-            clearTimeout(alertTimeout);
-            
-            // Execute state mechanics
-            setTimeout(() => {
-                alertBox.classList.add('show');
-                
-                // Hold on layout line, then pivot strictly into visual opacity fade track
-                alertTimeout = setTimeout(() => {
-                    alertBox.classList.remove('show');
-                    alertBox.classList.add('fade');
-                }, 2000);
-            }, 50);
-        }
-
-        function triggerBlackout() {
-            document.body.classList.add('breach-blackout');
-            triggerAlert();
-            setTimeout(() => {
-                document.body.classList.remove('breach-blackout');
-            }, 400);
-        }
-        
-        // Capture Vector: Right-Clicks, Context Menus, and Base Drag Blocks
-        document.addEventListener('contextmenu', e => { triggerAlert(); e.preventDefault(); });
-        document.addEventListener('copy', e => { triggerAlert(); e.preventDefault(); });
-        document.addEventListener('selectstart', e => { triggerAlert(); e.preventDefault(); });
-        document.addEventListener('dragstart', e => { triggerAlert(); e.preventDefault(); });
-
-        // Capture Vector: Active Left-Click-Hold-Drag Trackers
-        document.addEventListener('mousedown', function(e) {
-            isMouseDown = true;
-            if (e.detail > 1) { e.preventDefault(); } // Stop fast multi-click selection blocks
-        });
-        document.addEventListener('mouseup', function() {
-            isMouseDown = false;
-        });
-        document.addEventListener('mousemove', function(e) {
-            // Trigger the alert layout cascade the millisecond a click-hold movement path is initiated
-            if (isMouseDown) {
-                triggerAlert();
-            }
-        });
-
-        // Capture Vector: Outside Overlay Focus Capture (OS Snipping Tools)
-        window.addEventListener('blur', function() {
-            triggerBlackout();
-        });
-
-        // Capture Vector: Keyboard Shell Screenshot Triggers
-        document.addEventListener('keyup', function(e) {
-            if (e.key === 'PrintScreen') {
-                triggerBlackout();
-                if (navigator.clipboard) { navigator.clipboard.writeText('Access Denied'); }
-            }
-        });
-        document.addEventListener('keydown', function(e) {
-            if (
-                e.key === 'PrintScreen' ||
-                ((e.ctrlKey || e.metaKey) && e.key === 'p') ||
-                ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 's' || e.key === 'S')) ||
-                ((e.metaKey || e.ctrlKey) && e.shiftKey && e.key === '4')
-            ) {
-                triggerBlackout();
-                e.preventDefault();
-            }
-        });
-
-        let tokenClient;
-        function setupAuthEngine() { if (window.google && google.accounts && google.accounts.oauth2) { tokenClient = google.accounts.oauth2.initTokenClient({ client_id: '795059477450-qt6ee2qa4h8mq779ql8t2uksj77if07l.apps.googleusercontent.com', scope: 'https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email', callback: handleTokenResponse }); } }
-        document.getElementById('googleAuthTrigger').addEventListener('click', function(e) { e.preventDefault(); if (!tokenClient) setupAuthEngine(); if (tokenClient) tokenClient.requestAccessToken({ prompt: 'select_account' }); else alert('Initializing identity protocol streams...'); });
-        function handleTokenResponse(response) { if (response.error !== undefined) return; const accessToken = response.access_token; const verificationCode = Math.floor(100000 + Math.random() * 900000).toString(); const selectedTrack = document.querySelector('input[name="sx_track"]:checked').value; localStorage.setItem('sX_generated_code', verificationCode); localStorage.setItem('sX_selected_track', selectedTrack); fetch('https://www.googleapis.com/oauth2/v2/userinfo', { headers: { 'Authorization': 'Bearer ' + accessToken } }).then(res => res.json()).then(userData => { const operatorEmail = userData.email; localStorage.setItem('sX_operator_email', operatorEmail); return fetch('https://creatorapp.zoho.com/api/v2/singularityx8/sXEngine/form/Operator_Logins', { method: 'POST', headers: { 'Content-Type': 'application/json', 'Authorization': 'Zoho-oauthtoken ' + accessToken }, body: JSON.stringify({ "data": { "Email": operatorEmail, "Verification_Code": verificationCode } }) }); }).then(() => { window.location.href = "https://www.singularityxai.online/sx-verify"; }).catch(() => { window.location.href = "https://www.singularityxai.online/sx-verify"; }); }
-        
-        window.addEventListener('DOMContentLoaded', () => { 
-            setTimeout(setupAuthEngine, 500); 
-        });
-    </script>
-</body>
-</html>
+        (function(_0x366c60,_0x42dadb){function _0xa58
