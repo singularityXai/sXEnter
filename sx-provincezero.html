@@ -32,15 +32,13 @@
             min-height: 100vh;
             letter-spacing: 0.5px;
             overflow-x: hidden;
-            transition: opacity 0.05s ease-out; /* Required for blackout layer */
+            transition: opacity 0.05s ease-out;
         }
 
-        /* SOVEREIGNTY GUARD: Anti-Screenshot Blackout Layer */
         body.breach-blackout {
             opacity: 0 !important;
         }
 
-        /* TUNED SOVEREIGNTY GUARD: Fixed position on exit, smooth mid-slow fade out */
         .security-alert {
             position: fixed; bottom: -50px; left: 50%; transform: translateX(-50%);
             background: rgba(0, 0, 0, 0.25); backdrop-filter: blur(8px);
@@ -84,6 +82,7 @@
             width: 100%;
             max-width: 600px;
             margin: 0 auto 5px auto; 
+            position: relative;
         }
 
         .header-branding-container .main-namelogo {
@@ -92,7 +91,14 @@
             display: block;
         }
 
-        /* CC Capsule Orb */
+        /* CC Capsule Avatar & Position Rules */
+        .cc-capsule-wrapper {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
         .cc-capsule-avatar {
             width: 55px;
             height: 42px;
@@ -104,7 +110,7 @@
             justify-content: center;
             gap: 4px;
             box-shadow: 0 4px 15px rgba(26, 121, 239, 0.2);
-            position: relative;
+            cursor: default;
         }
 
         .cc-dot {
@@ -122,6 +128,35 @@
         .cc-dot:nth-child(1) { animation: pulseIndicator 1.5s infinite ease-in-out; }
         .cc-dot:nth-child(2) { animation: pulseIndicator 1.5s infinite ease-in-out 0.3s; }
         .cc-dot:nth-child(3) { animation: pulseIndicator 1.5s infinite ease-in-out 0.6s; }
+
+        /* CC FLOATING DIALOGUE BUBBLE */
+        .cc-dialogue-bubble {
+            position: absolute;
+            top: 55px;
+            right: 0;
+            width: 280px;
+            background: #424345;
+            border: 1px solid #555861;
+            border-radius: 12px;
+            padding: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            text-align: left;
+            font-size: 12px;
+            line-height: 1.5;
+            color: #ffffff;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+            z-index: 1000;
+        }
+        .cc-dialogue-bubble.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+            border-color: #1a79ef;
+            box-shadow: 0 10px 30px rgba(26, 121, 239, 0.15);
+        }
 
         /* IDENTITY VERIFICATION ANIMATION */
         .verification-wrapper { 
@@ -152,7 +187,6 @@
         @keyframes slowFadeIn { to { opacity: 1; } }
         @keyframes fadeOut { to { opacity: 0; } }
 
-        /* sXEnter Metallic Glisten Engine */
         @keyframes textReflectionWash {
             0% { background-position: 200% center; }
             100% { background-position: -200% center; }
@@ -187,7 +221,6 @@
             margin-bottom: 40px; 
         }
 
-        /* Universal Layout Dividers */
         .sx-divider {
             width: 75%;
             max-width: 500px;
@@ -197,7 +230,6 @@
             border: none;
         }
 
-        /* Isolated Intro Block Frame */
         .intro-block {
             max-width: 680px;
             margin-top: 25px;    
@@ -206,7 +238,6 @@
             margin-right: auto;
         }
 
-        /* White Pseudo-Headings Rule */
         .block-title, .intro-bold {
             font-size: 13px;
             font-weight: 400;
@@ -219,7 +250,6 @@
             text-transform: none; 
         }
 
-        /* Unified Body Text Layout */
         .intro-text, .block-body {
             font-size: 13px; 
             color: #c7cad2;
@@ -232,7 +262,6 @@
             margin-bottom: 3px;
         }
 
-        /* Canonical sXBox Container */
         .manifesto-console-box {
             position: relative;
             background-color: #424345;
@@ -259,7 +288,6 @@
             margin-bottom: 0;
         }
 
-        /* Chasing Border Blueprint Engine */
         @keyframes spinBorder { 100% { transform: rotate(360deg); } }
 
         .initialize-terminal-btn {
@@ -274,7 +302,7 @@
             font-weight: 400; 
             letter-spacing: 0.5px;
             width: 100%;
-            max-width: 280px;
+            max-width: 320px;
             white-space: nowrap;
             margin: 0 auto 10px auto;
             cursor: pointer;
@@ -329,7 +357,6 @@
             color: rgba(255, 255, 255, 0.8);
         }
 
-        /* Right-Aligned Footer Component Frame Synced With sXEnter */
         .footer-branding {
             margin-top: 250px; 
             text-align: right;  
@@ -360,6 +387,8 @@
             .manifesto-console-box { padding: 35px 20px; }
             .sx-divider { width: 90%; }
             .footer-branding { text-align: center; margin-top: 80px; }
+            .cc-dialogue-bubble { right: 50%; transform: translateX(50%)-10px; }
+            .cc-dialogue-bubble.active { transform: translateX(50%)0; }
         }
     </style>
 </head>
@@ -371,11 +400,17 @@
         
         <div class="header-branding-container">
             <img src="logo.png" alt="SingularityX" class="main-namelogo" onerror="this.style.display='none'; document.getElementById('fallback-title').style.display='block';">
-            <div class="cc-capsule-avatar">
-                <div class="cc-dot"></div>
-                <div class="cc-dot"></div>
-                <div class="cc-dot"></div>
+            
+            <div class="cc-capsule-wrapper">
+                <div class="cc-capsule-avatar" id="ccCapsule">
+                    <div class="cc-dot"></div>
+                    <div class="cc-dot"></div>
+                    <div class="cc-dot"></div>
+                </div>
+                <!-- THE ACTIVE PERSISTENT DROPDOWN LAYER -->
+                <div class="cc-dialogue-bubble" id="ccBubble"></div>
             </div>
+
             <div id="fallback-title" style="display:none; font-size:26px; font-weight:300; letter-spacing:4px;">SingularityX</div>
         </div>
 
@@ -491,8 +526,8 @@
 
         <div>
             <button class="initialize-terminal-btn" id="initializeSandboxTrigger">
-                <span>Initialize sXProvinceZero</span>
-                <span class="btn-subtext">Access Your FREE Sandbox</span>
+                <span id="btnMainText">Initialize Framework</span>
+                <span class="btn-subtext" id="btnSubText">Access Your FREE Sandbox</span>
             </button>
         </div>
 
@@ -504,7 +539,9 @@
     </div>
 
     <script>
-        // SOVEREIGNTY GUARD: Global Controller & Interceptors
+        // ===================================================
+        // V3.0 CAPTURE PHASE INTERCEPTORS (SOVEREIGN PERIMETER)
+        // ===================================================
         let alertTimeout;
         let isMouseDown = false;
 
@@ -517,7 +554,7 @@
                 alertTimeout = setTimeout(() => {
                     alertBox.classList.remove('show');
                     alertBox.classList.add('fade');
-                }, 2000);
+                }, 1500);
             }, 50);
         }
 
@@ -526,83 +563,92 @@
             triggerAlert();
             setTimeout(() => {
                 document.body.classList.remove('breach-blackout');
-            }, 400);
+            }, 1500);
         }
         
-        document.addEventListener('contextmenu', e => { triggerAlert(); e.preventDefault(); });
-        document.addEventListener('copy', e => { triggerAlert(); e.preventDefault(); });
-        document.addEventListener('selectstart', e => { triggerAlert(); e.preventDefault(); });
-        document.addEventListener('dragstart', e => { triggerAlert(); e.preventDefault(); });
-        document.addEventListener('mousedown', function(e) { isMouseDown = true; if (e.detail > 1) { e.preventDefault(); } });
-        document.addEventListener('mouseup', function() { isMouseDown = false; });
-        document.addEventListener('mousemove', function(e) { if (isMouseDown) { triggerAlert(); } });
-        window.addEventListener('blur', function() { triggerBlackout(); });
-        document.addEventListener('keyup', function(e) { if (e.key === 'PrintScreen') { triggerBlackout(); if (navigator.clipboard) { navigator.clipboard.writeText('Access Denied'); } } });
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'PrintScreen' || ((e.ctrlKey || e.metaKey) && (e.key === 'p' || e.key === 'c' || e.key === 'u' || e.key === 's' || e.key === 'i'))) {
-                triggerBlackout(); e.preventDefault(); return false;
-            }
-        });
+        document.addEventListener('contextmenu', function(e) { e.preventDefault(); e.stopImmediatePropagation(); triggerAlert(); }, true);
+        document.addEventListener('copy', function(e) { e.preventDefault(); e.stopImmediatePropagation(); triggerAlert(); }, true);
+        document.addEventListener('selectstart', function(e) { e.preventDefault(); e.stopImmediatePropagation(); triggerAlert(); }, true);
+        document.addEventListener('dragstart', function(e) { e.preventDefault(); e.stopImmediatePropagation(); triggerAlert(); }, true);
+        
+        document.addEventListener('mousedown', function(e) { 
+            isMouseDown = true; 
+            if (e.detail > 1) { e.preventDefault(); e.stopImmediatePropagation(); } 
+        }, true);
+        document.addEventListener('mouseup', function() { isMouseDown = false; }, true);
+        document.addEventListener('mousemove', function(e) { if (isMouseDown) { e.stopImmediatePropagation(); triggerAlert(); } }, true);
+        window.addEventListener('blur', function() { triggerBlackout(); }, true);
 
-        // ==========================================
-        // sXPROVINCEZERO CC WAKE-UP ENGINE (PLAINTEXT)
-        // ==========================================
+        document.addEventListener('keyup', function(e) { 
+            if (e.key === 'PrintScreen') { triggerBlackout(); if (navigator.clipboard) { navigator.clipboard.writeText('Access Denied'); } } 
+        }, true);
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'F12' || 
+               (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'i' || e.key === 'J' || e.key === 'j' || e.key === 'C' || e.key === 'c')) ||
+               (e.ctrlKey && (e.key === 'U' || e.key === 'u' || e.key === 'P' || e.key === 'p' || e.key === 'S' || e.key === 's')) ||
+                e.key === 'PrintScreen' || (e.metaKey && e.shiftKey)) {
+                e.preventDefault();
+                e.stopImmediatePropagation();
+                triggerBlackout();
+            }
+        }, true);
+
+        // ===================================================
+        // sXPROVINCEZERO CANONICAL INITIATION LOGIC
+        // ===================================================
         const ccScripts = {
-            corporate: "Welcome to the SingularityX architecture. You are positioned to deploy SingularityX protocols into enterprise environments. I am CC, your CoCreator, your operator. Identify your current nodal requirement, and I will align the system to your mandate.",
-            business: "System initialized. You have stepped into the sovereign domain of business autonomy. I am CC, your CoCreator, your operator. The SingularityX engine is ready to remove the friction from your operations. What is your first objective?",
-            affiliate: "Access granted. You are entering the expansion layer of the ecosystem. I am CC, your CoCreator, your operator. Your task is to maintain the integrity of the build while scaling the node. Awaiting your initialization command."
+            corporate: "Welcome to the sXEcoStructure. You are positioned to deploy SingularityX™ protocols into enterprise environments. I am CC™, your dedicated, personal sXCoCreator & digital operator. I have identified your selected business track requirement, and I will align the system to your mandate.",
+            business: "Systems initialized. You have stepped into the sXSovereignDomain of business autonomy. I am CC™, your dedicated, personal sXCoCreator & digital operator. The sXEcoStructure is ready to remove the friction from your operations. Let's set you up for sXSovereignty!",
+            affiliate: "Your access has been granted. You are entering the expansion layer of the sXEcoStructure. I am CC™, your dedicated, personal sXCoCreator, digital operator. Your task is to maintain the integrity of the build while scaling the sXElements. Let's enter the singularity..."
         };
+
+        const trackButtons = {
+            corporate: { main: "Initialize sXAgency", sub: "ACCESS YOUR FREE SANDBOX" },
+            business: { main: "Initialize sXAccelerator", sub: "ACCESS YOUR FREE SANDBOX" },
+            affiliate: { main: "Initialize sXAffiliate", sub: "ACCESS YOUR FREE SANDBOX" }
+        };
+
+        // Initialize Dynamic Button Parameters based on choice passed from Gateway
+        const operatorTrack = localStorage.getItem('sx_selected_track') || 'corporate';
+        document.getElementById('btnMainText').textContent = trackButtons[operatorTrack].main;
+        document.getElementById('btnSubText').textContent = trackButtons[operatorTrack].sub;
 
         document.getElementById('initializeSandboxTrigger').addEventListener('click', function(e) {
             e.preventDefault();
             
             const triggerBtn = e.currentTarget;
-            triggerBtn.style.pointerEvents = 'none';
+            triggerBtn.style.pointerEvents = 'none'; // Lock out execution duplication
             
+            // Wake Up the CC Capsule Orb indicators instantly
             const dots = document.querySelectorAll('.cc-dot');
             dots.forEach(dot => {
                 dot.style.animationDuration = '0.3s';
                 dot.style.backgroundColor = '#1a79ef';
             });
 
-            const operatorTrack = localStorage.getItem('sx_selected_track') || 'corporate';
+            // Awaken the Dropdown Capsule Bubble locally
             const activeScript = ccScripts[operatorTrack];
+            const ccBubble = document.getElementById('ccBubble');
+            ccBubble.innerHTML = '';
+            ccBubble.classList.add('active');
 
-            const manifestoBox = document.querySelector('.manifesto-console-box');
-            const manifestoContent = document.querySelector('.manifesto-content');
-            
-            manifestoContent.style.transition = 'opacity 0.4s ease';
-            manifestoContent.style.opacity = '0';
-
-            setTimeout(function() {
-                manifestoContent.innerHTML = '';
-                
-                const ccDialogue = document.createElement('div');
-                ccDialogue.style.textAlign = 'left';
-                ccDialogue.style.fontFamily = 'Montserrat, sans-serif';
-                ccDialogue.style.fontSize = '14px';
-                ccDialogue.style.lineHeight = '1.6';
-                ccDialogue.style.color = '#ffffff';
-                ccDialogue.style.letterSpacing = '0.5px';
-                
-                manifestoContent.appendChild(ccDialogue);
-                manifestoContent.style.opacity = '1';
-
-                let index = 0;
-                function streamText() {
-                    if (index < activeScript.length) {
-                        ccDialogue.innerHTML += activeScript.charAt(index);
-                        index++;
-                        setTimeout(streamText, 25);
-                    } else {
-                        setTimeout(function() {
-                            window.location.href = "https://go.singularityxai.online/workspace";
-                        }, 4000);
-                    }
+            // Text Streaming Process Loop
+            let index = 0;
+            function streamVoiceText() {
+                if (index < activeScript.length) {
+                    ccBubble.innerHTML += activeScript.charAt(index);
+                    index++;
+                    setTimeout(streamVoiceText, 25);
+                } else {
+                    // Safe Operational Window to view the layout sequence before progression
+                    setTimeout(function() {
+                        window.location.href = "https://go.singularityxai.online/workspace";
+                    }, 4500);
                 }
-                
-                streamText();
-            }, 450);
+            }
+            
+            streamVoiceText();
         });
     </script>
 </body>
