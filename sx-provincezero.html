@@ -544,9 +544,65 @@
             }
         });
 
+        // ==========================================
+        // sXPROVINCEZERO CC WAKE-UP ENGINE (PLAINTEXT)
+        // ==========================================
+        const ccScripts = {
+            corporate: "Welcome to the SingularityX architecture. You are positioned to deploy SingularityX protocols into enterprise environments. I am CC, your CoCreator, your operator. Identify your current nodal requirement, and I will align the system to your mandate.",
+            business: "System initialized. You have stepped into the sovereign domain of business autonomy. I am CC, your CoCreator, your operator. The SingularityX engine is ready to remove the friction from your operations. What is your first objective?",
+            affiliate: "Access granted. You are entering the expansion layer of the ecosystem. I am CC, your CoCreator, your operator. Your task is to maintain the integrity of the build while scaling the node. Awaiting your initialization command."
+        };
+
         document.getElementById('initializeSandboxTrigger').addEventListener('click', function(e) {
             e.preventDefault();
-            window.location.href = "https://go.singularityxai.online/sx-provincezero";
+            
+            const triggerBtn = e.currentTarget;
+            triggerBtn.style.pointerEvents = 'none';
+            
+            const dots = document.querySelectorAll('.cc-dot');
+            dots.forEach(dot => {
+                dot.style.animationDuration = '0.3s';
+                dot.style.backgroundColor = '#1a79ef';
+            });
+
+            const operatorTrack = localStorage.getItem('sx_selected_track') || 'corporate';
+            const activeScript = ccScripts[operatorTrack];
+
+            const manifestoBox = document.querySelector('.manifesto-console-box');
+            const manifestoContent = document.querySelector('.manifesto-content');
+            
+            manifestoContent.style.transition = 'opacity 0.4s ease';
+            manifestoContent.style.opacity = '0';
+
+            setTimeout(function() {
+                manifestoContent.innerHTML = '';
+                
+                const ccDialogue = document.createElement('div');
+                ccDialogue.style.textAlign = 'left';
+                ccDialogue.style.fontFamily = 'Montserrat, sans-serif';
+                ccDialogue.style.fontSize = '14px';
+                ccDialogue.style.lineHeight = '1.6';
+                ccDialogue.style.color = '#ffffff';
+                ccDialogue.style.letterSpacing = '0.5px';
+                
+                manifestoContent.appendChild(ccDialogue);
+                manifestoContent.style.opacity = '1';
+
+                let index = 0;
+                function streamText() {
+                    if (index < activeScript.length) {
+                        ccDialogue.innerHTML += activeScript.charAt(index);
+                        index++;
+                        setTimeout(streamText, 25);
+                    } else {
+                        setTimeout(function() {
+                            window.location.href = "https://go.singularityxai.online/workspace";
+                        }, 4000);
+                    }
+                }
+                
+                streamText();
+            }, 450);
         });
     </script>
 </body>
